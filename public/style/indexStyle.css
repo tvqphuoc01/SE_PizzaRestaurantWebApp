@@ -1,0 +1,186 @@
+.container-fluid {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.mainNavBar {
+    background-color: black;
+    color: white;
+}
+
+.mainNavBar .col-2, .col-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mainNavBar .nav-item {
+    margin-right: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.mainNavBar .nav-item:hover {
+    color: red;
+}
+
+.mainNavBar #search-bar {
+    display: none;
+}
+
+#search-bar input {
+    width: 80%;
+    padding: 10px;
+    background-color: #000000F2;
+    margin-left: 30px;
+    color: white;
+    font-style: italic;
+    box-shadow: none;
+    font-size: 18pt;
+}
+
+#search-bar input:focus {
+    border: 2px solid black !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    font-size: 14pt;
+    font-style: italic;
+    transition: all 0.6s;
+    border-bottom: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+
+.dropdown-content a:hover {
+    color: red;
+    background-color: black;
+}
+
+.carosel {
+    margin-top: 40px;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.section_01 {
+    padding: 50px;
+    font-family: 'Caveat', cursive;
+    font-size: 24pt;
+    text-align: center;
+}
+
+.section_02 {
+    padding-bottom: 50px;
+}
+
+.whitebox {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    padding: 15px;
+    border: 1px solid white !important;
+    border-radius: 0% !important;
+}
+
+.cardMainHeader {
+    font-style:oblique;
+    font-size: 24pt;
+}
+
+.customBtn { 
+    border-radius: 0% !important;
+    background-color: #ef0400 !important;
+}
+
+.customBtn:hover { 
+    background-color: #000000 !important;
+    color: white;
+    border-color: #000000;
+    transition: all 0.7s;
+}
+
+.section_03 {
+    background-image: url('parallax-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 600px;
+    margin-top: 30px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.section_03 .card {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 4rem;
+    border: 0;
+}
+
+.section_03 .card-title {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    font-size: 18pt;
+}
+
+.section_03 .card {
+    position: relative;
+}
+
+.section_03 .price {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 25px;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    z-index: 9;
+}
+
+.section_03 .customBtnPrice {
+    border-radius: 0% !important;
+    background-color: #04aa6d !important;
+}
+
+.section_04 {
+    background-image: url('parallax-bg2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height:700px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}

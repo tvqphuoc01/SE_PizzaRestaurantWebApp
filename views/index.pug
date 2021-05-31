@@ -1,0 +1,156 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        script. 
+            function myFunction() {
+                    var x = document.getElementById("search-bar");
+                    var y = document.getElementById("nav-list");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "flex";
+                        }
+                    }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown HOME 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="#") Bakery
+                            a(class="dropdown-item" href="#") Coffee
+                            a(class="dropdown-item" href="#") Pizza
+                            a(class="dropdown-item" href="#") Winery
+                            a(class="dropdown-item" href="#") Restaurant
+                    li.nav-item SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="#") About Us
+                            a(class="dropdown-item" href="#") Our Chefs
+                            a(class="dropdown-item" href="#") Service
+                            a(class="dropdown-item" href="#") Log in 
+                            a(class="dropdown-item" href="#") Sign Up
+                    li.nav-item.dropdown MENU 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="#") Menu 1
+                            a(class="dropdown-item" href="#") Menu 2
+                            a(class="dropdown-item" href="#") Menu 3
+                    li.nav-item RESERVATION
+                    li.nav-item GALLERY
+                    li.nav-item BLOG
+                    li.nav-item CONTACT
+                    li.nav-item
+                        i(class="fas fa-cart-plus fa-lg")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        div(id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel")
+            ol(class="carousel-indicators")
+                li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
+                li(data-target="#carouselExampleIndicators" data-slide-to="1")
+                li(data-target="#carouselExampleIndicators" data-slide-to="2")
+            div(class="carousel-inner" role="listbox")
+            //Slide One
+            div(class="carousel-item active" style="background-image: url('slider-bg.jpg')")
+                div(class="carousel-caption d-none d-md-block")
+                    h2(class="display-4") First Slide
+                    p(class="lead") This is a description for the first slide.
+            //Slide Two
+            div(class="carousel-item" style="background-image: url('slider-bg1.jpg')")
+                div(class="carousel-caption d-none d-md-block")
+                    h2(class="display-4") Second Slide 
+                    p(class="lead") This is a description for the second slide.
+            //Slide Three
+            div(class="carousel-item" style="background-image: url('slider-bg2.jpg')")
+                div(class="carousel-caption d-none d-md-block")
+                    h2(class="display-4") Third Slide
+                    p(class="lead") This is a description for the third slide.
+            a(class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev")
+                span(class="carousel-control-prev-icon" aria-hidden="true")
+                span(class="sr-only") Previous
+            a(class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next")
+                span(class="carousel-control-next-icon" aria-hidden="true")
+                span(class="sr-only") Next
+        .section.row.container-fluid  
+            .col-2
+            .col-8
+                p.section_01 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                    br
+                    img(src="site-img04.jpg")
+            .col-2
+        .section.row.container-fluid 
+            .col-1 
+            .col-10.row.section_02
+                .col-6
+                    img(src="site-img51.jpg")
+                .col-6
+                    div(class="card whitebox" style="width: 30rem; height: 30rem")
+                        div(class="card-body")
+                            h5.cardMainHeader OUT STORY
+                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            button(type="button" class="btn btn-danger btn-lg customBtn") KNOW MORE
+            .col-1
+        .section_03.row
+            .col-1
+            .col-10.row
+                .col-4
+                    div(class="card" style="width: 18rem;")
+                        img(class="card-img-top" src="site-img18.jpg" alt="Card image cap")
+                        div(class="card-body")
+                            h5(class="card-title") CHICKEN PIZZA
+                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            div.row
+                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
+                                div.col-2
+                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
+                .col-4
+                    div(class="card" style="width: 18rem;")
+                        img(class="card-img-top" src="site-img19.jpg" alt="Card image cap")
+                        div(class="card-body")
+                            h5(class="card-title") VEG. BURGER 
+                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            div.row
+                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
+                                div.col-2
+                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
+                .col-4
+                    div(class="card" style="width: 18rem;")
+                        img(class="card-img-top" src="site-img20.jpg" alt="Card image cap")
+                        div(class="card-body")
+                            h5(class="card-title") VEG. PIZZA
+                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            div.row
+                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
+                                div.col-2
+                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
+                                
+            .col-1
+        .section_04
+            .container
