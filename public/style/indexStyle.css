@@ -184,3 +184,33 @@
     margin-right: 0px !important;
     margin-left: 0px !important;
 }
+
+.section_04 .container-fluid {
+    padding: 80px !important;
+    min-height: 700px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.section_04 .Offers-tittle {
+    font-size: 24pt;
+    font-weight: 700 !important;
+    padding: 10px;
+    
+}
+
+.section_04 .menu-card {
+    padding: 10px;
+    align-items: center;
+}
+
+.menu-card h3 {
+    padding-bottom: 0;
+}
+
+.menu-card span {
+    padding-top: 10px;
+    font-size: 18pt;
+    align-items: center;
+    color: #ef0400;
+    font-weight: 700;
+}
