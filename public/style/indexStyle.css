@@ -214,3 +214,139 @@
     color: #ef0400;
     font-weight: 700;
 }
+
+.section_05 {
+    min-height: 550px;
+    width: 100%;
+}
+
+.section_05 h1 {
+    padding: 25px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.section_05 h2 {
+    padding-top: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
+}
+
+.section_05 p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.section_05 img {
+    max-width: 100%;
+}
+
+.section_05 a {
+    color: black;
+}
+
+.section_05 a:hover {
+    text-decoration: none;
+    color: #ef0400;
+    transition: all 0.5s;
+}
+
+.footer {
+    min-height: 400px;
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+    padding: 80px;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.address-info {
+    padding: 0;
+    margin: 0;
+}
+
+.address-info li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title-line {
+    background-color: #ef0400;
+    height: 2px;
+    margin: 10px auto 25px 0;
+    padding: 0;
+    width: 36px;
+}
+
+.customer-sp {
+    padding: 0;
+    margin: 0;
+}
+
+.customer-sp li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.customer-sp a {
+    color: #fff;
+}
+
+.customer-sp a:hover {
+    text-decoration: none;
+    color: #ef0400;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.Copyright {
+    min-height: 100px;
+    background-color: #1f1f1f;
+}
+
+.copyRight-title {
+    color: #fff;
+    padding: 35px;
+    text-align: center;
+    font-size: 12pt;
+    font-family: 'Raleway', sans-serif;
+}
+
+.social-list {
+    padding: 35px;
+    text-align: center;
+}
+
+.social-app {
+    display: inline-block;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.fa-facebook-square {
+    color: #4267B2;
+}
+
+.fa-instagram { 
+    font-size:30px;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube {
+    color: red
+}
+
+.fa-twitter-square {
+    color: #00b6f1;
+}
