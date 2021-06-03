@@ -8,6 +8,7 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         // Boostrap & CSS
         link(rel="stylesheet" href="register_style.css" )
+        link(rel="stylesheet" href="indexStyle.css")
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
         link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
@@ -21,11 +22,11 @@ html(lang="en")
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
             .col-2.d-flex.justify-content-center
-                a(href="#")
+                a(href="/")
                     img(src="logo.png" alt="Butter logo")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
-                    li.nav-item.dropdown HOME 
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
                         i(class="fa fa-angle-down")
                         div(class="dropdown-content")
                             a(class="dropdown-item" href="#") Bakery
@@ -37,13 +38,14 @@ html(lang="en")
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
                         div(class="dropdown-content")
-                            a(class="dropdown-item" href="#") About Us
+                            a(class="dropdown-item" href="/aboutUs") About Us
                             a(class="dropdown-item" href="#") Our Chefs
-                            a(class="dropdown-item" href="#") Service
-                            a(class="dropdown-item" href="#") Log in 
-                            a(class="dropdown-item" href="#") Sign Up
+                            a(class="dropdown-item" href="/service") Service
+                            a(class="dropdown-item" href="/logIn") Log in 
+                            a(class="dropdown-item" href="/SignUp") Sign Up
                     li.nav-item.dropdown MENU 
-                    li.nav-item RESERVATION
+                    li.nav-item
+                        a(class="reservation" href="/reservation") RESERVATION
                     li.nav-item GALLERY
                     li.nav-item BLOG
                     li.nav-item CONTACT
@@ -63,7 +65,7 @@ html(lang="en")
                     p.content_main User Register Here...!
                 //- Breadcrumb
                 .Breadcrumbs
-                    a.Home(href="#" style="text-decoration: none;") Home
+                    a.Home(href="/" style="text-decoration: none;") Home
                     i /
                     a.Page(href="#" style="text-decoration: none;") Pages
                     i /
