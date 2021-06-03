@@ -32,6 +32,10 @@ app.get('/signUp', (req, res) => {
   res.render('signUp');
 })
 
+app.get('/reservation', (req, res) => {
+  res.render('reservation');
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

@@ -22,10 +22,21 @@
 
 .mainNavBar .nav-item:hover {
     color: red;
+    transition: all 0.6s;
 }
 
 .mainNavBar #search-bar {
     display: none;
+}
+
+.reservation {
+    color: #fff;
+}
+
+.reservation:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
 }
 
 #search-bar input {
