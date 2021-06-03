@@ -1,1 +1,269 @@
-p Hello World
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="serviceStyle.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+        script. 
+            function myFunction() {
+                    var x = document.getElementById("search-bar");
+                    var y = document.getElementById("nav-list");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "flex";
+                        }
+                    }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown HOME 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="#") Bakery
+                            a(class="dropdown-item" href="#") Coffee
+                            a(class="dropdown-item" href="#") Pizza
+                            a(class="dropdown-item" href="#") Winery
+                            a(class="dropdown-item" href="#") Restaurant
+                    li.nav-item SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="#") Our Chefs
+                            a(class="dropdown-item" href="/service") Service
+                            a(class="dropdown-item" href="/logIn") Log in 
+                            a(class="dropdown-item" href="/SignUp") Sign Up
+                    li.nav-item.dropdown MENU 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/menu") Menu 1
+                            a(class="dropdown-item" href="#") Menu 2
+                            a(class="dropdown-item" href="#") Menu 3
+                    li.nav-item RESERVATION
+                    li.nav-item GALLERY
+                    li.nav-item BLOG
+                    li.nav-item CONTACT
+                    li.nav-item
+                        i(class="fas fa-cart-plus fa-lg")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3.left-section1 Services 
+                    h4.left-section2 Know About Our Amazing Services 
+                .col-md-6
+                    .breadcrumbs
+                        a(href="#" style="color:white") Home 
+                        i /       
+                        a(href="#" style="color:white") Page
+                        i / 
+                        a Service
+        //Section1
+        .service-section1 
+            .container 
+                h2 Restaurant, Bakery, Coffee, Winery & Pizza
+                p Consequuntur magni dolores eos ratione voluptatem nesciunt natus error voluptatem accusantium tempo doloremque.
+        //Section2
+        .service-section2
+            .container 
+                .row
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img18.jpg" alt="breakfast")
+                            span.dine-time BREAKFAST 
+                            p(style="padding:30px"). 
+                               description
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img19.jpg" alt="lunch")
+                            span.dine-time LUNCH 
+                            p(style="padding:30px"). 
+                                description
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img20.jpg" alt="dinner")
+                            span.dine-time DINNER 
+                            p(style="padding:30px"). 
+                                description
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img21.jpg" alt="dinner")
+                            span.dine-time TABLE ORDERING
+                            p(style="padding:30px"). 
+                                description
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img22.jpg" alt="dinner")
+                            span.dine-time OFFER FREE WI-FI
+                            p(style="padding:30px"). 
+                                description
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img23.jpg" alt="dinner")
+                            span.dine-time HOME DELIVERY 
+                            p(style="padding:30px"). 
+                                description
+        //Section3
+        .service-section3
+            .container
+                h3.text-center(style="color:white;text-transform: uppercase;font-size: 20px !important;font-weight: 700 !important;") Testimonials
+                h4.text-center(style="color:white;text-transform: uppercase;font-size: px !important;font-weight: 700 !important;") What people say
+                div(id = "carousel-example-generic1" class="carousel slide" data-ride="carousel")
+                    ol.carousel-indicators 
+                        li(data-target="#carousel-example-generic1" data-slide-to="0" class="active")
+                        li(data-target="#carousel-example-generic1" data-slide-to="1")
+                        li(data-target="#carousel-example-generic1" data-slide-to="2") 
+                    .carousel-inner(role = "listbox")
+                        //Slide 1
+                        div(class="carousel-item carousel-item-service active")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    description slide 1
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+                        //Slide 2
+                        div(class="carousel-item carousel-item-service")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    description slide 2
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+                        //Slide 3
+                        div(class="carousel-item carousel-item-service")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    description slide 3
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+        //Section4
+        .service-section4
+            .container 
+                .row 
+                    .col-md-6 
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-utensils" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Online Ordering 
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-wifi" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Offer Free Wi-Fi
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-vihara" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Conference Halls
+                                    p description
+                    .col-md-6 
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="far fa-calendar-check" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Table Ordering
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-puzzle-piece" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Games at The Table
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-door-open" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Home Delivery 
+                                    p description
+                                    
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>
+
+
+
+
+                        
+                           
+
+                
