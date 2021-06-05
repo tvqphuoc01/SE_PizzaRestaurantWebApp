@@ -1,0 +1,448 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="aboutUsStyle.css" )
+        link(rel="stylesheet" href="cbpStyle.css" )
+        
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        script. 
+            function myFunction() {
+                    var x = document.getElementById("search-bar");
+                    var y = document.getElementById("nav-list");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "flex";
+                        }
+                    }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="#") Bakery
+                            a(class="dropdown-item" href="#") Coffee
+                            a(class="dropdown-item" href="#") Pizza
+                            a(class="dropdown-item" href="#") Winery
+                            a(class="dropdown-item" href="#") Restaurant
+                    li.nav-item SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="#") Our Chefs
+                            a(class="dropdown-item" href="/service") Service
+                            a(class="dropdown-item" href="/logIn") Log in 
+                            a(class="dropdown-item" href="/SignUp") Sign Up
+                    li.nav-item.dropdown MENU 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/menu") Menu 1
+                            a(class="dropdown-item" href="#") Menu 2
+                            a(class="dropdown-item" href="#") Menu 3
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item GALLERY
+                    li.nav-item BLOG
+                    li.nav-item CONTACT
+                    li.nav-item
+                        i(class="fas fa-cart-plus fa-lg")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3 About Us
+                    h4 A brief history about our company
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/") Home 
+                        i /       
+                        a(href="#") Pages
+                        i / 
+                        a(href='/aboutUs') About Us
+        
+        //Founder
+        .section-lg
+            .container 
+                .row
+                    .col-md-7.col-sm-6.m-bottom4.text-center.m-top8
+                        h2.font-color.font30.font-bold.uppercase.m-bottom2 founder 
+                        p.font-grey.font18.font18.font-thin.italic.line-height30.text-center Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vesti  ulum dui sagittis mlste sagittis elts. Exercitation photo booth that is end stumptown tote bag Banksy, elit small batch freegan sed craft a  beer elit seitan exercitation, photo booth et kale chips hillwave deep laborum mlste sagittis sunt culpa only oficia Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut Excepteur sit occaecat cupidatan is proident end stumptown tote bag Banksy.
+                            br
+                            img.m-top3(src='site-img04.jpg' alt='')
+
+                    .col-md-5.col-sm-6.m-bottom5.m-top8
+                        img.img-responsive(src = 'site-img17.jpg' alt='')
+
+        // Our History
+        .section-lg.m-top6
+            .container 
+                .row
+                    .col-md-6.col-sm-6.m-bottom4 
+                        img.img-responsive(src='site-img16.jpg' alt='')
+                    .col-md-6.col-sm-6.m-bottom4 
+                        h2.font-color.font30.font-bold.uppercase.m-bottom1 our history 
+                        p.font-777575.font15 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut minim veniam laboreua dolore magna aliqua. Consequuntur magni dolores eos ratione voluptatem nesciunt natus error voluptatem accusantium tempo doloremque Excepteur sit occaecat cupidatan is proident, one sunt in culpa.
+                        p.font-grey.font18.font-thin.italic.line-height30 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui minim veniam laboreua.
+                        p.font-777575.font15 Consequuntur magni dolores eos ratione voluptatem nesciunt natus error voluptatem accusantium tempo doloremque. Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut minim veniam laboreua dolore magna aliqua. Excepteur sit occaecat cupidatan is proident, one sunt in culpa Ut enim ad minim veniam, quis nostrud enim ad.
+        
+        // Our Chef
+        .section-lg.m-top8
+            .container
+                h2.section-titles.text-center.font-grey.font40.font-boldH2 Our Chef
+                p.col-md-11.sec-auto-margin.font-grey.font18.font-thin.line-height30.text-center Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vesti  ulum dui sagittis mlste sagittis elts. Exercitation photo booth that is end stumptown tote bag Banksy, elit small batch freegan sed craft a  beer elit seitan exercitation, photo booth et kale chips hillwave deep laborum mlste sagittis sunt culpa only oficia. Consequuntur magni voluptatem.
+                    br
+                    img.m-top3.m-bottom5(src='site-img50.jpg')
+                .row
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img24.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 John Doe
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img25.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 Angelina Smith
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img26.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 John Doe
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img27.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 Angelina Jr.
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img24.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 John Doe
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img25.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 Angelina Smith
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img26.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 John Doe
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    .col-sm-3.m-bottom5
+                        .team-thumb.clearfix
+                            .team-col
+                                .imgbox
+                                    a(href='#')
+                                        img.img-responsive(alt='' src='site-img27.jpg')
+                            .team-dis
+                                h4.m-bottom1.font20 Angelina Jr.
+                                p.m-bottom2 Excepteur sit occaecat cupidatan is proident, one sunt in culpa qui officia deserunt mollit anim Ut.
+                                ul.social-icons.team
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-facebook
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-twitter
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-google-plus
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-linkedin
+                    
+        // Dev Team
+        .section-titles.text-center.m-bottom4.m-top8
+            h2.section-titles.text-center.font-grey.font40.font-boldH2 Our Development Team
+            p.col-md-11.sec-auto-margin.font-grey.font18.font-thin.line-height30.text-center.m-top3 Our formation is not without mentioning the outstanding faces, they have contributed to our success. They are great people when it comes to managing very tight and secure systems, creating a versatile platform that helps us interact and support more customers.
+                br
+                img.m-top3(src='site-img50.jpg')
+        .section-lg.m-top6 
+            .container 
+                .cbp.cbp-caption-active.cbp-caption-zoom.cbp-ready(id='js-grid-lightbox-gallery')
+                    .cbp-wrapper-outer 
+                        .cbp-wrapper
+                            .cbp-item.graphic.identity(style='width: 210px; left: 0px; top: 0px')
+                                .cbp-item-wrapper 
+                                    a.cbp-caption.cbp-lightbox(data-title = 'Our Gallery<br>by Hoan My' href='portfolio-1.jpg')
+                                        .cbp-caption-defaultWrap
+                                            img(src='thumb1.jpg' alt) 
+                                        .cbp-caption-activeWrap 
+                                            .cbp-l-caption-alignCenter 
+                                                .cbp-l-caption-body 
+                                                    .cbp-l-caption-title
+                                                        h5.uppercase.font18 Đỗ Tiến Trung
+                                                        br
+                                                        p.padd-l-r Đây là một cái caption dài ơi là dài dùng để test. Đây là một cái caption dài ơi là dài dùng để test.
+                            .cbp-item.graphic.identity(style='width: 210px; left: 230px; top: 0px')
+                                .cbp-item-wrapper 
+                                    a.cbp-caption.cbp-lightbox(data-title = 'Our Gallery<br>by Hoan My' href='portfolio-1.jpg')
+                                        .cbp-caption-defaultWrap
+                                            img(src='thumb1.jpg' alt) 
+                                        .cbp-caption-activeWrap 
+                                            .cbp-l-caption-alignCenter 
+                                                .cbp-l-caption-body 
+                                                    .cbp-l-caption-title
+                                                        h5.uppercase.font18 Phạm Hồng Quân
+                                                        br
+                                                        p.padd-l-r Đây là một cái caption dài ơi là dài dùng để test. Đây là một cái caption dài ơi là dài dùng để test.
+                            .cbp-item.graphic.identity(style='width: 210px; left: 460px; top: 0px')
+                                .cbp-item-wrapper 
+                                    a.cbp-caption.cbp-lightbox(data-title = 'Our Gallery<br>by Hoan My' href='portfolio-1.jpg')
+                                        .cbp-caption-defaultWrap
+                                            img(src='thumb1.jpg' alt) 
+                                        .cbp-caption-activeWrap 
+                                            .cbp-l-caption-alignCenter 
+                                                .cbp-l-caption-body 
+                                                    .cbp-l-caption-title
+                                                        h5.uppercase.font18 Trần Văn Quý Phước
+                                                        br
+                                                        p.padd-l-r Đây là một cái caption dài ơi là dài dùng để test. Đây là một cái caption dài ơi là dài dùng để test.
+                            .cbp-item.graphic.identity(style='width: 210px; left: 690px; top: 0px')
+                                .cbp-item-wrapper 
+                                    a.cbp-caption.cbp-lightbox(data-title = 'Our Gallery<br>by Hoan My' href='portfolio-1.jpg')
+                                        .cbp-caption-defaultWrap
+                                            img(src='thumb1.jpg' alt) 
+                                        .cbp-caption-activeWrap 
+                                            .cbp-l-caption-alignCenter 
+                                                .cbp-l-caption-body 
+                                                    .cbp-l-caption-title
+                                                        h5.uppercase.font18 Đặng Hoàn Mỹ
+                                                        br
+                                                        p.padd-l-r Đây là một cái caption dài ơi là dài dùng để test. Đây là một cái caption dài ơi là dài dùng để test.
+                            .cbp-item.graphic.identity(style='width: 210px; left: 920px; top: 0px')
+                                .cbp-item-wrapper 
+                                    a.cbp-caption.cbp-lightbox(data-title = 'Our Gallery<br>by Hoan My' href='portfolio-1.jpg')
+                                        .cbp-caption-defaultWrap
+                                            img(src='thumb1.jpg' alt) 
+                                        .cbp-caption-activeWrap 
+                                            .cbp-l-caption-alignCenter 
+                                                .cbp-l-caption-body 
+                                                    .cbp-l-caption-title
+                                                        h5.uppercase.font18 Huỳnh Trọng Phúc
+                                                        br
+                                                        p.padd-l-r Đây là một cái caption dài ơi là dài dùng để test. Đây là một cái caption dài ơi là dài dùng để test.
+
+
+        // Slider
+        .section-lg.bg-parallax.m-top6
+            .container 
+                    h3.text-center.font-bold.font-white.font15.uppercase Testimonials
+                    h2.text-center.font-bold.font-white.font30.uppercase What People Say
+                    .title-line-shape.m-bottom2 
+                    div.carousel.slide(data-ride='carousel' id='carousel-example-generic1')
+                        ol.carousel-indicators
+                            li(class="" data-slide-to="0" data-target="#carousel-example-generic1")
+                            li(data-slide-to="1" data-target="#carousel-example-generic1" class="")
+                            li(data-slide-to="2" data-target="#carousel-example-generic1" class="active")
+                        .carousel-inner(role='listbox')
+                            div(class='carousel-item carousel-item-service')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575 / from examedia
+                            div(class='carousel-item carousel-item-service')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575 / from examedia
+                            div(class='carousel-item carousel-item-service active')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575  / from examedia
+
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>
