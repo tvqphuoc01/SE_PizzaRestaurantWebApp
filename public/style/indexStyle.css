@@ -49,6 +49,16 @@
     transition: all 0.7s;
 }
 
+.menu {
+    color: #fff;
+}
+
+.menu:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
 #search-bar input {
     width: 80%;
     padding: 10px;

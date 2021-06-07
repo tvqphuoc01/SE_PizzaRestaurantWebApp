@@ -248,7 +248,12 @@ h3{
     padding-right: 15px;
 }
 
-.button a{
+.Log_in {
+    max-width:50%; 
+    margin:auto;
+}
+
+.button input{
     font: 600 20px/39px 'Raleway', sans-serif ;
     padding: 4px 35px;
     height: 46px;

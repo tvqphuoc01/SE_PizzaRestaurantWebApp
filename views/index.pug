@@ -17,6 +17,13 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        
+        // The core Firebase JS SDK is always required and must be listed first
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
+        // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
         script. 
             function myFunction() {
                     var x = document.getElementById("search-bar");
@@ -38,33 +45,19 @@ html(lang="en")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a>
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="#") Bakery
-                            a(class="dropdown-item" href="#") Coffee
-                            a(class="dropdown-item" href="#") Pizza
-                            a(class="dropdown-item" href="#") Winery
-                            a(class="dropdown-item" href="#") Restaurant
                     li.nav-item SHOP
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
                         div(class="dropdown-content")
                             a(class="dropdown-item" href="/aboutUs") About Us
-                            a(class="dropdown-item" href="#") Our Chefs
                             a(class="dropdown-item" href="/service") Service
                             a(class="dropdown-item" href="/logIn") Log in 
-                            a(class="dropdown-item" href="/SignUp") Sign Up
-                    li.nav-item.dropdown MENU 
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="/menu") Menu 1
-                            a(class="dropdown-item" href="#") Menu 2
-                            a(class="dropdown-item" href="#") Menu 3
+                            a(class="dropdown-item" href="/signUp") Sign Up
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
                     li.nav-item 
                         a(class="reservation" href="/reservation") RESERVATION
                     li.nav-item GALLERY
                     li.nav-item BLOG
-                    li.nav-item CONTACT
                     li.nav-item
                         i(class="fas fa-cart-plus fa-lg")
                     li.nav-item

@@ -71,18 +71,18 @@ html(lang="en")
                     i /
                     p.Login_Form(href="") Registration Form
         //- Form register
-        .form.Log_in(style="max-width:50%; margin:auto;")
+        form(action='/signUp', method='POST' class='Log_in')
             .frame_log_in 
                 h3 REGISTRATION FORM 
                 .ROW 
                     .col.inside.UserName
-                        input.text_login(type="username" placeholder="Username" name="username")
+                        input.text_login(type="username" placeholder="Username" name="userName")
                         i.fas.fa-user
                     .col.inside.E-mail
                         input.text_login(type="email" placeholder="Email address" name="email")
                         i.fas.fa-envelope
                     .col.inside.Password
-                        input.text_login(type="password" placeholder="Enter password" name="password")
+                        input.text_login(type="password" placeholder="Enter password" name="passWord")
                         i.fas.fa-lock
                     .col.inside.Confirm
                         input.text_login(type="password" placeholder="Confirm password" name="confirm_pass")
@@ -98,16 +98,9 @@ html(lang="en")
                             option(value="1") Male 
                             option(value="2") Female 
                             option(value="3") Other     
-                    .col.inside.Check_Box
-                        .boxCheck.checkbox1 
-                            input.tick.check1(type="checkbox")
-                            p.tick_content.contentTick2 I want to receive news and special offers
-                        .boxCheck.checkbox2
-                            input.tick.check1(type="checkbox")
-                            p.tick_content.contentTick2 I agree with the Terms and Conditions
                     .clear
                 .button 
-                    a.btn.register(href="#") REGISTER 
+                    input(class="btn register" type="submit" value="REGISTER")
         .footer
             .container-fluid.row 
                 .col-6
