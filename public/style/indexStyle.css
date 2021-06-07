@@ -29,11 +29,11 @@
     display: none;
 }
 
-.reservation {
+.reservation, .contact, .Blog {
     color: #fff;
 }
 
-.reservation:hover {
+.reservation:hover, .contact:hover, .Blog:hover {
     text-decoration: none;
     color: red;
     transition: all 0.7s;

@@ -36,6 +36,14 @@ app.get("/reservation", (req, res) => {
   res.render("reservation");
 });
 
+app.get("/Blog", (req, res) => {
+  res.render("Blog");
+});
+
+app.get("/Blog1", (req, res) => {
+  res.render("Blog1");
+});
+
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
