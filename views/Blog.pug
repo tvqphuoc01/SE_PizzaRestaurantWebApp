@@ -24,18 +24,11 @@ html(lang="en")
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
             .col-2.d-flex.justify-content-center
-                a(href="/")
+                a(href="#")
                     img(src="logo.png" alt="Butter logo")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
-                    li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="#") Bakery
-                            a(class="dropdown-item" href="#") Coffee
-                            a(class="dropdown-item" href="#") Pizza
-                            a(class="dropdown-item" href="#") Winery
-                            a(class="dropdown-item" href="#") Restaurant
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
                     li.nav-item SHOP
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
@@ -59,73 +52,79 @@ html(lang="en")
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
-            //  - Page Header
-        .page_header_login
-            img.Image_Pg_Header(src="site-img14.jpg" alt="Page header")
-            .pageH
-                .Page_header_content
-                    h2.content_header BLOG
-                    p.content_main News and Events about Pizzas ...
-                //- Breadcrumb
-                .Breadcrumbs
-                    a.Home(href="/" style="text-decoration: none;") Home
-                    i /
-                    p.Login_Form Blog
-
-        div(id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel")
-            ol(class="carousel-indicators")
-                li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
-                li(data-target="#carouselExampleIndicators" data-slide-to="1")
-                li(data-target="#carouselExampleIndicators" data-slide-to="2")
-            div(class="carousel-inner" role="listbox")
-            //Slide One
-            div(class="carousel-item active" style="")
-                img.pic.pic1(src="pizza1.jpg")
-                div(class="carousel-caption d-none d-md-block")
-            //Slide Two
-            div(class="carousel-item")
-                img.pic.pic2(src="pizza2.jpg")
-                div(class="carousel-caption d-none d-md-block")
-            //Slide Three
-            div(class="carousel-item")
-                img.pic.pic3(src="pizza3.jpg")
-                div(class="carousel-caption d-none d-md-block")
-        
-            .Content(style="color: black")
-                h3.Header_Content THE STORY OF THE PIZZA 
-                p.Paragr_Content Pizza, favored by all ages, dates back to 1889. Pizza, garnished with Mozzarella and tomatoes, was normally known as the dish for poor people until it became a famous dish for the wealthy when Queen Margherita had it as a meal as well. Pizza, with sauces and spices such as basil and garlic added later on, gets recognition by other nations with the arrival of Italian immigrants to the United States.  The spread of pizza all over the world is due to the initiatives of the Americans. At that time in Italy, pizzas were made with Mozzarella and tomatoes however later on were served with different ingredients used today. Pizza, which has spread quickly outside of the USA, has become a favorite dish for consumers of all ages. 
-        .Image-center
-            img.pic4(src="pizza4.png")
-            p.content_pic4_header OUR CONCEPT
-            p.content_pic4_main Our Mission is to offer a high quality products to our customers each and every time they place an order with our Pizza restaurant.  We strive to provide a clean and healthy environment, along with the freshest and highest quality product. We strive to be productive member of our communities, whether it is the community surrounding our stores or our franchising family of which we are a part – strong, trusting relations are a key ingredient to our success.
-        .Blog-Content-Main
-            a.blog1(href="/Blog1" style="text-decoration: none; color: black")
-                img.blog1-picture(src="pizza6.jpg", alt="Blog 1")
-                h3.blog1-header Different Pizza Types For Different Palates
-                p.blog1-subheader There are dozens of famous pizzas that appeal to different palates specially in the USA and Italy. In addition to the ready-made pizzas that are available at pizza restaurants you can also choose pizzas with only the ingredients you want to eat.
-        .Quotes
-            p.quotes1 “A pizza slice a day keeps sadness away”
-            p.author1 - Jet Paacal -
-        .Blog-Content-Main
-            a.blog1.blog2(href="/Blog2" style="text-decoration: none; color: black")
-                img.blog1-picture.blog2(src="IAM_3129w.jpg", alt="Blog 2")
-                h3.blog1-header.blog2 Pizza Grilled Cheese Recipe
-                p.blog1-subheader.blog2. 
-                    Do you guys ever get a craving for pizza but the 30 minutes it takes for delivery to arrive 
-                    just seems way too long? I have the answer, my friends! Pizza grilled cheese! All the goodness of pizza, 
-                    minus the pizza crust because who has pizza crust just hanging out in the fridge at home? Oh wait, you do? Can we be friends?!
-        .Blog-Content-Main
-            a.blog1.blog3(href="#" style="text-decoration: none; color: black")
-                img.blog1-picture.blog3(src="pizza8.jpg", alt="Blog 2")
-                h3.blog1-header.blog3 Different Pizza Types For Different Palates
-                p.blog1-subheader.blog3 There are dozens of famous pizzas that appeal to different palates specially in the USA and Italy. In addition to the ready-made pizzas that are available at pizza restaurants you can also choose pizzas with only the ingredients you want to eat.   
-        .Quotes2(style="color: white; text-align: center; background-image: url('parallax-bg.jpg'); height: 300px")
-            p.quotes2-header(style="font-family: 'Parisienne', cursive; font-size: 60px; font-weight: bold") Tips for the Perfect Pizzas
-            p.content2-quotes2(style="font-family: 'Raleway', sans-serif; font-size: 20px") The most important point of making a pizza is the dough and the cooking method. Although pizza dough is a changing concept based on different palates, pizzaiolos  suggest that the dough should be as thin as possible. It is believed that a more delicious pizza can be obtained by focusing more on toppings rather than the dough. The pizza dough is as important as baking it. After all the ingredients have been added, the pizza should be placed on a higher rack in the oven. Thus, ingredients are cooked at the same time as the dough. You can also eat the pizza only with spices or sauces such as ketchup, mayonnaise, Ranch and mustard.
+                    input(type="text", placeholder="Search Here ..... !")
+        //Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3.left-section1 BLOG 
+                    h4.left-section2 News and Events ... 
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/" style="color:white; text-decoration: none") Home 
+                        i(style="color: white") /       
+                        a(href="#" style="color: white; text-decoration: none") Blog
+        // Carousel
+        .section-lg.m-top8 
+            .container
+                div(id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel")
+                    ol(class="carousel-indicators")
+                        li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
+                        li(data-target="#carouselExampleIndicators" data-slide-to="1")
+                        li(data-target="#carouselExampleIndicators" data-slide-to="2")
+                    div(class="carousel-inner" role="listbox")
+                        //Slide One
+                        div(class="carousel-item active" style="background-image: url('pizza1.jpg'); height: 350px; object-fix: cover")
+                        //Slide Two
+                        div(class="carousel-item" style="background-image: url('pizza2.jpg'); height: 350px; object-fix: cover")
+                        //Slide Three
+                        div(class="carousel-item" style="background-image: url('pizza3.jpg'); height: 350px; object-fix: cover")
+        //Section 1
+        .section-lg1
+            .container 
+                h3 THE STORY OF THE PIZZA
+                p(style="font-size: 17px; font-family: 'Raleway', sans-serif") Pizza, favored by all ages, dates back to 1889. Pizza, garnished with Mozzarella and tomatoes, was normally known as the dish for poor people until it became a famous dish for the wealthy when Queen Margherita had it as a meal as well. Pizza, with sauces and spices such as basil and garlic added later on, gets recognition by other nations with the arrival of Italian immigrants to the United States.  The spread of pizza all over the world is due to the initiatives of the Americans. At that time in Italy, pizzas were made with Mozzarella and tomatoes however later on were served with different ingredients used today. Pizza, which has spread quickly outside of the USA, has become a favorite dish for consumers of all ages. 
+        //Section 2
+        .section-lg2 
+            .container 
+                .row 
+                    .col-6 
+                        img(src="pizza4.png" alt="Picture Pizza" style="float: right; max-width: 100%")
+                    .col-6
+                        p.header OUR MISSION
+                        p.p1 Our Mission is to offer a high quality products to our customers each and every time they place an order with Pizza World.  We strive to provide a clean and healthy environment, along with the freshest and highest quality product. We strive to be productive member of our communities, whether it is the community surrounding our stores or our franchising family of which we are a part – strong, trusting relations are a key ingredient to our success.
+        //Section 3
+        .section-lg3 
+            .container 
+                .row
+                    .col-md-12
+                        a.blog(href="/Blog1" style="text-decoration: none; color: black")
+                            img.blog-picture(src="pizza5.jpg" style="width: 100%; height: 350px; margin-bottom: 20px; object-fit: cover" alt="Blog 1")
+                            h3.blog-header Different Pizza Types For Different Palates
+                            p.blog-subheader There are dozens of famous pizzas that appeal to different palates specially in the USA and Italy. In addition to the ready-made pizzas that are available at pizza restaurants you can also choose pizzas with only the ingredients you want to eat.
+                    .col-md-12
+                        .Quotes
+                            p.quotes “A pizza slice a day keeps sadness away”
+                            p.author - Jet Paacal -
+                    .col-md-12
+                        a.blog(href="/Blog2" style="text-decoration: none; color: black")
+                            img.blog-picture(src="IAM_3129w.jpg" style="width: 100%; height: 350px; margin-bottom: 20px; object-fit: cover" alt="Blog 1")
+                            h3.blog-header Pizza Grilled Cheese Recipe
+                            p.blog-subheader Do you guys ever get a craving for pizza but the 30 minutes it takes for delivery to arrive just seems way too long? I have the answer, my friends! Pizza grilled cheese! All the goodness of pizza, minus the pizza crust because who has pizza crust just hanging out in the fridge at home? Oh wait, you do? Can we be friends?!
+                    .col-md-12
+                        a.blog(href="#" style="text-decoration: none; color: black")
+                            img.blog-picture(src="pizza7.jpg" style="width: 100%; height: 350px; margin-bottom: 20px; object-fit: cover" alt="Blog 1")
+                            h3.blog-header Different Pizza Types For Different Palates
+                            p.blog-subheader There are dozens of famous pizzas that appeal to different palates specially in the USA and Italy. In addition to the ready-made pizzas that are available at pizza restaurants you can also choose pizzas with only the ingredients you want to eat.
+        //Section 4
+        .section-lg4
+            .container 
+                .Quotes
+                    p.quotes-header(style="font-family: 'Parisienne', cursive; font-size: 60px; font-weight: bold") Tips for the Perfect Pizzas
+                    p.content-quotes(style="font-family: 'Raleway', sans-serif; font-size: 20px; font-style: normal") The most important point of making a pizza is the dough and the cooking method. Although pizza dough is a changing concept based on different palates, pizzaiolos  suggest that the dough should be as thin as possible. It is believed that a more delicious pizza can be obtained by focusing more on toppings rather than the dough. The pizza dough is as important as baking it. After all the ingredients have been added, the pizza should be placed on a higher rack in the oven. Thus, ingredients are cooked at the same time as the dough. You can also eat the pizza only with spices or sauces such as ketchup, mayonnaise, Ranch and mustard.
         //Footer
         .footer
-            .container-fluid.row(style="background-color: black;") 
+            .container-fluid.row(style="background-color: black")
                 .col-6
                     h4 About Company
                     .title-line 
@@ -165,4 +164,4 @@ html(lang="en")
                     li.social-app
                         <i class="fab fa-youtube fa-3x"></i>
                     li.social-app
-                        <i class="fab fa-twitter-square fa-3x"></i> 
+                        <i class="fab fa-twitter-square fa-3x"></i>
