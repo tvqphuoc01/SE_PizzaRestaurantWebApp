@@ -70,7 +70,10 @@
     text-align: center;
     line-height: 32px;
 }
-li{
+.breadcrumbs a:hover{
+    color:gray !important;
+}
+.list-disc{
     list-style:disc;
 }
 .line{
