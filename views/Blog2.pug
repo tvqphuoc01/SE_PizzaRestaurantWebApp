@@ -1,0 +1,180 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="Blog2Style.css" )
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        
+        // The core Firebase JS SDK is always required and must be listed first
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
+        // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
+        script. 
+            function myFunction() {
+                    var x = document.getElementById("search-bar");
+                    var y = document.getElementById("nav-list");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "flex";
+                        }
+                    }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/login") LOGIN
+                    li.nav-item
+                        a(class="contact" href="/signUp") SIGN UP
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        i(class="fas fa-cart-plus fa-lg")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //Header
+        .page-header
+            .container(style="max-width: 99% !important;")
+                .col-md-6.left-padd0
+                    h3(style="font-size: 45px;") BLOG2 
+                    h4(style="font-size: 18px;font-family: 'Raleway', sans-serif;font-weight: 300 !important") Pizza Grilled Cheese Recipe 
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/" style="color:black") Home 
+                        i /       
+                        a(href="/Blog" style="color:black") Blog
+                        i / 
+                        a Blog2
+        //Section1
+        .section1
+            .container(style="border-right: 0px;border-left: 0px;border-style:inset; padding-top:15px;padding-bottom:15px")
+                h1(style="text-align:center;color:red") Pizza Grilled Cheese Recipe
+                p(style="text-align:center;font-style:italic").
+                    Pizza grilled cheese: perfect for those times when a pizza craving hits but you're too hangry to wait the 30-40 minutes for delivery!
+        //Content_script
+        .the-post
+            .container
+                img.image-center(src='pizza-grilled-cheese-3103.jpg')
+                p.post. 
+                    Do you guys ever get a craving for pizza but the 30 minutes it takes for delivery to arrive just seems 
+                    <em> way </em> too long? I have the answer, my friends! Pizza grilled cheese! All the goodness of pizza, minus the pizza 
+                    crust because who has pizza crust just hanging out in the fridge at home? Oh wait, you do? Can we be friends?!
+                img.image-center(src="pizza-grilled-cheese-3117.jpg")
+                p.post. 
+                    Okay, now that we’re friends, you can make me this grilled cheese! All we need is bread (duh!), 
+                    cheese, pizza sauce, and toppings. I used mini mini pepperonis because mini pepperonis are cute AF. 
+                    I also added everything in a classic deluxe: red onions, green peppers, and mushrooms. After you gather your ingredients, 
+                    it’s just a question of buttering the outside of your bread and building. I like the double cheese strategy – that is, 
+                    cheese on both slices of bread so that it can hold the insides together. I also like using shredded cheese because it melts 
+                    faster and because it’s stringier. Don’t quote me on that one though because I haven’t scientifically figured out if shredded 
+                    cheese is meltier and stringier than sliced. Wait, no I have thanks to google. 
+                    <a href="http://www.finecooking.com/article/the-science-of-melting-cheese" target="_blank" rel="noopener">Grated cheese is meltier than non-grated</a>
+                img.image-center(src="pizza-grilled-cheese-3135.jpg")
+                p.post.
+                    To be honest, it doesn’t matter what kind of cheese you use as long as you’re using a good melting cheese 
+                    because the best part of grilled cheese is the gooeyness of the cheese pull. Melting cheese slowly prevents the 
+                    fat from separating out. You want a nice, even, homogenous melting cheese, like&nbsp;
+                    <a href="http://www.seriouseats.com/2015/08/the-science-of-melting-cheese.html" target="_blank" rel="noopener">mozzarella, Taleggio, brie, Gruyère, Emmental, and Pepper Jack.</a>
+                    Also, pro tip – when you’re making grilled cheeses, low and slow is the way to go. 
+                p.post. 
+                    But, not too slow, this grilled cheese will assuredly be in your mouth way faster than ordering a pizza. 
+                    So, what are you waiting for? Go forth and grill cheese!
+                img.image-center.line(src="line.png")
+                h2(style="letter-spacing: 10px;font-weight: 850;text-align:center;color:red;") RECIPE
+                .row
+                    img.col-sm-6(src="pizza-grilled-cheese-3137.jpg")
+                    .recipe.col-sm-6
+                        ul
+                            li 2 slices bread of choice 
+                            li 1 cup shredded cheese of choice(I used mozzarella)
+                            li 1-2 tablespoons pizza sauce
+                            li mini pepperoni
+                            li diced red onions
+                            li diced green peppers
+                            li sautéed sliced mushrooms
+                            li pizza sauce, to dip, if desired
+                p.post.
+                    Build your sandwich, buttered bread facing outwards: bread, cheese, 
+                    pizza sauce, toppings, cheese, bread. Place in a heavy bottomed pan and grill on medium low until golden brown 
+                    and toasty and cheese is melted, flipping once. The first side will take a bit longer to toast than the second side. Enjoy!
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>
