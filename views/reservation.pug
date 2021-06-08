@@ -27,13 +27,6 @@ html(lang="en")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="#") Bakery
-                            a(class="dropdown-item" href="#") Coffee
-                            a(class="dropdown-item" href="#") Pizza
-                            a(class="dropdown-item" href="#") Winery
-                            a(class="dropdown-item" href="#") Restaurant
                     li.nav-item SHOP
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
@@ -47,7 +40,8 @@ html(lang="en")
                     li.nav-item RESERVATION
                     li.nav-item GALLERY
                     li.nav-item BLOG
-                    li.nav-item CONTACT
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
                     li.nav-item
                         i(class="fas fa-cart-plus fa-lg")
                     li.nav-item

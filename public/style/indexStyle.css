@@ -49,6 +49,16 @@
     transition: all 0.7s;
 }
 
+.contact {
+    color: #fff;
+}
+
+.contact:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
 .menu {
     color: #fff;
 }

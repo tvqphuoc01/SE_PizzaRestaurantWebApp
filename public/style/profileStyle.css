@@ -1,0 +1,36 @@
+.snippet {
+    margin-top: 100px;
+}
+
+a,li {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
+}
+
+.mainNavBar a:hover{
+    background-color: black !important;
+}
+
+.form-group .col-xs-6{
+   padding-bottom: 10px;
+}
+
+.form-group button {
+    padding: 15px;
+    margin: 25px;
+    font-size: 12pt;
+}
+
+.form-group input {
+    font-size: 12pt;
+    font-family: 'Raleway', sans-serif;
+}
+
+.panel-body {
+    text-align: center;
+}
+
+.panel-body i {
+    margin: 10px;
+    cursor: pointer;
+}
