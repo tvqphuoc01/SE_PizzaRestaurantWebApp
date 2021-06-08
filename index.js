@@ -47,6 +47,18 @@ app.get('/profilePage', (req, res) => {
   res.render('profilePage');
 });
 
+app.get('/Blog', (req, res) => {
+  res.render('Blog');
+});
+
+app.get('/Blog1', (req, res) => {
+  res.render('Blog1');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
