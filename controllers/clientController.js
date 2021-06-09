@@ -15,8 +15,16 @@ const clientGet = function(req, res) {
 const addClient = async (req, res, next) => {
   try {
     const data = req.body;
-    await firestore.collection('client').doc().set(data);
-    res.send('Record saved successfuly');
+    await firestore.collection('client').doc().set({
+      email: data.email,
+      userName: data.userName,
+      passWord: data.passWord,
+      firstName: data.FirstName,
+      lastName: data.LastName,
+      gender: data.Gender,
+      cart: [],
+    });
+    res.render('logIn');
   } catch (error) {
     res.status(400).send(error.message);
   }
@@ -24,5 +32,5 @@ const addClient = async (req, res, next) => {
 
 module.exports = {
   addClient,
-  clientGet
+  clientGet,
 };

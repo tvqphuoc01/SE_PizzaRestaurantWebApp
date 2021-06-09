@@ -51,7 +51,7 @@ html(lang="en")
                     li.nav-item 
                         a(class="Blog" href="/Blog") BLOG
                     li.nav-item
-                        a(class="contact" href="/login") LOGIN
+                        a(class="contact" href="/logIn") LOGIN
                     li.nav-item
                         a(class="contact" href="/signUp") SIGN UP
                     li.nav-item
@@ -76,9 +76,13 @@ html(lang="en")
                     a.Page(href="#" style="text-decoration: none;") Pages
                     i /
                     p.Login_Form(href="") Login Form
-        .form.Log_in(style="max-width:50%; margin:auto;")
+        form(action='/logIn' class='Log_in' method='POST')
             .frame_log_in 
                 h3 LOGIN FORM 
+                if errors
+                    each error in errors
+                        .form-group
+                        .alert.alert-danger= error
                 .ROW.ROW1 
                     p.col.col1 Email
                     .col.inside.E-mail
@@ -87,15 +91,12 @@ html(lang="en")
                 .ROW.ROW2 
                     p.col.col1 Password
                     .col.inside.Log-In
-                        input.text_login(type="password" name="password")
+                        input.text_login(type="password" name="passWord")
                         i.fas.fa-lock
-                a.forgot_pass(href="#") Forgot password?
-                .Remember_pass 
-                    input.tick(type="checkbox")
-                    p.tick_content Keep me logged in
-                .button 
+                .button
                     a.btn.register(href="/signUp") REGISTER 
-                    a.btn.loginbtn(href="#") LOG IN
+                .button
+                    input(class="btn loginbtn" type="submit" value="LOG IN")
         .footer
             .container-fluid.row 
                 .col-6

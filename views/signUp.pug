@@ -39,7 +39,7 @@ html(lang="en")
                     li.nav-item 
                         a(class="Blog" href="/Blog") BLOG
                     li.nav-item
-                        a(class="contact" href="/login") LOGIN
+                        a(class="contact" href="/logIn") LOGIN
                     li.nav-item
                         a(class="contact" href="/signUp") SIGN UP
                     li.nav-item
@@ -69,6 +69,10 @@ html(lang="en")
         form(action='/signUp', method='POST' class='Log_in')
             .frame_log_in 
                 h3 REGISTRATION FORM 
+                if errors
+                    each error in errors
+                        .form-group
+                        .alert.alert-danger= error
                 .ROW 
                     .col.inside.UserName
                         input.text_login(type="username" placeholder="Username" name="userName")

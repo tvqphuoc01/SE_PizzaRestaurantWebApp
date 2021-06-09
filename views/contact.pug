@@ -76,15 +76,18 @@ html(lang="en")
                     li.nav-item 
                         a(class="Blog" href="/Blog") BLOG
                     li.nav-item
-                        a(class="contact" href="/login") LOGIN
-                    li.nav-item
-                        a(class="contact" href="/signUp") SIGN UP
-                    li.nav-item
                         a(class="contact" href="/contact") CONTACT
                     li.nav-item
                         i(class="fas fa-cart-plus fa-lg")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        p= user.userName
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP   
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
                     input(type="text", placeholder="Search Here ..... !", )

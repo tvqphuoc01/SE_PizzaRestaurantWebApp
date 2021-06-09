@@ -146,6 +146,8 @@
 .Log_in{
     margin-top: 80px !important;
     margin-bottom: 80px !important;  
+    max-width:50%; 
+    margin:auto;
 }
 
 .frame_log_in{
@@ -233,6 +235,16 @@ h3{
     font-weight: bold;
     color: white;
 }
+
+.button input{
+    font: 600 20px/39px 'Raleway', sans-serif ;
+    padding: 4px 35px;
+    height: 46px;
+    border-radius: 0;
+    font-weight: bold;
+    color: white;
+}
+
 .button .register{
     background-color: #b5b5b5;
 }

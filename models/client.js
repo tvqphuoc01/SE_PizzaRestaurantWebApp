@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 class Client {
   constructor(id, userName, passWord, email, cart, FirstName, LastName, Gender) {
