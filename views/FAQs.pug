@@ -7,7 +7,7 @@ html(lang="en")
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         // Boostrap & CSS
-        link(rel="stylesheet" href="register_style.css" )
+        link(rel="stylesheet" href="FAQsStyle.css" )
         link(rel="stylesheet" href="indexStyle.css")
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
         link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
@@ -18,16 +18,20 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap")
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
             .col-2.d-flex.justify-content-center
-                a(href="/")
+                a(href="#")
                     img(src="logo.png" alt="Butter logo")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
-                    li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
-                    li.nav-item SHOP
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item 
+                        a(class="Shop" href="/Shop") SHOP
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
                         div(class="dropdown-content")
@@ -50,54 +54,52 @@ html(lang="en")
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
-        //- Page Header
-        .page_header_login
-            img.Image_Pg_Header(src="site-img10.jpg" alt="Page header")
-            .pageH
-                .Page_header_content
-                    h2.content_header REGISTRATION FORM 
-                    p.content_main User Register Here...!
-                //- Breadcrumb
-                .Breadcrumbs
-                    a.Home(href="/" style="text-decoration: none;") Home
-                    i /
-                    a.Page(href="#" style="text-decoration: none;") Pages
-                    i /
-                    p.Login_Form(href="") Registration Form
-        //- Form register
-        form(action='/signUp', method='POST' class='Log_in')
-            .frame_log_in 
-                h3 REGISTRATION FORM 
-                .ROW 
-                    .col.inside.UserName
-                        input.text_login(type="username" placeholder="Username" name="userName")
-                        i.fas.fa-user
-                    .col.inside.E-mail
-                        input.text_login(type="email" placeholder="Email address" name="email")
-                        i.fas.fa-envelope
-                    .col.inside.Password
-                        input.text_login(type="password" placeholder="Enter password" name="passWord")
-                        i.fas.fa-lock
-                    .col.inside.Confirm
-                        input.text_login(type="password" placeholder="Confirm password" name="confirm_pass")
-                        i.fas.fa-lock
-                    .col.inside.First_Last_Name 
-                        .Name.first_name 
-                            input.text_Name.First(type="text" placeholder="First Name" name="FirstName")
-                        .Name.last_name 
-                            input.text_Name.Last(type="text" placeholder="Last Name" name="LastName")
-                    .col.inside.Gender 
-                        select.Gender_List(name="Gender") Gender
-                            option(value="0" disabled=" selected disabled") Gender 
-                            option(value="1") Male 
-                            option(value="2") Female 
-                            option(value="3") Other     
-                    .clear
-                .button 
-                    input(class="btn register" type="submit" value="REGISTER")
+                    input(type="text", placeholder="Search Here ..... !")
+        //  - Page Header
+        .page-header
+            .container
+                .row
+                    .col-2
+                    .col-8
+                        i.fas.fa-utensils
+                        h3.left-section1 Frequently Asked Questions
+                        h4.left-section2 You ask - We answer
+                    .col-2
+        //
+        .Section-1(style="position:relative")
+            image.Pic1(src="blaze-half-circle.png" style="position:absolute;") 
+            image.Pic2(src="cartoon-pizza.png" style="position:absolute;") 
+            .container
+                .row
+                    .col-md-12
+                        h2 DO YOU OFFER VEGAN OR VEGETARIAN OPTIONS?
+                        p Yes! We have great vegan and vegetarian options available. Our traditional dough, vegan cheese, red sauce, spicy red sauce, BBQ sauce, buffalo sauce, and magic oil are vegan and vegetarian friendly. Please let our team know if you have any dietary needs or restrictions.
+                    .col-md-12
+                        h2 DO YOU CATER EVENTS?
+                        p Our Pizza Company is the perfect way to celebrate birthdays, work events, or other get togethers. You can place your order directly through our website in advance or head into your local store to discuss the details of your event with the General Manager. If your order is placed online and our team is not able to fulfill your order due to timing, order size, or any other reason, please email or call us with information at footer and a member of our team will reach out to you to discuss the order!
+                    .col-md-12
+                        h2 WHAT HOURS ARE YOU OPEN?
+                        p All locations are open: Saturday and Sunday 10am - 9pm | Monday to Friday 9am - 10pm. See you soon!
+                    .col-md-12
+                        h2 HOW CAN I WORK HERE?
+                        p We’d love to talk to you. The best way is to go to the locations page on this website, and send an email & resume directly to the restaurant you’re interested in joining. If the location you would like to apply to doesn't have an email address available, please send your resume and preferred location to the appropriate individual for consideration.
+                    .col-md-12 
+                        h2 Where can I find your nutritional information?
+                        p We are committed to full transparency in our ingredients and food so that you can make the decisions you need to chart your own course with your nutrition. Use our nutritional calculator  to get the details about your favorite pizza creation and other menu items at restaurant.
+                    .col-md-12 
+                        h2 Can I start a franchise or be involved in owning a restaurant in any way?
+                        p So, you think you might want to “start a fire”? To learn more, please come and contact with our Manager. You will complete an inquiry form, then we’ll be in touch.
+                    .col-md-12 
+                        h2 Where are you located?
+                        p Need an address for the GPS? Check out our map  to find a map and complete address & phone information for your favorite restaurant.
+                    .col-md-12 
+                        h2 Where can I buy gift cards?
+                        p Happiness is a loaded gift card – and they’re available at all of our restaurants or on our online shop.  Your friends will love the gift of us.
+                    .col-md-12 
+                        h2(style="text-align: center; font-family: 'Parisienne', cursive; font-size: 70px; margin: 50px 0;") For the love of our restaurant to you
+        //Footer
         .footer
-            .container-fluid.row 
+            .container-fluid.row(style="background-color: black")
                 .col-6
                     h4 About Company
                     .title-line 
@@ -138,3 +140,4 @@ html(lang="en")
                         <i class="fab fa-youtube fa-3x"></i>
                     li.social-app
                         <i class="fab fa-twitter-square fa-3x"></i>
+           

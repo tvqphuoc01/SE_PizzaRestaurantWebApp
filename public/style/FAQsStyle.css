@@ -136,37 +136,29 @@
     padding-right: 0 !important;
 }
 
-.col-md-6{
-    font-family: 'Raleway', sans-serif;
+.accordion, .footer{
+    width: 100%;
     float: left;
-    width: 50%;
 }
 
-.breadcrumbs{
-    font-size: 14px;
-    font-weight: normal;
-    margin: 23px 0 0;
-    text-align: right;
+.col-8{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
 }
 
-.breadcrumbs a:hover{
-    color: #cecece !important;
-}
-
-.breadcrumbs i{
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.left-padd0{
-    padding-left: 0px !important;
+.fa-utensils{
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 .left-section1{
     color: white;
+    font-size: 40px;
     text-transform: uppercase;
-    font-size: 45px;
     font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
 }
 
 .left-section2{
@@ -177,114 +169,44 @@
     font-weight: 300 !important;
 }
 
-.section-lg, .section-lg1, .section-lg2, .section-lg3, .section-lg4, .footer{
-    width: 100%;
+.Section-1, .footer{
     float: left;
-}
-
-.section-lg1{
-    margin-top: 60px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-lg1 h3{
-    margin-bottom: 20px !important;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 40px;
-}
-
-.m-top8{
-    margin-top: 80px !important;
-}
-
-.carousel-item {
-    min-height: 350px;
-    background: no-repeat center center scroll;
-    margin: 0 auto;
-}
-
-.carousel-indicators {
     width: 100%;
+    margin-top: 70px;
+}
+
+.Section-1 .Pic1{
+    right: 0;
+    top: 20%;
+    width: 8%;
+    opacity: 0.7;
+}
+
+.Section-1 .Pic2{
     left: 0;
-    text-align: center;
-    margin: 0 !important;
-    bottom: -35px !important;
+    top: 70%;
+    width: 8%;
+    opacity: 0.7;
 }
 
-.carousel .carousel-indicators li{
-    background: #7d7c7c none repeat scroll 0 0;
-    border-color: 1px #7d7c7c;
-    border-radius: 5px;
-    height: 4px;
-    width: 60px;
-    cursor: pointer;
+.Section-1 h2{
+    font-family: 'Staatliches', cursive;
+    font-weight: bold;
+    line-height: 1.2;
+    font-size: 35px;
 }
 
-.carousel .carousel-indicators .active, .carousel .carousel-indicators.white-color .active {
-    background: #ef0400 none repeat scroll 0 0;
-}
-
-.col-6 .header{
-    margin-left: 0;
-    border: 2px solid forestgreen;
-    font-size: 55px;
-    font-family: 'Oswald', sans-serif;
-    color:forestgreen;
-    padding: 5px;
-    text-align: right;
-    margin-right: 110px;
-    margin-bottom: 10px;
-}
-
-.section-lg3{
-    margin-top: 80px;
+.Section-1 p{
+    font-family: 'Raleway', sans-serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 19px;
+    text-align: justify;
 }
 
 .col-md-12{
-    margin-bottom: 30px;
-}
-
-.blog .blog-header{
-    font-weight: bolder;
-    font-family: 'Raleway', san-serif;
-}
-
-.blog .blog-subheader{
-    font-size: 17px; 
-    font-family: 'Raleway', san-serif;
-}
-
-.blog .blog-header:hover{
-    color: red;
-}
-
-.Quotes{
-    margin-top: 20px;
-    color: #7d7d7d;
-    text-align: center;
-    font-style: italic;
-    font-size: 50px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    margin-bottom: 50px;
-}
-
-.Quotes .author{
-    font-family: 'Parisienne', cursive;
-    font-size: 45px;
-}
-
-.section-lg4 {
-    background-image: url('parallax-bg.jpg');
-    background-size: cover; 
-    height: auto;
-    background-position-x: center;
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-    font-family: 'Raleway', sans-serif;
-    color: #ffff;
+    padding-right: 70px !important;
+    padding-left: 70px !important;
 }
 
 .footer {
