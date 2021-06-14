@@ -1,0 +1,60 @@
+.menu-item{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.menu-item h3{
+    background: #fff none repeat scroll 0 0;
+    margin: 5px 0;
+    text-align: center;
+    color: #010101;
+    font-size: 20px;
+    font-weight: 700 !important;
+    height: 43px;
+}
+.menu-item .price{
+    background: #fff none repeat scroll 0 0;
+    color: #ef0400;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.service-section2{
+    padding-top:350px;
+}
+.col-xs-12{
+    width: 100%;
+}
+.cell-food p{
+    margin-bottom: 40px;
+    font-family: sans-serif, 'Raleway';
+    font-style: italic;
+}
+.button a.boxed-color-xs{
+    border: 0;
+    background: #ef0400;
+    border-radius: 0px;
+    padding: 12px 20px;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: bold;
+}
+.button a.boxed-color-xs:hover{
+    background-color: black;
+}
+.kind h1{
+    color:red;
+    font-weight: 800;
+    letter-spacing: 30px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+}
+.kind{
+    padding-top: 30px;
+    border-style: solid;
+    border-width: 0 0 5px 0;
+}
+.cell-food p{
+    height: 72px;
+}
