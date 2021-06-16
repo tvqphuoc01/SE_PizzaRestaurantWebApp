@@ -51,6 +51,8 @@
 
 .contact {
     color: #fff;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
 }
 
 .contact:hover {

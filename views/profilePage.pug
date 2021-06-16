@@ -68,22 +68,25 @@ head
             li.nav-item 
               a(class="Blog" href="/Blog") BLOG
             li.nav-item
-              a(class="contact" href="/login") LOGIN
-            li.nav-item
-              a(class="contact" href="/signUp") SIGN UP
-            li.nav-item
               a(class="contact" href="/contact") CONTACT
             li.nav-item
-                i(class="fas fa-cart-plus fa-lg")
+              i(class="fas fa-cart-plus fa-lg")
             li.nav-item
-                i(class="fas fa-search fa-lg" onclick="myFunction()")
+              i(class="fas fa-search fa-lg" onclick="myFunction()")
+            if user
+              p= user.userName
+            else
+              li.nav-item
+                a(class="contact" href="/logIn") LOGIN
+              li.nav-item
+                a(class="contact" href="/signUp") SIGN UP
         div.col-12(id="search-bar")
             i(class="fas fa-search fa-lg" onclick="myFunction()")
             input(type="text", placeholder="Search Here ..... !", )        
 .container.bootstrap.snippet
   .row
     .col-sm-10
-      h1 User name
+      h1= user.userName
   .row
     .col-sm-3
       // left col
@@ -114,32 +117,50 @@ head
               .col-xs-6
                 label(for='first_name')
                   h4 First name
-                input#first_name.form-control(type='text' name='first_name' placeholder='first name' title='enter your first name if any.')
+                if user
+                  input#last_name.form-control(type='text' name='last_name' placeholder=user.firstName title='enter your last name if any.')
+                else
+                  input#last_name.form-control(type='text' name='last_name' placeholder='First name' title='enter your last name if any.')
             .form-group
               .col-xs-6
                 label(for='last_name')
                   h4 Last name
-                input#last_name.form-control(type='text' name='last_name' placeholder='last name' title='enter your last name if any.')
+                if user
+                  input#last_name.form-control(type='text' name='last_name' placeholder=user.lastName title='enter your last name if any.')
+                else
+                  input#last_name.form-control(type='text' name='last_name' placeholder='Last name' title='enter your last name if any.')
             .form-group
               .col-xs-6
                 label(for='phone')
                   h4 Phone
-                input#phone.form-control(type='text' name='phone' placeholder='enter phone' title='enter your phone number if any.')
+                if user
+                  input#last_name.form-control(type='text' name='last_name' placeholder=user.phone title='enter your last name if any.')
+                else
+                  input#last_name.form-control(type='text' name='last_name' placeholder='Phone' title='enter your last name if any.')
             .form-group
               .col-xs-6
                 label(for='email')
                   h4 Email
-                input#email.form-control(type='email' name='email' placeholder='you@email.com' title='enter your email.')
+                if user
+                  input#last_name.form-control(type='text' name='last_name' placeholder=user.email title='enter your last name if any.')
+                else
+                  input#last_name.form-control(type='text' name='last_name' placeholder='Email' title='enter your last name if any.')
             .form-group
               .col-xs-6
                 label(for='email')
                   h4 Location
-                input#location.form-control(type='email' placeholder='somewhere' title='enter a location')
+                if user
+                  input#last_name.form-control(type='text' name='last_name' placeholder=user.address title='enter your last name if any.')
+                else
+                  input#last_name.form-control(type='text' name='last_name' placeholder='Address' title='enter your last name if any.')
             .form-group
               .col-xs-6
                 label(for='password')
                   h4 Password
-                input#password.form-control(type='password' name='password' placeholder='password' title='enter your password.')
+                if user
+                  input#last_name.form-control(type='text' name='last_name' placeholder=user.passWord title='enter your last name if any.')
+                else
+                  input#last_name.form-control(type='text' name='last_name' placeholder='Password' title='enter your last name if any.')
             .form-group
               .col-xs-12.row
                 br

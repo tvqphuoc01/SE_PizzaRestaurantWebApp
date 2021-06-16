@@ -36,33 +36,29 @@ module.exports.validateLoginClient = async function(req, res, next) {
 
   errors = [];
 
-  firestore.collection('client').where('email', '==', data.email)
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          checkClientEmail = doc.data().email;
-          checkClientPass = doc.data().passWord;
-          if (!checkClientEmail) {
-            errors.push('User does not exist !!!');
-          }
+  const ref = await firestore.collection('client').where('email', '==', data.email).get();
+  if (ref.docs[0] === undefined) {
+    errors.push('User does not exist !!!');
 
-          if (checkClientPass !== data.passWord) {
-            errors.push('Wrong PASSWORD !!');
-          }
-
-          if (errors.length !== 0) {
-            res.render('logIn', {
-              errors: errors,
-            });
-
-            return;
-          }
-        });
+    if (errors.length !== 0) {
+      res.render('logIn', {
+        errors: errors,
       });
 
-  const ref = await firestore.collection('client').where('email', '==', data.email).get();
+      return;
+    }
+  } else if (ref.docs[0].data().passWord !== data.passWord) {
+    errors.push('Wrong PASSWORD !!');
+    if (errors.length !== 0) {
+      res.render('logIn', {
+        errors: errors,
+      });
 
-  const refId = ref.docs[0].id;
-  res.cookie('userId', refId);
-  next();
+      return;
+    }
+  } else {
+    const refId = ref.docs[0].id;
+    res.cookie('userId', refId);
+    next();
+  }
 };

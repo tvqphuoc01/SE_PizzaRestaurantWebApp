@@ -8,6 +8,8 @@ class Client {
     this.passWord = passWord;
     this.firstName = FirstName;
     this.lastName = LastName;
+    this.address = address;
+    this.phone = phone;
     this.gender = Gender;
     this.cart = [];
   }

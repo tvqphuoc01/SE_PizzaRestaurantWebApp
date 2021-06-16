@@ -1,0 +1,312 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="aboutUsStyle.css" )
+        
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        script. 
+            function myFunction() {
+                    var x = document.getElementById("search-bar");
+                    var y = document.getElementById("nav-list");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "flex";
+                        }
+                    }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/login") LOGIN
+                    li.nav-item
+                        a(class="contact" href="/signUp") SIGN UP
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        i(class="fas fa-cart-plus fa-lg")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3 About Us
+                    h4 A brief history about our company
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/") Home 
+                        i /       
+                        a(href="#") Pages
+                        i / 
+                        a(href='/aboutUs') About Us
+        
+        .section-lg
+            .container
+                .section-titles.text-center.uppercase.m-bottom4.padd-top8
+                    h2.font-color.font40.font-bold Starters
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img19.jpg')
+                        .menu-items
+                            h3 Chicken Soup
+                            span.price $4.95
+                            .dotted-lines
+                        p A traditional chicken soup delicately spiced.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img41.jpg')
+                        .menu-items
+                            h3 Gulab jamun
+                            span.price $4.95
+                            .dotted-lines
+                        p Traditional dessert Spongy milky balls soaked in rose.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img42.jpg')
+                        .menu-items
+                            h3 Tomato Soup
+                            span.price $3.95
+                            .dotted-lines
+                        p Tomato soup prepared tomato and herbs.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img43.jpg')
+                        .menu-items
+                            h3 Chicken &quot;65&quot;
+                            span.price $3.95
+                            .dotted-lines
+                        p Chicken cubes are well marinated in secret spices.
+                .divider-d-dashed.m-top2
+                .section-titles.text-center.uppercase.m-bottom4.padd-top8
+                    h2.font-color.font40.font-bold Soup
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img19.jpg')
+                        .menu-items
+                            h3 Chicken Soup
+                            span.price $4.95
+                            .dotted-lines
+                        p A traditional chicken soup delicately spiced.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img41.jpg')
+                        .menu-items
+                            h3 Gulab jamun
+                            span.price $4.95
+                            .dotted-lines
+                        p Traditional dessert Spongy milky balls soaked in rose.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img42.jpg')
+                        .menu-items
+                            h3 Tomato Soup
+                            span.price $3.95
+                            .dotted-lines
+                        p Tomato soup prepared tomato and herbs.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img43.jpg')
+                        .menu-items
+                            h3 Chicken &quot;65&quot;
+                            span.price $3.95
+                            .dotted-lines
+                        p Chicken cubes are well marinated in secret spices.
+                .divider-d-dashed.m-top2
+                .section-titles.text-center.uppercase.m-bottom4.padd-top8
+                    h2.font-color.font40.font-bold Desserts
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img19.jpg')
+                        .menu-items
+                            h3 Chicken Soup
+                            span.price $4.95
+                            .dotted-lines
+                        p A traditional chicken soup delicately spiced.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img41.jpg')
+                        .menu-items
+                            h3 Gulab jamun
+                            span.price $4.95
+                            .dotted-lines
+                        p Traditional dessert Spongy milky balls soaked in rose.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img42.jpg')
+                        .menu-items
+                            h3 Tomato Soup
+                            span.price $3.95
+                            .dotted-lines
+                        p Tomato soup prepared tomato and herbs.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img43.jpg')
+                        .menu-items
+                            h3 Chicken &quot;65&quot;
+                            span.price $3.95
+                            .dotted-lines
+                        p Chicken cubes are well marinated in secret spices.
+                .divider-d-dashed.m-top2
+                .section-titles.text-center.uppercase.m-bottom4.padd-top8
+                    h2.font-color.font40.font-bold Beverages
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img19.jpg')
+                        .menu-items
+                            h3 Chicken Soup
+                            span.price $4.95
+                            .dotted-lines
+                        p A traditional chicken soup delicately spiced.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img41.jpg')
+                        .menu-items
+                            h3 Gulab jamun
+                            span.price $4.95
+                            .dotted-lines
+                        p Traditional dessert Spongy milky balls soaked in rose.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img42.jpg')
+                        .menu-items
+                            h3 Tomato Soup
+                            span.price $3.95
+                            .dotted-lines
+                        p Tomato soup prepared tomato and herbs.
+                .col-md-3.col-sm-6.col-xs-12
+                    .menu-card
+                        .m-bottom2
+                            img.img-responsive(alt='' src='site-img43.jpg')
+                        .menu-items
+                            h3 Chicken &quot;65&quot;
+                            span.price $3.95
+                            .dotted-lines
+                        p Chicken cubes are well marinated in secret spices.
+            
+        // Slider
+        .section-lg.bg-parallax.m-top8
+            .container 
+                    h3.text-center.font-bold.font-white.font15.uppercase Testimonials
+                    h2.text-center.font-bold.font-white.font30.uppercase What People Say
+                    .title-line-shape.m-bottom2 
+                    div.carousel.slide(data-ride='carousel' id='carousel-example-generic1')
+                        ol.carousel-indicators
+                            li(class="" data-slide-to="0" data-target="#carousel-example-generic1")
+                            li(data-slide-to="1" data-target="#carousel-example-generic1" class="")
+                            li(data-slide-to="2" data-target="#carousel-example-generic1" class="active")
+                        .carousel-inner(role='listbox')
+                            div(class='carousel-item carousel-item-service')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575 / from examedia
+                            div(class='carousel-item carousel-item-service')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575 / from examedia
+                            div(class='carousel-item carousel-item-service active')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575  / from examedia
+
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>

@@ -59,7 +59,10 @@ html(lang="en")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
-                        p= user.userName
+                        li.nav-item
+                            i(class="fas fa-user-circle fa-lg")
+                        li.nav-item
+                            a(class="contact" href="/profilePage")= user.userName
                     else
                         li.nav-item
                             a(class="contact" href="/logIn") LOGIN

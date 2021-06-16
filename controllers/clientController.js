@@ -22,6 +22,8 @@ const addClient = async (req, res, next) => {
       firstName: data.FirstName,
       lastName: data.LastName,
       gender: data.Gender,
+      address: data.address,
+      phone: data.phone,
       cart: [],
     });
     res.render('logIn');

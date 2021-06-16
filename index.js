@@ -7,13 +7,17 @@ const bodyParser = require('body-parser');
 
 const authMiddleware = require('./middleware/authMiddleware');
 
+// Routes
 const clientRoutes = require('./routers/clientRouter');
 const clientLoginRoutes = require('./routers/authClientRouter');
 const profileRoutes = require('./routers/profileRouter');
 const aboutUsRoutes = require('./routers/aboutUs.router');
 const serviceRoutes = require('./routers/service.router');
 const contactRoutes = require('./routers/contact.router');
+const reservationRoutes = require('./routers/reservation.router');
+const blogRoutes = require('./routers/blog.router');
 
+// Views
 app.set('views', './views');
 app.set('view engine', 'pug');
 
@@ -39,15 +43,11 @@ app.get('/menu', (req, res) => {
 
 app.use('/signUp', clientRoutes);
 
-app.get('/reservation', (req, res) => {
-  res.render('reservation');
-});
+app.use('/reservation', reservationRoutes);
 
 app.use('/profilePage', authMiddleware.authMiddleware, profileRoutes);
 
-app.get('/Blog', (req, res) => {
-  res.render('Blog');
-});
+app.use('/blog', blogRoutes);
 
 app.get('/Blog1', (req, res) => {
   res.render('Blog1');

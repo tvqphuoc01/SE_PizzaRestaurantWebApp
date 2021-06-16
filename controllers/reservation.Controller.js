@@ -6,7 +6,7 @@ const firebase = require('../db');
 const Client = require('../models/client');
 const firestore = firebase.firestore();
 
-const profileGet = async function(req, res) {
+const reservationGet = async function(req, res) {
   if (req.cookies.userId) {
     let userEmail;
     const findEmail = await firestore.collection('client').doc(req.cookies.userId).get().then((doc) => {
@@ -24,12 +24,12 @@ const profileGet = async function(req, res) {
     const ref = await firestore.collection('client').where('email', '==', userEmail).get();
     const client = ref.docs[0].data();
     res.locals.user = client;
-    res.render('profilePage');
+    res.render('reservation');
   } else {
-    res.render('profilePage');
+    res.render('reservation');
   }
 };
 
 module.exports = {
-  profileGet,
+  reservationGet,
 };
