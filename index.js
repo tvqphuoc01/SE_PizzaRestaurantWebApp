@@ -63,6 +63,14 @@ app.get('/Blog3', (req, res) => {
   res.render('Blog3');
 });
 
+app.get('/Shop', (req, res) => {
+  res.render('Shop');
+});
+
+app.get('/FAQs', (req, res) => {
+  res.render('FAQs');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
