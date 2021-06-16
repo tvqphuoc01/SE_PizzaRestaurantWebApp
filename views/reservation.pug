@@ -27,7 +27,8 @@ html(lang="en")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
-                    li.nav-item SHOP
+                    li.nav-item
+                        a(class="Shop" href="/Shop") SHOP
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
                         div(class="dropdown-content")
@@ -45,12 +46,18 @@ html(lang="en")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
-                        p= user.userName
+                        li.nav-item
+                            i(class="fas fa-user-circle fa-lg")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
                     else
                         li.nav-item
                             a(class="contact" href="/logIn") LOGIN
                         li.nav-item
-                            a(class="contact" href="/signUp") SIGN UP   
+                            a(class="contact" href="/signUp") SIGN UP     
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
                     input(type="text", placeholder="Search Here ..... !", )

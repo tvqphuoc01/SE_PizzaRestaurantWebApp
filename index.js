@@ -16,6 +16,7 @@ const serviceRoutes = require('./routers/service.router');
 const contactRoutes = require('./routers/contact.router');
 const reservationRoutes = require('./routers/reservation.router');
 const blogRoutes = require('./routers/blog.router');
+const indexRoutes = require('./routers/index.router');
 
 // Views
 app.set('views', './views');
@@ -27,9 +28,7 @@ app.use(express.static('public/images'));
 app.use(express.static('public/style'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+app.use('/', indexRoutes);
 
 app.use('/service', serviceRoutes);
 
@@ -69,6 +68,11 @@ app.get('/Shop', (req, res) => {
 
 app.get('/FAQs', (req, res) => {
   res.render('FAQs');
+});
+
+app.get('/logOut', (req, res) => {
+  res.clearCookie('userId');
+  res.render('index');
 });
 
 app.listen(port, () => {

@@ -58,7 +58,7 @@ module.exports.validateLoginClient = async function(req, res, next) {
     }
   } else {
     const refId = ref.docs[0].id;
-    res.cookie('userId', refId);
+    res.cookie('userId', refId, {expires: new Date(Date.now() + 3600000), httpOnly: true});
     next();
   }
 };

@@ -61,6 +61,18 @@
     transition: all 0.7s;
 }
 
+.Shop {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+.Shop:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
 .menu {
     color: #fff;
 }

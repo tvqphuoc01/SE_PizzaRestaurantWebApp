@@ -43,15 +43,24 @@ html(lang="en")
                     li.nav-item 
                         a(class="Blog" href="/Blog") BLOG
                     li.nav-item
-                        a(class="contact" href="/logIn") LOGIN
-                    li.nav-item
-                        a(class="contact" href="/signUp") SIGN UP
-                    li.nav-item
                         a(class="contact" href="/contact") CONTACT
                     li.nav-item
                         i(class="fas fa-cart-plus fa-lg")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            i(class="fas fa-user-circle fa-lg")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP  
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
                     input(type="text", placeholder="Search Here ..... !")
