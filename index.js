@@ -19,6 +19,7 @@ const blogRoutes = require('./routers/blog.router');
 const indexRoutes = require('./routers/index.router');
 const shopRoutes = require('./routers/shop.router');
 const FAQRoutes = require('./routers/FAQ.routes');
+
 // Views
 app.set('views', './views');
 app.set('view engine', 'pug');

@@ -31,7 +31,7 @@ module.exports.validateNewUser = async function(req, res, next) {
       checkUserName = false;
     }
   });
-
+  
   let errors = [];
 
   if (!req.body.userName) {
