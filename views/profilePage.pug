@@ -91,15 +91,13 @@ head
             input(type="text", placeholder="Search Here ..... !", )        
 .container.bootstrap.snippet
   .row
-    .col-sm-10
-      h1= user.userName
-  .row
     .col-sm-3
       // left col
       .text-center
-        img.avatar.img-circle.img-thumbnail(src='http://ssl.gstatic.com/accounts/ui/avatar_2x.png' alt='avatar')
+        img.avatar.img-thumbnail(src='http://ssl.gstatic.com/accounts/ui/avatar_2x.png' alt='avatar' style="border-radius: 50%;")
         h6 Upload a different photo...
-        input.text-center.center-block.file-upload(type='file')
+        input.text-center.center-block.file-upload.well.well-sm(type='file')
+        h1= user.userName
       br
       br
       .panel.panel-default

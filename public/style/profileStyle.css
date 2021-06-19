@@ -1,5 +1,5 @@
 .snippet {
-    margin-top: 100px;
+    padding-top: 165px;
 }
 
 a,li {
@@ -32,5 +32,5 @@ a,li {
 
 .panel-body i {
     margin: 10px;
-    cursor: pointer;
+    cursor: pointer; 
 }
