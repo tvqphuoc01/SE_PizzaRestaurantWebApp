@@ -39,6 +39,13 @@
     transition: all 0.7s;
 }
 
+.avatar-nav {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
 .home {
     color: #fff;
 }

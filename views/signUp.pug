@@ -72,7 +72,7 @@ html(lang="en")
                     i /
                     p.Login_Form(href="") Registration Form
         //- Form register
-        form(action='/signUp', method='POST' class='Log_in')
+        form(action='/signUp', method='POST' class='Log_in' enctype="multipart/form-data")
             .frame_log_in 
                 h3 REGISTRATION FORM 
                 if errors
@@ -92,6 +92,9 @@ html(lang="en")
                     .col.inside.Confirm
                         input.text_login(type="password" placeholder="Confirm password" name="confirm_pass")
                         i.fas.fa-lock
+                    .col.inside.Confirm
+                        input.text_login(type="file" name="avatar")
+                        i.fas.fa-user-circle
                     .col.inside.First_Last_Name 
                         .Name.first_name 
                             input.text_Name.First(type="text" placeholder="First Name" name="FirstName")
