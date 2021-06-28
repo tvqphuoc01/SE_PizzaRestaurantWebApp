@@ -412,3 +412,12 @@ ul, li, ol {
 .fa-twitter-square {
     color: #00b6f1;
 }
+
+.cart:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+.cart{
+    color:white
+}

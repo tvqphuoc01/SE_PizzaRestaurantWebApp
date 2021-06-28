@@ -44,7 +44,7 @@ html(lang="en")
                     li.nav-item
                         a(class="contact" href="/contact") CONTACT
                     li.nav-item
-                        i(class="fas fa-cart-plus fa-lg")
+                        a(class="fas fa-cart-plus fa-lg cart" href="/ShoppingCart")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
@@ -74,7 +74,7 @@ html(lang="en")
                     .breadcrumbs
                         a(href="/" style="color:white; text-decoration: none") Home 
                         i(style="color: white") /       
-                        a(href="#" style="color: white; text-decoration: none") Blog
+                        a(href="/Blog" style="color: white; text-decoration: none") Blog
         // Carousel
         .section-lg.m-top8 
             .container

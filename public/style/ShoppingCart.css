@@ -1,0 +1,162 @@
+.page-header{
+    width: 98%;
+}
+.bodyCart{
+    width: 98%;
+    padding-top: 300px;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 5em;
+}
+.bodyCart .cart{
+    width: 75%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1em 0;
+    color:black;
+}
+.cart .items{
+    width: 100%;
+    vertical-align: middle;
+    padding: 1.5em;
+    border-bottom: 1px solid #fafafa;
+}
+.card .items.even{
+    background: #fafafa;
+}
+.cart li{
+    list-style-type: none;
+}
+.itemImg{
+    width: 8em;
+    display: inline;
+    padding-right: 1em;
+    float:left;
+    width: 30%;
+}
+.infoWrap{
+    display: table;
+    width: 100%;
+}
+.cartSection{
+    display: table-cell;
+    vertical-align: middle;
+}
+.cartSection h3{
+    font-size: 1em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+}
+.cartSection p{
+    display: inline-block;
+    font-size: .85em;
+    font-family: "Montserrat", sans-serif;
+}
+.qty{
+    width: 2em;
+    text-align: center;
+    font-size: 1em;
+    padding: .25em;
+    margin: 1em .5em 0 0;
+}
+.stockStatus{
+    color: #82CA9C;
+    font-weight: bold;
+    padding: .5em 0 0 1em;
+    text-transform: uppercase;
+}
+.stockStatus.out{
+    color:#F69679;
+}
+.remove{
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    background: #e0e0e0;
+    padding: .5em;
+    font-size: .75em;
+    display: inline-block;
+    border-radius: 100%;
+    line-height: .85;
+}
+.remove:hover{
+    transition: all 0.25s linear;
+    background-color: red;
+    text-decoration: none;
+    color:white
+}
+.items.even{
+    background: #fafafa;
+}
+.promoCode{
+    width: 100%;
+    border: 2px solid #efefef;
+    float: left;
+    padding: 2%;
+}
+.promoCode label{
+    display: block;
+    width: 100%;
+    font-style: italic;
+    font-size: 1.15em;
+    margin-bottom: .5em;
+    letter-spacing: -.025em;
+}
+.promoCode input{
+    width: 85%;
+    font-size: 1em;
+    padding: .5em;
+    float: left;
+    border: 1px solid #dadada;
+}
+.promoCode a{
+    text-decoration: none;
+}
+.btn{
+    width: 15%;
+    padding: .5em 0;
+    border-radius: 0 1em 1em 0;
+    text-align: center;
+    color:white;
+    border: 1px solid #82ca9c;
+    background: #82ca9c;
+    font-size: 19px !important;
+    font-weight: bold !important;
+    transition: all 0.25s linear !important;
+}
+.promoCode .btn:hover{
+    color:white;
+    padding-left:7%;
+    transition: all 0.25s linear;
+    background:tomato;
+}
+.subtotal{
+    width: 100%;
+}
+.total{
+    padding: .5em;
+    text-align: right;
+}
+.total .label{
+    font-family: "Montserrat", sans-serif;
+    font-size: .85em;
+    text-transform: uppercase;
+    color: #777;
+}
+.total span{
+    display: inline-block;
+    padding: 0 0 0 1em;
+    text-align: right;
+}
+.total .value{
+    letter-spacing: -.025em;
+    width: 35%;
+}
+.total .btn:hover{
+    color:white;
+    transition: all 0.25s linear;
+    background:tomato;
+}

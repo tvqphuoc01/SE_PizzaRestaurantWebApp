@@ -74,6 +74,10 @@ app.get('/logOut', (req, res) => {
   res.render('index');
 });
 
+app.get('/ShoppingCart', (req, res) => {
+  res.render('ShoppingCart');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
