@@ -65,10 +65,10 @@ html(lang="en")
                     h2.content_header REGISTRATION FORM 
                     p.content_main User Register Here...!
                 //- Breadcrumb
-                .Breadcrumbs
+                .Breadcrumbs(style="font-family: 'Raleway',san-serif")
                     a.Home(href="/" style="text-decoration: none;") Home
-                    i /
-                    a.Page(href="#" style="text-decoration: none;") Pages
+                    //- i /
+                    //- a.Page(href="#" style="text-decoration: none;") Pages
                     i /
                     p.Login_Form(href="") Registration Form
         //- Form register
@@ -94,7 +94,6 @@ html(lang="en")
                         i.fas.fa-lock
                     .col.inside.Confirm
                         input.text_login(type="file" name="avatar")
-                        i.fas.fa-user-circle
                     .col.inside.First_Last_Name 
                         .Name.first_name 
                             input.text_Name.First(type="text" placeholder="First Name" name="FirstName")

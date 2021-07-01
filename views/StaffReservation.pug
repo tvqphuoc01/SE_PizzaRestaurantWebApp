@@ -1,0 +1,254 @@
+doctype html
+html(lang="en")
+    head
+    //Required meta tags
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    //Boostrap & CSS
+    link(rel="stylesheet" href="indexStyle.css")
+    link(rel="stylesheet" href="StaffReservation.css")
+    link(rel="stylesheet" href="serviceStyle.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+    // The core Firebase JS SDK is always required and must be listed first
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
+    // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
+    script. 
+        function myFunction() {
+                var x = document.getElementById("search-bar");
+                var y = document.getElementById("nav-list");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                        y.style.display = "none";
+                    } else {
+                        x.style.display = "none";
+                        y.style.display = "flex";
+                    }
+                }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item 
+                        a(class="contact" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        a(class="fas fa-cart-plus fa-lg cart" href="/ShoppingCart")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP      
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //  - Page Header
+        .page-header
+            .container
+                .row
+                    .col-8
+                        //- i.fas.fa-utensils
+                        h3.left-section1 CHECK FOR RESERVATION
+                        h4.left-section2 ONLY STAFF
+                    .col-2
+                    .col-2
+        .Section-1(style="position:relative")
+            .container
+                .col-12 
+                    ul#myTab.nav.nav-tabs(role='tablist')
+                        li.nav-item(role='presentation')
+                            button#home-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#home' type='button' role='tab' aria-controls='home' aria-selected='true') Reservation details
+                        li.nav-item(role='presentation')
+                            button#profile-tab.nav-link(data-bs-toggle='tab' data-bs-target='#profile' type='button' role='tab' aria-controls='profile' aria-selected='false') Cancelation details
+                    #myTabContent.tab-content
+                        #home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='home-tab')
+                            .row.subContent
+                                .col-3
+                                    input(type="text")
+                                .col-3 
+                                    i(class = "fas fa-search" style="color: steelblue")
+                                        input(type="button" value="Search Reservations") 
+                                .col-3
+                                    i(class = "fas fa-plus" style="color: steelblue")
+                                        input(type="button" value="Add new reservation")
+                                .col-3
+                                    i(class = "fas fa-times" style="color: steelblue")
+                                        input(type="button" value="Cancel reservation") 
+                            .row.subContent1
+                                .col-12(style="text-align:center;  margin-bottom: 10px")
+                                    h2 RESERVATION INFORMATION
+                                .col-12
+                                    table(class="table table-striped table-hover table-sm")
+                                        thead
+                                            tr(style="text-align: center")
+                                                th(scope='col') UserName
+                                                th(scope='col') Email
+                                                th(scope='col') Phone
+                                                th(scope='col') Date
+                                                th(scope='col') Number of guests
+                                                th(scope='col') Status
+                                        tbody
+                                            tr(style="text-align: center")
+                                                th(scope='row') Hong Quan
+                                                td hongquan4242@gmail.com
+                                                td 0942429242
+                                                td 02/03/2020
+                                                td 100
+                                                td
+                                                    select(class="form-select" aria-label="Default select example" style="width:120px; font-size: 15px; height: 30px;")
+                                                        option Confirmed
+                                                        option Canceled                  
+                                            tr(style="text-align: center")
+                                                th(scope='row') Quy Phuoc
+                                                td quyphuocxamlon@gmail.com
+                                                td 0901291201
+                                                td 01/07/2021
+                                                td 1
+                                                td 
+                                                    select(class="form-select" aria-label="Default select example" style="width:120px; font-size: 15px; height: 30px;")
+                                                        option Confirmed
+                                                        option Canceled
+                                            tr(style="text-align: center")
+                                                th(scope='row') Tien Trung
+                                                td tientrungcungxamlon@gmail.com
+                                                td 0901291201
+                                                td 01/07/2021
+                                                td 10
+                                                td 
+                                                    select(class="form-select" aria-label="Default select example" style="width:120px; font-size: 15px; height: 30px;")
+                                                        option Confirmed
+                                                        option Canceled
+                        #profile.tab-pane.fade(role='tabpanel' aria-labelledby='profile-tab')
+                            .row.subContent
+                                .col-3
+                                    input(type="text")
+                                .col-3 
+                                    i(class = "fas fa-search" style="color: red")
+                                        input(type="button" value="Search cancelation" style="color: red") 
+                                .col-3
+                                .col-3
+                            .row.subContent1
+                                .col-12(style="text-align:center;  margin-bottom: 10px")
+                                    h2( style="color: red") CANCELATION INFORMATION
+                                .col-12
+                                    table(class="table table-striped table-hover table-sm")
+                                        thead
+                                            tr(style="text-align: center")
+                                                th(scope='col') UserName
+                                                th(scope='col') Email
+                                                th(scope='col') Phone
+                                                th(scope='col') Date
+                                                th(scope='col') Number of guests
+                                                th(scope='col') Status
+                                                th(scope='col') Reason
+                                        tbody
+                                            tr(style="text-align: center")
+                                                th(scope='row') Hong Quan
+                                                td hongquan4242@gmail.com
+                                                td 0942429242
+                                                td 02/03/2020
+                                                td 100
+                                                td
+                                                    i(class="fas fa-times" style="color: red")
+                                                td Joke               
+                                            tr(style="text-align: center")
+                                                th(scope='row') Quy Phuoc
+                                                td quyphuocxamlon@gmail.com
+                                                td 0901291201
+                                                td 01/07/2021
+                                                td 1
+                                                td 
+                                                    i(class="fas fa-times" style="color: red")
+                                                td Like 
+                                            tr(style="text-align: center")
+                                                th(scope='row') Tien Trung
+                                                td tientrungcungxamlon@gmail.com
+                                                td 0901291201
+                                                td 01/07/2021
+                                                td 10
+                                                td 
+                                                   i(class="fas fa-times" style="color: red")
+                                                td Staff cancel (Out of table) 
+
+
+
+        //Footer
+        .footer
+            .container-fluid.row(style="background-color: black")
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>

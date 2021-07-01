@@ -78,6 +78,10 @@ app.get('/ShoppingCart', (req, res) => {
   res.render('ShoppingCart');
 });
 
+app.get('/StaffReservation', (req, res) => {
+  res.render('StaffReservation');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

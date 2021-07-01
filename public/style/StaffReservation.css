@@ -1,0 +1,300 @@
+.container-fluid {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.mainNavBar {
+    background-color: black;
+    color: white;
+}
+
+.mainNavBar .col-2, .col-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mainNavBar .nav-item {
+    margin-right: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.mainNavBar .nav-item:hover {
+    color: red;
+    transition: all 0.6s;
+}
+
+.mainNavBar #search-bar {
+    display: none;
+}
+
+.reservation, .contact, .Blog {
+    color: #fff;
+}
+
+.reservation:hover, .contact:hover, .Blog:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.home {
+    color: #fff;
+}
+
+.home:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.contact {
+    color: #fff;
+}
+
+.contact:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.menu {
+    color: #fff;
+}
+
+.menu:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+#search-bar input {
+    width: 80%;
+    padding: 10px;
+    background-color: #000000F2;
+    margin-left: 30px;
+    color: white;
+    font-style: italic;
+    box-shadow: none;
+    font-size: 18pt;
+}
+
+#search-bar input:focus {
+    border: 2px solid black !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    font-size: 14pt;
+    font-style: italic;
+    transition: all 0.6s;
+    border-bottom: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+
+.dropdown-content a:hover {
+    color: red;
+    background-color: black;
+}
+
+.page-header{
+    background-image: url('site-img14.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 0;
+    padding-top: 150px;
+    padding-bottom: 60px;
+    width: 100%;
+}
+
+.container{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+.accordion, .footer{
+    width: 100%;
+    float: left;
+}
+
+.col-8{
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+}
+
+
+.left-section1{
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.left-section2{
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.Section-1, .subContent, .subContent1 {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+input[type=text]{
+    border: 1px solid gray;
+    height: 30px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+input[type="button"]{
+    border: none;
+    height: 30px;
+    border-radius: 5px; 
+    background-color: white;
+    color: steelblue !important;
+    font-weight: bold;
+    font-family: 'Raleway', san-serif; 
+    padding: 2px 30px;
+    padding-left: 6px !important; 
+    cursor: pointer;
+}
+
+.Section-1 ul{
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+}
+
+
+.col-md-12{
+    padding-right: 70px !important;
+    padding-left: 70px !important;
+}
+
+.footer {
+    margin-top: 50px;
+    min-height: 400px;
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+    padding: 80px;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.address-info {
+    padding: 0;
+    margin: 0;
+}
+
+.address-info li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title-line {
+    background-color: #ef0400;
+    height: 2px;
+    margin: 10px auto 25px 0;
+    padding: 0;
+    width: 36px;
+}
+
+.customer-sp {
+    padding: 0;
+    margin: 0;
+}
+
+.customer-sp li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.customer-sp a {
+    color: #fff;
+}
+
+.customer-sp a:hover {
+    text-decoration: none;
+    color: #ef0400;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.Copyright {
+    min-height: 100px;
+    background-color: #1f1f1f;
+}
+
+.copyRight-title {
+    color: #fff;
+    padding: 35px;
+    text-align: center;
+    font-size: 12pt;
+    font-family: 'Raleway', sans-serif;
+}
+
+.social-list {
+    padding: 35px;
+    text-align: center;
+}
+
+.social-app {
+    display: inline-block;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.fa-facebook-square {
+    color: #4267B2;
+}
+
+.fa-instagram { 
+    font-size:30px;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube {
+    color: red
+}
+
+.fa-twitter-square {
+    color: #00b6f1;
+}
