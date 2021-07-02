@@ -11,10 +11,9 @@ html(lang="en")
         link(rel="stylesheet" href="serviceStyle.css")
         link(rel="stylesheet" href="ShopStyle.css")
         link(rel="stylesheet" href="menuStyle.css")
-        //link(rel="stylesheet" href="menu2Style.css")
-        
+
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
-        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
@@ -27,16 +26,16 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css2?family=Karla:wght@600&display=swap" rel="stylesheet")
         script. 
             function myFunction() {
-                    var x = document.getElementById("search-bar");
-                    var y = document.getElementById("nav-list");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                            y.style.display = "none";
-                        } else {
-                            x.style.display = "none";
-                            y.style.display = "flex";
-                        }
+                var x = document.getElementById("search-bar");
+                var y = document.getElementById("nav-list");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                        y.style.display = "none";
+                    } else {
+                        x.style.display = "none";
+                        y.style.display = "flex";
                     }
+                }
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -80,8 +79,8 @@ html(lang="en")
                             a(class="contact" href="/signUp") SIGN UP  
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
-        
+                    input(type="text" placeholder="Search Here ..... !", )
+
         //Header
         .page-header-menu
             .container
@@ -93,7 +92,7 @@ html(lang="en")
                         a(href="/" style="color:white") Home 
                         i /       
                         a(href="/" style="color:white") Menu
-        
+
         //Menu
         .service-section2.font-fa
             .container 
@@ -221,7 +220,7 @@ html(lang="en")
                                     .reciepe-no.font18-price 299,000 VND
                                     p With farm-fresh milk and professional skills, Burrata is high-qualified that is so great when combining with ham.
                             // ~./ food-menu-item ~
-                        
+
                     .divider-d-dashed.m-top2
                 .p-top3
                     .text-center.uppercase.m-bottom4
@@ -443,7 +442,7 @@ html(lang="en")
                                     .reciepe-no.font18-price 39,000 VND
                                     p 7 UP - big one, big fun.
                             // ~./ food-menu-item ~
-                    
+
         //Slider
         .service-section3
             .container
@@ -479,8 +478,8 @@ html(lang="en")
                                 p.m-top2
                                     span.color-red.font18 John Deo 
                                     span(style="font-style:italic;color:#777575") / from exmedia
-        
-        
+
+
         //Footer
         .footer
             .container-fluid.row 

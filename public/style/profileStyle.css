@@ -9,6 +9,7 @@
 
 .text-muted {
   font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
 .mar-right-0 {
   margin-right: 0px !important;
@@ -290,7 +291,6 @@ a:hover {
   box-shadow: none !important;
 }
 
-/* Test profile pic */
 .upload-btn-wrapper {
   position: relative;
   overflow: hidden;
@@ -317,4 +317,80 @@ a:hover {
 
 .pad-7 {
   padding-right: 7px;
+}
+
+.pad-5 {
+  padding: 0px 5px 0 5px;
+}
+
+.mar-bot-0 {
+  margin-bottom: 0 !important;
+}
+
+.pad-bot-5 {
+  padding-bottom: 5px !important;
+}
+
+.bn34 {
+  background-color: #ffffff;
+  border: none;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  padding: 0.3em 1.2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.fixed-size {
+  width: 80px !important;
+  height: 80px !important;
+}
+.grey-filter {
+  filter: invert(42%) sepia(5%) saturate(236%) hue-rotate(349deg) brightness(92%) contrast(80%);
+}
+
+.font-lora {
+  font-family: 'Lora' serif !important;
+}
+
+.text-al {
+  text-align: left !important;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif !important;
+}
+.text-align-center {
+  text-align: center;
+}
+.font-14-a {
+  font-size: 14px !important;
+  color:red;
+}
+.font-14 {
+  font-size: 14px !important;
+}
+.pad-0 {
+  padding: 0 0 0 0 !important;
+}
+
+.font-viaoda {
+  font-family: 'Viaoda Libre', cursive !important;
+}
+
+.svg-vertical {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pad-top-10 {
+  padding-top: 10px;
+}
+.right-align {
+  text-align: right;
+}
+.font-12 {
+  font-size: 12px;
 }
