@@ -73,15 +73,15 @@ html(lang="en")
             img.Image_Pg_Header(src="site-img10.jpg" alt="Page header")
             .pageH
                 .Page_header_content
-                    h2.content_header LOGIN FORM 
-                    p.content_main User Login Here...!
+                    h2.content_header.font-fam LOGIN FORM 
+                    p.content_main.font-fam User Login Here...!
                 //- Breadcrumb
                 .Breadcrumbs(style="font-family: 'Raleway',san-serif")
                     a.Home(href="/" style="text-decoration: none;") Home
                     //- i /
                     //- a.Page(href="#" style="text-decoration: none;") Pages
                     i /
-                    p.Login_Form(href="") Login Form
+                    p.Login_Form(href="/logIn") Login Form
         form(action='/logIn' class='Log_in' method='POST')
             .frame_log_in 
                 h3 LOGIN FORM 
