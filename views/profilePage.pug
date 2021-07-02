@@ -112,104 +112,6 @@ head
         i / 
         a(href='/profilePage') Profile page
 
-//- // Old
-//- .container.bootstrap.snippet
-//-   .row
-//-     .col-sm-10
-//-       h1= user.userName
-//-   .row
-//-     .col-sm-3
-//-       // left col
-//-       .text-center
-//-         img.avatar.img-circle.img-thumbnail(src=user.avatar alt='avatar')
-//-       br
-//-       br
-//-       .panel.panel-default
-//-         .panel-heading Social Media
-//-         .panel-body
-//-           i.fa.fa-facebook.fa-2x
-//-           i.fa.fa-github.fa-2x
-//-           i.fa.fa-twitter.fa-2x
-//-           i.fa.fa-pinterest.fa-2x
-//-           i.fa.fa-google-plus.fa-2x
-//-     // /col-3
-//-     .col-sm-9
-//-       ul.nav.nav-tabs
-//-         li.active
-//-           a(data-toggle='tab' href='#home') Home
-//-       .tab-content
-//-         #home.tab-pane.active
-//-           hr
-//-           form#registrationForm.form(action='/profilePage' method='post' enctype="multipart/form-data")
-//-             .form-group
-//-               .col-xs-6
-//-                 label(for='first_name')
-//-                   h4 First name
-//-                 if user
-//-                   input#last_name.form-control(type='text' name='firstName' value=user.firstName title='enter your first name if any.')
-//-                 else
-//-                   input#last_name.form-control(type='text' name='firstName' placeholder='First name' title='enter your first name if any.')
-//-             .form-group
-//-               .col-xs-6
-//-                 label(for='last_name')
-//-                   h4 Last name
-//-                 if user
-//-                   input#last_name.form-control(type='text' name='lastName' value=user.lastName title='enter your last name if any.')
-//-                 else
-//-                   input#last_name.form-control(type='text' name='lastName' placeholder='Last name' title='enter your last name if any.')
-//-             .form-group
-//-               .col-xs-6
-//-                 label(for='phone')
-//-                   h4 Phone
-//-                 if user
-//-                   input#last_name.form-control(type='text' name='phone' value=user.phone)
-//-                 else
-//-                   input#last_name.form-control(type='text' name='phone' placeholder='Phone')
-//-             .form-group
-//-               .col-xs-6
-//-                 label(for='email')
-//-                   h4 Email
-//-                 if user
-//-                   input#last_name.form-control(type='text' name='email' value=user.email)
-//-                 else
-//-                   input#last_name.form-control(type='text' name='email' placeholder='Email')
-//-             .form-group
-//-               .col-xs-6
-//-                 label(for='Location')
-//-                   h4 Location
-//-                 if user
-//-                   input#last_name.form-control(type='text' name='address' value=user.address)
-//-                 else
-//-                   input#last_name.form-control(type='text' name='address' placeholder='Address')
-//-             .form-group
-//-               .col-xs-6
-//-                 label(for='password')
-//-                   h4 Password
-//-                 if user
-//-                   input#myInput2.form-control(type='password' name='passWord' value=user.passWord)
-//-                   <input type="checkbox" onclick="myFunction2()"> Show Password 
-//-                 else
-//-                   input#last_name.form-control(type='password' name='passWord' placeholder='Password')
-//-   .form-group
-//-     .col-xs-6
-//-       label(for='Avatar')
-//-         h4 Avatar
-//-         input(type='file' name='avatar')
-//-   .form-group
-//-     .col-xs-12.row
-//-       br
-//-       button.btn.btn-lg.btn-success.col-3(type='submit')
-//-         i.glyphicon.glyphicon-ok-sign
-//-         |  Save
-//-       button.btn.btn-lg.col-3(type='reset')
-//-         i.glyphicon.glyphicon-repeat
-//-         |  Reset
-//-       a(href='/logOut' id='logOut').col-3
-//-         button.btn.btn-lg.btn-danger(type='button' id='logOut')
-//-             i.fas.fa-sign-out-alt
-//-               |  Log Out
-//- hr
-
 //New
 .container
   .main-body
@@ -221,31 +123,12 @@ head
               .d-flex.flex-column.align-items-center.text-center
                 .form-group
                   img.rounded-circles.p-1(src=user.avatar alt='User Avatar')
-                //- label(for='avatar') Edit Photo
-                //- input(type='file' name='avatar' id='avatar')
-                //- label(for='avatar') Edit Photo
-                //- input#Avatar(type="file" name="avatar")
                 .form-group
-                  //- .upload-photo
-                  //-   input#Avatar.inputfile(type='file' name='avatar' onclick= 'inputFunction()' data-multiple-caption="{count} files selected" multiple='')
-                  //-   label(for='Avatar')
-                  //-     strong Upload photo
-
                   .upload-btn-wrapper
                     button#upload_label.btn-upload(for='Avatar')
                       i.fa.fa-camera.pad-7(aria-hidden='true')
                       | Edit Photo
                     input#Avatar(type='file' name='avatar')
-
-
-                  //- label(for='Avatar') Edit Photo
-                  //-   input#Avatar(type='file' name='avatar' style='display: none;')
-                  //- input#uploadFile(placeholder='File Name here' disabled='disabled')
-                  //- .fileUpload.btn.btn-primary
-                  //-   span Upload
-                  //-   input#uploadBtn.upload(type='file')
-
-
                   .mt-3
                     h4= user.userName
                     .text-secondary.mb-1.flex-control
@@ -465,8 +348,6 @@ head
                                 img.rounded-circle.img-fluid(src='https://res.cloudinary.com/dxfq3iotg/image/upload/v1573035929/Pra/59d280613165c000014cc031_circleniamhhogan.png' alt='DP' width='35' height='35')
                               li.list-inline-item
                                 img.more(src='https://img.icons8.com/ios/50/000000/plus.png' width='30' height='30 ')
-
-
 
 
                 #Something.tab-pane.fade.p-3(role='tabpanel' aria-labelledby='something-tab')
