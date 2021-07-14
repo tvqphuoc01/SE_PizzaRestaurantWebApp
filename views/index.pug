@@ -23,19 +23,7 @@ html(lang="en")
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
         // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
-
-        script. 
-            function myFunction() {
-                    var x = document.getElementById("search-bar");
-                    var y = document.getElementById("nav-list");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                            y.style.display = "none";
-                        } else {
-                            x.style.display = "none";
-                            y.style.display = "flex";
-                        }
-                    }
+        <script src="app.js"></script>
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -79,7 +67,9 @@ html(lang="en")
                             a(class="contact" href="/signUp") SIGN UP      
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
+                    input(type="text" id="searchBar" placeholder="Search Here ..... !")
+                    div(id="search_List")
+                        ul(id="dishesList")
         div(id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel")
             ol(class="carousel-indicators")
                 li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")

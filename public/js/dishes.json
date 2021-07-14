@@ -1,0 +1,74 @@
+[
+    {
+        "describe": "Prawn, crab sticks & calamari with Marinara sauce",
+        "dishImg": "Seafood Deluxe.png",
+        "dishName": "Seafood Deluxe",
+        "price": "129.000"
+    },
+    {
+        "describe": "Shrimp, Ham, Peach 'exploded' together with Thousand Island sauce",
+        "dishImg": "Seafood & Peach.png",
+        "dishName": "Seafood & Peach",
+        "price": "169,000"
+    },
+    {
+        "describe": "Shrimp, crab stick, squid, broccoli and green Pesto sauce",
+        "dishImg": "Seafood Pesto.png",
+        "dishName": "Seafood Pesto",
+        "price": "169,000"
+    },
+    {
+        "describe": "Fresh prawns, succulent crab sticks, ham and juicy pineapples with Thousand Island sauce",
+        "dishImg": "Seafood Cocktail.png",
+        "dishName": "Seafood Cocktail",
+        "price": "129.000"
+    },
+    {
+        "describe": "Crab sticks, pineapples and Thousand Island sauce",
+        "dishImg": "Tropical Seafood.png",
+        "dishName": "Tropical Seafood",
+        "price": "129.000"
+    },
+    {
+        "describe": "Ham, pepperoni, pork sausage and juicy pineapple with Thousand Island sauce",
+        "dishImg": "Aloha.png",
+        "dishName": "Aloha",
+        "price": "119.000"
+    },
+    {
+        "describe": "Italian sausages, bacon, ham, green capsicums and tomatoes",
+        "dishImg": "Bacon Super Delight.png",
+        "dishName": "Bacon Super Delight",
+        "price": "119.000"
+    },
+    {
+        "describe": "Ham, bacon bits and corns",
+        "dishImg": "Canadian Bacon.jpg",
+        "dishName": "Canadian Bacon",
+        "price": "119.000"
+    },
+    {
+        "describe": "A triple-layer of Mozzarella cheese on top of tomato sauce",
+        "dishImg": "Pizza-cheese.jpg",
+        "dishName": "Cheese Lover",
+        "price": "79.000"
+    },
+    {
+        "describe": "Hawaiian-flavored pizza with hams and pineapples",
+        "dishImg": "248-2486762_tropical-hawaiian-pizza-hut-hd-png-download.png",
+        "dishName": "Hawaiian Paradise",
+        "price": "109.000"
+    },
+    {
+        "describe": "Zucchini and Basil with House-made Latic Cheese",
+        "dishImg": "ZucchiniBasil.png",
+        "dishName": "Zucchini Basil Sauce",
+        "price": "147.000"
+    },
+    {
+        "describe": "With farm-fresh milk and professional skills, Burrata is high-qualified that is so great when combining with ham.",
+        "dishImg": "BurrataHam.png",
+        "dishName": "Burrata Parma Ham",
+        "price": "299.000"
+    }
+]

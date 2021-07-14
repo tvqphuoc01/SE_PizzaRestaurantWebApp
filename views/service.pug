@@ -20,18 +20,7 @@ html(lang="en")
         link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-        script. 
-            function myFunction() {
-                    var x = document.getElementById("search-bar");
-                    var y = document.getElementById("nav-list");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                            y.style.display = "none";
-                        } else {
-                            x.style.display = "none";
-                            y.style.display = "flex";
-                        }
-                    }
+        <script src="app.js"></script>
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -75,7 +64,9 @@ html(lang="en")
                             a(class="contact" href="/signUp") SIGN UP  
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
+                    input(type="text" id="searchBar" placeholder="Search Here ..... !")
+                    div(id="search_List")
+                        ul(id="dishesList")
         //Header
         .page-header
             .container

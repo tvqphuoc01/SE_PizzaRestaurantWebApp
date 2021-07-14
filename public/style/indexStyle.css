@@ -90,6 +90,36 @@
     transition: all 0.7s;
 }
 
+#dishesList {
+    max-width: 50%;
+    padding: 10px;
+    margin-left: 55px;
+}
+
+.dishes {
+    list-style-type: none;
+    color: black;
+    background-color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 24pt;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: left;
+    transition: all 0.6s;
+}
+
+.dishes img {
+    max-height: 100px;
+}
+
+.dishes:hover {
+    background-color: red;
+}
+
+#dishesList a:hover {
+    text-decoration: none;
+}
+
 #search-bar input {
     width: 80%;
     padding: 10px;

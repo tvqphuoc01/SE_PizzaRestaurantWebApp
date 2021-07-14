@@ -26,6 +26,7 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(express.static('public/js'));
 app.use(express.static('public/images'));
 app.use(express.static('public'));
 app.use(express.static('public/style'));
