@@ -6,30 +6,64 @@ const firebase = require('../db');
 const Client = require('../models/client');
 const firestore = firebase.firestore();
 
-const updateClient = async (req, res, next) => {
+const updateUser = async (req, res, next) => {
   try {
-    if (req.file) {
-      req.body.avatar = req.file.path.split('\\').slice(1).join('/');
-    }
-    const data = req.body;
-    const client = await firestore.collection('client').doc(req.cookies.userId);
-    await client.update(data);
+    // if (req.file) {
+    //   req.body.avatar = req.file.path.split('\\').slice(1).join('/');
+    // }
+    // const data = req.body;
+    // const user = await firestore.collection('client').doc(req.cookies.userId);
+    // if (user === undefined) {
+    //   user = await firestore.collection('staff').doc(req.cookies.userId);
+    //   console.log(user);
+    // }
+    // await user.update(data);
     let userEmail;
+    let check = 0;
     const findEmail = await firestore.collection('client').doc(req.cookies.userId).get().then((doc) => {
       if (doc.exists) {
         userEmail = doc.data().email;
       } else {
         // doc.data() will be undefined in this case
-        console.log('No such document!');
       }
-    }).catch((error) => {
-      console.log('Error getting document:', error);
-    }); ;
+    });
+    if (userEmail === undefined) {
+      const findEmailStaff = await firestore.collection('staff').doc(req.cookies.userId).get().then((doc) => {
+        if (doc.exists) {
+          userEmail = doc.data().email;
+          check = 1;
+        } else {
+          // doc.data() will be undefined in this case
+        }
+      })
+    }
     // const client = ref.docs[0].data();
     // res.locals.user = client;
-    const ref = await firestore.collection('client').where('email', '==', userEmail).get();
-    const localClient = ref.docs[0].data();
-    res.locals.user = localClient;
+    if (check === 0) {
+      //Update new Info
+      if (req.file) {
+        req.body.avatar = req.file.path.split('\\').slice(1).join('/');
+      }
+      const data = req.body;
+      const userUpdate = await firestore.collection('client').doc(req.cookies.userId);
+      await userUpdate.update(data);
+
+      const ref = await firestore.collection('client').where('email', '==', userEmail).get();
+      const user = ref.docs[0].data();
+      res.locals.user = user;
+    } else {
+      //Update new Info
+      if (req.file) {
+        req.body.avatar = req.file.path.split('\\').slice(1).join('/');
+      }
+      const data = req.body;
+      const userUpdate = await firestore.collection('staff').doc(req.cookies.userId);
+      await userUpdate.update(data);
+
+      const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
+      const user = ref.docs[0].data();
+      res.locals.user = user;
+    }
     res.render('profilePage');
   } catch (error) {
     res.status(400).send(error.message);
@@ -39,21 +73,35 @@ const updateClient = async (req, res, next) => {
 const profileGet = async function(req, res) {
   if (req.cookies.userId) {
     let userEmail;
-    const findEmail = await firestore.collection('client').doc(req.cookies.userId).get().then((doc) => {
+    let check = 0;
+    const findEmailClient = await firestore.collection('client').doc(req.cookies.userId).get().then((doc) => {
       if (doc.exists) {
         userEmail = doc.data().email;
       } else {
         // doc.data() will be undefined in this case
-        console.log('No such document!');
       }
-    }).catch((error) => {
-      console.log('Error getting document:', error);
-    }); ;
+    })
+    if (userEmail === undefined) {
+      const findEmailStaff = await firestore.collection('staff').doc(req.cookies.userId).get().then((doc) => {
+        if (doc.exists) {
+          userEmail = doc.data().email;
+          check = 1;
+        } else {
+          // doc.data() will be undefined in this case
+        }
+      })
+    }
     // const client = ref.docs[0].data();
     // res.locals.user = client;
-    const ref = await firestore.collection('client').where('email', '==', userEmail).get();
-    const client = ref.docs[0].data();
-    res.locals.user = client;
+    if (check === 0) {
+      const ref = await firestore.collection('client').where('email', '==', userEmail).get();
+      const user = ref.docs[0].data();
+      res.locals.user = user;
+    } else {
+      const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
+      const user = ref.docs[0].data();
+      res.locals.user = user;
+    }
     res.render('profilePage');
   } else {
     res.render('profilePage');
@@ -61,6 +109,6 @@ const profileGet = async function(req, res) {
 };
 
 module.exports = {
-  updateClient,
+  updateUser,
   profileGet,
 };

@@ -8,7 +8,7 @@ const profileController = require('../controllers/profileController');
 
 router.post('/',
     upload.single('avatar'),
-    profileController.updateClient,
+    profileController.updateUser,
 );
 
 router.get('/', upload.single('avatar'), profileController.profileGet);

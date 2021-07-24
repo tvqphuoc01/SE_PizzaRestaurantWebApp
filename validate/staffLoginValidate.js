@@ -1,26 +1,18 @@
-/* eslint-disable max-len */
-/* eslint-disable require-jsdoc */
-/* eslint-disable prefer-const */
-/* eslint-disable no-unused-vars */
 'use strict';
 
 const firebase = require('../db');
-const Client = require('../models/client');
+const Staff = require('../models/staff');
 const firestore = firebase.firestore();
 
-module.exports.validateLoginClient = async function(req, res, next) {
+module.exports.validateLoginStaff = async function(req, res, next) {
   
-  //Client collections
-  const clients = await firestore.collection('client');
+  //Staff collections
+  const staffs = await firestore.collection('staff');
 
-  //Client Docs
-  const clientDocs = await clients.get();
+  //Staff Docs
+  const staffDocs = await staffs.get();
   
   const data = req.body;
-
-  //Client Email & Pass
-  let checkClientEmail;
-  let checkClientPass;
 
   let errors = [];
 
@@ -42,7 +34,7 @@ module.exports.validateLoginClient = async function(req, res, next) {
 
   errors = [];
 
-  const ref = await firestore.collection('client').where('email', '==', data.email).get();
+  const ref = await firestore.collection('staff').where('email', '==', data.email).get();
   
   if (ref.docs[0] === undefined) {
     errors.push('User does not exist !!!');

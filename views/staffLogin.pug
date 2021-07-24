@@ -74,7 +74,7 @@ html(lang="en")
             .pageH
                 .Page_header_content
                     h2.content_header.font-fam LOGIN
-                    p.content_main.font-fam User Login Here...!
+                    p.content_main.font-fam Staff Login Here...!
                 //- Breadcrumb
                 .Breadcrumbs(style="font-family: 'Raleway',san-serif")
                     a.Home(href="/" style="text-decoration: none;") Home
@@ -82,9 +82,9 @@ html(lang="en")
                     //- a.Page(href="#" style="text-decoration: none;") Pages
                     i /
                     p.Login_Form(href="/logIn") Login
-        form(action='/logIn' class='Log_in' method='POST')
+        form(action='/Stafflogin' class='Log_in' method='POST')
             .frame_log_in 
-                h3 LOGIN
+                h3 STAFF LOGIN
                 if errors
                     each error in errors
                         .form-group
@@ -100,10 +100,7 @@ html(lang="en")
                         input.text_login(type="password" name="passWord")
                         i.fas.fa-lock
                 .button
-                    a.btn.register(href="/signUp") REGISTER 
-                .button
                     input(class="btn loginbtn" type="submit" value="LOG IN")
-            h5 If you are Staff <a href="/staffLogin"> Click Here To Log In </a>
         .footer
             .container-fluid.row 
                 .col-6

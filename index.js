@@ -19,6 +19,8 @@ const blogRoutes = require('./routers/blog.router');
 const indexRoutes = require('./routers/index.router');
 const shopRoutes = require('./routers/shop.router');
 const FAQRoutes = require('./routers/FAQ.routes');
+const staffLogin = require('./routers/staffLogin.router')
+const staffReservationRoutes = require('./routers/staffReservation.router')
 
 // Views
 app.set('views', './views');
@@ -75,13 +77,13 @@ app.get('/logOut', (req, res) => {
   res.render('index');
 });
 
+app.use('/staffLogin', staffLogin)
+
 app.get('/ShoppingCart', (req, res) => {
   res.render('ShoppingCart');
 });
 
-app.get('/StaffReservation', (req, res) => {
-  res.render('StaffReservation');
-});
+app.use('/StaffReservation', authMiddleware.authMiddleware, staffReservationRoutes)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
