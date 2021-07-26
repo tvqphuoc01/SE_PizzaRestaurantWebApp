@@ -54,6 +54,10 @@ module.exports.validateNewUser = async function(req, res, next) {
     errors.push('Last name is required !!!');
   }
 
+  if (!req.body.Avatar) {
+    errors.push('Avatar is required !!!');
+  }
+
   if (!req.body.Gender) {
     errors.push('Gender is required !!!');
   }

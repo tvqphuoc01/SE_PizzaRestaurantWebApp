@@ -98,7 +98,7 @@ html(lang="en")
                         li.nav-item(role='presentation')
                             button#profile-tab.nav-link(data-bs-toggle='tab' data-bs-target='#profile' type='button' role='tab' aria-controls='profile' aria-selected='false') Cancelation details
                     #myTabContent.tab-content
-                        #home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='home-tab')
+                        #home.tab-pane.fade(role='tabpanel' aria-labelledby='home-tab')
                             .row.subContent
                                 .col-3
                                     input(type="text")
@@ -155,7 +155,7 @@ html(lang="en")
                                                     select(class="form-select" aria-label="Default select example" style="width:120px; font-size: 15px; height: 30px;")
                                                         option Confirmed
                                                         option Canceled
-                        #profile.tab-pane.fade(role='tabpanel' aria-labelledby='profile-tab')
+                        #profile.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='profile-tab')
                             .row.subContent
                                 .col-3
                                     input(type="text")
