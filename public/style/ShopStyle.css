@@ -35,7 +35,7 @@
 .cell-food p:hover{
     overflow: visible;
 }
-.button a.boxed-color-xs{
+.button input.boxed-color-xs{
     border: 0;
     background: #ef0400;
     border-radius: 0px;

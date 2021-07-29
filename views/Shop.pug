@@ -24,6 +24,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet")
         <script src="app.js"></script>
+        <script src="shop.js"></script>
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -87,7 +88,7 @@ html(lang="en")
                 .kind
                     h1(style="color:red;") PIZZA
                     .row
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_1")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_1", method="POST", action='/Shop')
                             .cell-food
                                 img.img-responsive(src="Seafood Deluxe.png" alt="Seafood Deluxe")
                                 .menu-item
@@ -96,12 +97,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Prawn, crab sticks & calamari with Marinara sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_1" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_2")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_1')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_1" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_1')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_2", method="POST", action='/Shop')
                             .cell-food
                                 img.img-responsive(src="Seafood & Peach.png" alt="Seafood & Peach")
                                 .menu-item
@@ -110,12 +112,13 @@ html(lang="en")
                                     h2.price 169.000VNĐ
                                 p Shrimp, Ham, Peach "exploded" together with Thousand Island sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_2" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_3")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_2')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_2" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_2')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_3", method="POST", action='/Shop')
                             .cell-food
                                 img.img-responsive(src="Seafood Pesto.png" alt="Seafood Pesto")
                                 .menu-item
@@ -124,12 +127,13 @@ html(lang="en")
                                     h2.price 169.000VNĐ
                                 p Shrimp, crab stick, squid, broccoli and green Pesto sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_3" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_4")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_3')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_3" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_3')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_4", method="POST", action='/Shop')
                             .cell-food
                                 img.img-responsive(src="Seafood Cocktail.png" alt="Seafood Cocktail")
                                 .menu-item
@@ -138,12 +142,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Fresh prawns, succulent crab sticks, ham and juicy pineapples with Thousand Island sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_4" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_5")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_4')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_4" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_4')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_5", method="POST", action='/Shop')
                             .cell-food
                                 img.img-responsive(src="Tropical Seafood.png" alt="Tropical Seafood")
                                 .menu-item
@@ -152,12 +157,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Crab sticks, pineapples and Thousand Island sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_5" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_6")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_5')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_5" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_5')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_6", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Aloha.png" alt="Aloha")
                                 .menu-item
@@ -166,12 +172,13 @@ html(lang="en")
                                     h2.price 119.000VNĐ
                                 p Ham, pepperoni, pork sausage and juicy pineapple with Thousand Island sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_6" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+") 
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_7")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_6')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_6" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_6')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_7", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Bacon Super Delight.png" alt="Bacon Super Delight")
                                 .menu-item
@@ -180,12 +187,13 @@ html(lang="en")
                                     h2.price 119.000VNĐ
                                 p Italian sausages, bacon, ham, green capsicums and tomatoes
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_7" style="display: none") 
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_8")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_7')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_7" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_7')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_8", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Canadian Bacon.jpg" alt="Canadian Bacon")
                                 .menu-item
@@ -194,12 +202,13 @@ html(lang="en")
                                     h2.price 119.000VNĐ
                                 p Ham, bacon bits and corns
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_8" style="display: none") 
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_9")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_8')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_8" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_8')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_9", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pizza-cheese.jpg" alt="Cheese Lover")
                                 .menu-item
@@ -208,12 +217,13 @@ html(lang="en")
                                     h2.price 79.000VNĐ
                                 p A triple-layer of Mozzarella cheese on top of tomato sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_9" style="display: none") 
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+") 
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_10")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_9')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_9" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_9')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_10", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="248-2486762_tropical-hawaiian-pizza-hut-hd-png-download.png" alt="Hawaiian Paradise")
                                 .menu-item
@@ -222,12 +232,13 @@ html(lang="en")
                                     h2.price 109.000VNĐ
                                 p Hawaiian-flavored pizza with hams and pineapples
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_10" style="display: none")  
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_31")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_10')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_10" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_10')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_31", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src='ZucchiniBasil.png' alt='Zucchini Basil Sauce')
                                 .menu-item
@@ -236,12 +247,13 @@ html(lang="en")
                                     h2.price 147.000VNĐ
                                 p Zucchini and Basil with House-made Latic Cheese
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_31" style="display: none") 
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_32")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_31')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_31" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_31')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_32", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src='BurrataHam.png' alt='Burrata Parma Ham')
                                 .menu-item
@@ -250,15 +262,16 @@ html(lang="en")
                                     h2.price 299.000VNĐ
                                 p With farm-fresh milk and professional skills, Burrata is high-qualified that is so great when combining with ham.
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_32" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_32')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_32" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_32')" value="+")
                 .kind
                     h1(style="color:red;") PASTA
                     .row
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_11")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_11", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Stir fried pasta with spicy seafood.png" alt="Stir fried pasta with spicy seafood")
                                 .menu-item
@@ -267,12 +280,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Pasta stir fried with fresh seafood cooked with lots of spices and garlic
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_11" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_12")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_11')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_11" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_11')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_12", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pasta shrimp rose.png" alt="Pasta shrimp rose")
                                 .menu-item
@@ -281,12 +295,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p The juiciness of fresh shrimps combined with delectable rosé sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_12" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_13")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_12')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_12" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_12')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_13", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pasta bolognese.png" alt="Pasta bolognese")
                                 .menu-item
@@ -295,12 +310,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Italian-style mince beef sauce finely mixed with pasta
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_13" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_14")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_13')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_13" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_13')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_14", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Stir fried pasta with spicy sausage.png" alt="Stir fried pasta with spicy sausage")
                                 .menu-item
@@ -309,15 +325,16 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Pasta stir fried with parsley sausages, fresh herbs and Italian basil
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_14" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_14')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_14" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_14')" value="+")
                 .kind
                     h1(style="color:red;") SALAD
                     .row
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_15")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_15", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Chicken Strip Salad.png" alt="Chicken Strip Salad")
                                 .menu-item
@@ -326,12 +343,13 @@ html(lang="en")
                                     h2.price 69.000VNĐ
                                 p Crispy chicken salad with quail eggs, bacon, parmesan and Thousand Island
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_15" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_16")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_15')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_15" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_15')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_16", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Crispy Salmon Skin Salad.png" alt="Crispy Salmon Skin Salad")
                                 .menu-item
@@ -340,12 +358,13 @@ html(lang="en")
                                     h2.price 69.000VNĐ
                                 p Salad with crispy salmon skin and red cabbage, cherry tomatoes, corn with Yuzu sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_16" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_17")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_16')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_16" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_16')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_17", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Signature salad.png" alt="Signature salad")
                                 .menu-item
@@ -354,12 +373,13 @@ html(lang="en")
                                     h2.price 69.000VNĐ
                                 p Broccoli, purple cabbage, apple mixed with boiled quail eggs and Salad sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_17" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_18")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_17')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_17" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_17')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_18", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Caesar's salad.png" alt="Caesar's salad")
                                 .menu-item
@@ -368,15 +388,16 @@ html(lang="en")
                                     h2.price 69.000VNĐ
                                 p Salad with caesar dressing
                                 .button(style="float: right;")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_18" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")    
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_18')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_18" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_18')" value="+")    
                 .kind
                     h1(style="color:red;") DESSERT
                     .row
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_19")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_19", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Muc_Chien_Gion_400x275.jpg" alt="Crispy fried calamari")
                                 .menu-item
@@ -385,12 +406,13 @@ html(lang="en")
                                     h2.price 99.000VNĐ
                                 p Crispy fried calamari
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_19" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_20")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_19')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_19" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_19')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_20", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Banh_Cuon_Pho_Mai_400x275.jpg" alt="Cheesy Pops")
                                 .menu-item
@@ -399,12 +421,13 @@ html(lang="en")
                                     h2.price 69.000VNĐ
                                 p Filled with 2 types of cheese
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_20" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_21")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_20')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_20" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_20')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_21", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Ga_Cay_Pho_Mai_Han_Quoc_400x275.jpg" alt="KOREAN STYLE CHEESY CHICKEN")
                                 .menu-item
@@ -413,12 +436,13 @@ html(lang="en")
                                     h2.price 129.000VNĐ
                                 p Chicken thigh fillet with Korean spicy sauce, sweet corn, onion, topped with melted mozzarella cheese
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_21" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_22")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_21')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_21" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_21')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_22", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Banh_Mi_Bo_Toi_400x275.jpg" alt="Garlic Bread")
                                 .menu-item
@@ -427,15 +451,16 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p Deliciously crusty grilled bread covered with savory garlic-butter sauce
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_22" style="display: none") 
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")  
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_22')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_22" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_22')" value="+")
                 .kind
                     h1(style="color:red;") DRINK
                     .row
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_23")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_23", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pepsi Can.jpeg" alt="Pepsi Can 320Ml")
                                 .menu-item
@@ -444,12 +469,13 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p Pepsi Lon 320ml
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_23" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_24")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_23')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_23" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_23')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_24", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pepsi_Lemon_Can_400x275.jpg" alt="Pepsi Lemon Can 320Ml")
                                 .menu-item
@@ -458,12 +484,13 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p Pepsi Lemon Lon 320ml
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_24" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_25")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_24')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_24" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_24')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_25", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pepsi Black Can.jpeg" alt="Pepsi No Calories Can 320Ml")
                                 .menu-item
@@ -472,12 +499,13 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p Pepsi No Calories Lon 320ml
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_25" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_26")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_25')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_25" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_25')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_26", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="7Up_Can_400x275.jpg" alt="7Up Can 320Ml")
                                 .menu-item
@@ -486,12 +514,13 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p 7Up Lon 320ml
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_26" style="display: none") 
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_27")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_26')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_26" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_26')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_27", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Mirinda_Orange_Can_400x275.jpg" alt="Mirinda Orange Can 320Ml")
                                 .menu-item
@@ -500,12 +529,13 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p Mirinda Orange Lon 320Ml
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_27" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+") 
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_28")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_27')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_27" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_27')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_28", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Mirinda_Soda_Can_400x275.jpg" alt="Mirinda Soda Can 320Ml")
                                 .menu-item
@@ -514,12 +544,13 @@ html(lang="en")
                                     h2.price 29.000VNĐ
                                 p Mirinda Soda Lon 320Ml
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_28" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")    
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_29")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_28')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_28" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_28')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_29", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="Pepsi_1.5L_400x275.jpg" alt="Pepsi 1.5L")
                                 .menu-item
@@ -528,12 +559,13 @@ html(lang="en")
                                     h2.price 39.000VNĐ
                                 p PEPSI Chai 1.5L
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_29" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")
-                        .col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_30")
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_29')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_29" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_29')" value="+")
+                        form.col-md-3.col-sm-6.col-xs-12.m-bottom(id = "Mon_30", method="POST", action='/Shop')
                             .cell-food 
                                 img.img-responsive(src="7Up_1.5L_400x275.jpg" alt="7Up 1.5L")
                                 .menu-item
@@ -542,11 +574,12 @@ html(lang="en")
                                     h2.price 39.000VNĐ
                                 p 7Up Chai 1.5L
                                 .button(style="float: right")
-                                    a.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important") Order Now 
+                                    input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                    input(type="text" name="Id_Mon" value="Mon_30" style="display: none")
                                 .buttons_added 
-                                    input.minus.is-form(type="button" value="-")
-                                    input(aria-label="quantity" class="input-qty" max="5" min="1" name="" type="number" value="1")
-                                    input.plus.is-form(type= "button" value="+")                            
+                                    input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_30')" value="-")
+                                    input(aria-label="quantity" class="input-qty" id="number_Mon_30" max="5" min="1" name="quantity" type="number" value="0")
+                                    input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_30')" value="+")                            
         //Section3
         .service-section3
             .container
