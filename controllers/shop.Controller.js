@@ -30,7 +30,6 @@ const shopGet = async function(req, res) {
   }
 };
 const shopPost = async function(req, res) {
-  console.log(req.body);
   if (req.cookies.userId) {
     let userEmail;
     const findEmail = await firestore.collection('client').doc(req.cookies.userId).get().then((doc) => {
@@ -47,6 +46,14 @@ const shopPost = async function(req, res) {
     // res.locals.user = client;
     const ref = await firestore.collection('client').where('email', '==', userEmail).get();
     const client = ref.docs[0].data();
+    //Add mon vao cart cua Client 
+    client.cart.push(req.body);
+    let updates = {
+      // Set update cho cart 
+      cart: client.cart
+    }
+    //Update cho cart cua khach hang thong qua Id => Lay Id tu cookies
+    await firestore.collection('client').doc(req.cookies.userId).update(updates);
     res.locals.user = client;
     res.render('Shop');
   } else {

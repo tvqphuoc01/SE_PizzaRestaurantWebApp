@@ -1,74 +1,226 @@
 [
     {
+        "id": "Mon_1",
         "describe": "Prawn, crab sticks & calamari with Marinara sauce",
         "dishImg": "Seafood Deluxe.png",
         "dishName": "Seafood Deluxe",
         "price": "129.000"
     },
     {
+        "id": "Mon_2",
         "describe": "Shrimp, Ham, Peach 'exploded' together with Thousand Island sauce",
         "dishImg": "Seafood & Peach.png",
         "dishName": "Seafood & Peach",
         "price": "169,000"
     },
     {
+        "id": "Mon_3",
         "describe": "Shrimp, crab stick, squid, broccoli and green Pesto sauce",
         "dishImg": "Seafood Pesto.png",
         "dishName": "Seafood Pesto",
         "price": "169,000"
     },
     {
+        "id": "Mon_4",
         "describe": "Fresh prawns, succulent crab sticks, ham and juicy pineapples with Thousand Island sauce",
         "dishImg": "Seafood Cocktail.png",
         "dishName": "Seafood Cocktail",
         "price": "129.000"
     },
     {
+        "id": "Mon_5",
         "describe": "Crab sticks, pineapples and Thousand Island sauce",
         "dishImg": "Tropical Seafood.png",
         "dishName": "Tropical Seafood",
         "price": "129.000"
     },
     {
+        "id": "Mon_6",
         "describe": "Ham, pepperoni, pork sausage and juicy pineapple with Thousand Island sauce",
         "dishImg": "Aloha.png",
         "dishName": "Aloha",
         "price": "119.000"
     },
     {
+        "id": "Mon_7",
         "describe": "Italian sausages, bacon, ham, green capsicums and tomatoes",
         "dishImg": "Bacon Super Delight.png",
         "dishName": "Bacon Super Delight",
         "price": "119.000"
     },
     {
+        "id": "Mon_8",
         "describe": "Ham, bacon bits and corns",
         "dishImg": "Canadian Bacon.jpg",
         "dishName": "Canadian Bacon",
         "price": "119.000"
     },
     {
+        "id": "Mon_9",
         "describe": "A triple-layer of Mozzarella cheese on top of tomato sauce",
         "dishImg": "Pizza-cheese.jpg",
         "dishName": "Cheese Lover",
         "price": "79.000"
     },
     {
+        "id": "Mon_10",
         "describe": "Hawaiian-flavored pizza with hams and pineapples",
         "dishImg": "248-2486762_tropical-hawaiian-pizza-hut-hd-png-download.png",
         "dishName": "Hawaiian Paradise",
         "price": "109.000"
     },
     {
+        "id": "Mon_31",
         "describe": "Zucchini and Basil with House-made Latic Cheese",
         "dishImg": "ZucchiniBasil.png",
         "dishName": "Zucchini Basil Sauce",
         "price": "147.000"
     },
     {
+        "id": "Mon_32",
         "describe": "With farm-fresh milk and professional skills, Burrata is high-qualified that is so great when combining with ham.",
         "dishImg": "BurrataHam.png",
         "dishName": "Burrata Parma Ham",
         "price": "299.000"
+    },
+    {
+        "id": "Mon_11",
+        "describe": "Pasta stir fried with fresh seafood cooked with lots of spices and garlic",
+        "dishImg": "Stir fried pasta with spicy seafood.png",
+        "dishName": "Stir fried pasta with spicy seafood",
+        "price": "129.000"
+    },
+    {
+        "id": "Mon_12",
+        "describe": "The juiciness of fresh shrimps combined with delectable rosé sauce",
+        "dishImg": "Pasta shrimp rose.png",
+        "dishName": "Pasta shrimp rose",
+        "price": "129.000"
+    },
+    {
+        "id": "Mon_13",
+        "describe": "Italian-style mince beef sauce finely mixed with pasta",
+        "dishImg": "Pasta bolognese.png",
+        "dishName": "Pasta bolognese",
+        "price": "129.000"
+    },
+    {
+        "id": "Mon_14",
+        "describe": "Pasta stir fried with parsley sausages, fresh herbs and Italian basil",
+        "dishImg": "Stir fried pasta with spicy sausage.png",
+        "dishName": "Stir fried pasta with spicy sausage",
+        "price": "129.000"
+    },
+    {
+        "id": "Mon_15",
+        "describe": "Crispy chicken salad with quail eggs, bacon, parmesan and Thousand Island",
+        "dishImg": "Chicken Strip Salad.png",
+        "dishName": "Chicken Strip Salad",
+        "price": "69.000"
+    },
+    {
+        "id": "Mon_16",
+        "describe": "Salad with crispy salmon skin and red cabbage, cherry tomatoes, corn with Yuzu sauce",
+        "dishImg": "Crispy Salmon Skin Salad.png",
+        "dishName": "Crispy Salmon Skin Salad",
+        "price": "69.000"
+    },
+    {
+        "id": "Mon_17",
+        "describe": "Broccoli, purple cabbage, apple mixed with boiled quail eggs and Salad sauce",
+        "dishImg": "Signature salad.png",
+        "dishName": "Signature salad",
+        "price": "69.000"
+    },
+    {
+        "id": "Mon_18",
+        "describe": "Salad with caesar dressing",
+        "dishImg": "Caesar's salad.png",
+        "dishName": "Caesar's salad",
+        "price": "69.000"
+    },
+    {
+        "id": "Mon_19",
+        "describe": "Crispy fried calamari",
+        "dishImg": "Muc_Chien_Gion_400x275.jpg",
+        "dishName": "Calamari",
+        "price": "99.000"
+    },
+    {
+        "id": "Mon_20",
+        "describe": "Filled with 2 types of cheese",
+        "dishImg": "Banh_Cuon_Pho_Mai_400x275.jpg",
+        "dishName": "Cheesy Pops",
+        "price": "69.000"
+    },
+    {
+        "id": "Mon_21",
+        "describe": "Chicken thigh fillet with Korean spicy sauce, sweet corn, onion, topped with melted mozzarella cheese",
+        "dishImg": "Ga_Cay_Pho_Mai_Han_Quoc_400x275.jpg",
+        "dishName": "Korean Style Cheesy Chicken",
+        "price": "129.000"
+    },
+    {
+        "id": "Mon_22",
+        "describe": "Deliciously crusty grilled bread covered with savory garlic-butter sauce",
+        "dishImg": "Banh_Mi_Bo_Toi_400x275.jpg",
+        "dishName": "Garlic Bread",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_23",
+        "describe": "Pepsi Lon 320ml",
+        "dishImg": "Pepsi Can.jpeg",
+        "dishName": "Pepsi Can 320Ml",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_24",
+        "describe": "Pepsi Lemon Lon 320ml",
+        "dishImg": "Pepsi_Lemon_Can_400x275.jpg",
+        "dishName": "Pepsi Lemon Can 320Ml",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_25",
+        "describe": "Pepsi No Calories Lon 320ml",
+        "dishImg": "Pepsi Black Can.jpeg",
+        "dishName": "Pepsi No Calories Can 320Ml",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_26",
+        "describe": "7Up Lon 320ml",
+        "dishImg": "7Up_Can_400x275.jpg",
+        "dishName": "7Up Can 320Ml",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_27",
+        "describe": "Mirinda Orange Lon 320Ml",
+        "dishImg": "Mirinda_Orange_Can_400x275.jpg",
+        "dishName": "Mirinda Orange Can 320Ml",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_28",
+        "describe": "Mirinda Soda Lon 320Ml",
+        "dishImg": "Mirinda_Soda_Can_400x275.jpg",
+        "dishName": "Mirinda Soda Can 320Ml",
+        "price": "29.000"
+    },
+    {
+        "id": "Mon_29",
+        "describe": "Pepsi 1.5L",
+        "dishImg": "Pepsi_1.5L_400x275.jpg",
+        "dishName": "Pepsi 1.5L",
+        "price": "39.000"
+    },
+    {
+        "id": "Mon_30",
+        "describe": "7Up 1.5L",
+        "dishImg": "7Up_1.5L_400x275.jpg",
+        "dishName": "7Up 1.5L",
+        "price": "39.000"
     }
 ]
