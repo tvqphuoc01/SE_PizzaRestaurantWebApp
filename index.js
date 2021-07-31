@@ -21,6 +21,7 @@ const shopRoutes = require('./routers/shop.router');
 const FAQRoutes = require('./routers/FAQ.routes');
 const staffLogin = require('./routers/staffLogin.router')
 const staffReservationRoutes = require('./routers/staffReservation.router')
+const cartRoutes = require('./routers/cart.router');
 
 // Views
 app.set('views', './views');
@@ -79,9 +80,7 @@ app.get('/logOut', (req, res) => {
 
 app.use('/staffLogin', staffLogin)
 
-app.get('/ShoppingCart', (req, res) => {
-  res.render('ShoppingCart');
-});
+app.use('/ShoppingCart', authMiddleware.authMiddleware, cartRoutes);
 
 app.use('/StaffReservation', authMiddleware.authMiddleware, staffReservationRoutes)
 

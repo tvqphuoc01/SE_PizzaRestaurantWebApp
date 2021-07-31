@@ -83,46 +83,36 @@ html(lang="en")
         .bodyCart   
             .cart
                 h1 My Cart 
-                ul.cartWrap
-                    li.items
-                        .infoWrap
-                            .cartSection
-                                img.itemImg(src="Aloha.png")
-                                h3 Item Name 1
-                                p.
-                                    <input class="qty" type="text" placeholder="3">
-                                    x $5.00
-                                p.stockStatus In Stock 
-                            .cartSection(style="text-align:center") 
-                                p(style="font-weight:bold;font-size:1.25em;") $15.00
-                            .cartSection.removeWrap 
-                                a(class="remove" href="#") x
-                    li.items.even
-                        .infoWrap
-                            .cartSection
-                                img.itemImg(src="Aloha.png")
-                                h3 Item Name 1
-                                p.
-                                    <input class="qty" type="text" placeholder="3">
-                                    x $5.00
-                                p.stockStatus In Stock 
-                            .cartSection(style="text-align:center") 
-                                p(style="font-weight:bold;font-size:1.25em;") $15.00
-                            .cartSection.removeWrap 
-                                a(class="remove" href="#") x
-                    li.items
-                        .infoWrap
-                            .cartSection
-                                img.itemImg(src="Aloha.png")
-                                h3 Item Name 1
-                                p.
-                                    <input class="qty" type="text" placeholder="3">
-                                    x $5.00
-                                p.stockStatus.out Out In Stock 
-                            .cartSection(style="text-align:center") 
-                                p(style="font-weight:bold;font-size:1.25em;") $15.00
-                            .cartSection.removeWrap 
-                                a(class="remove" href="#") x
+                if user
+                    ul.cartWrap
+                        - var n = 0;
+                        each value in user.cart
+                            if n % 2 == 0
+                                li.items
+                                    .infoWrap
+                                        .cartSection
+                                            img.itemImg(src=user.cart[n].imgUrl)
+                                            h3=user.cart[n].dishName
+                                            input(class="qty" type="text" value=user.cart[n].quantity)
+                                            p.stockStatus In Stock 
+                                        .cartSection(style="text-align:center") 
+                                            p(style="font-weight:bold;font-size:1.25em;")=user.cart[n].price
+                                        .cartSection.removeWrap 
+                                            a(class="remove" href="#") x
+                                - n++;
+                            else
+                                li.items.even
+                                    .infoWrap
+                                        .cartSection
+                                            img.itemImg(src=user.cart[n].imgUrl)
+                                            h3=user.cart[n].dishName
+                                            input(class="qty" type="text" value=user.cart[n].quantity)
+                                            p.stockStatus In Stock 
+                                        .cartSection(style="text-align:center") 
+                                            p(style="font-weight:bold;font-size:1.25em;")=user.cart[n].price
+                                        .cartSection.removeWrap 
+                                            a(class="remove" href="#") x
+                                - n++;
             .promoCode
                 label(for ="promo") Have A Promo Code?
                 input(type="text" name="promo" placeholder="Enter Code")
