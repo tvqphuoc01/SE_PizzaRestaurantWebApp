@@ -24,7 +24,9 @@ const contactGet = async function(req, res) {
     // res.locals.user = client;
     const ref = await firestore.collection('client').where('email', '==', userEmail).get();
     const client = ref.docs[0].data();
+    const cartLength = client.cart.length;
     res.locals.user = client;
+    res.locals.cartLength = cartLength;
     res.render('contact');
   } else {
     res.render('contact');

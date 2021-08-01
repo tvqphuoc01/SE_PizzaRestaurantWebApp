@@ -21,7 +21,19 @@ const cartGet = async function(req, res) {
     // res.locals.user = client;
     const ref = await firestore.collection('client').where('email', '==', userEmail).get();
     const client = ref.docs[0].data();
+    const cartLength = client.cart.length;
+    let totalCart = 0;
+    for (let i = 0; i < cartLength; i++) {
+      totalCart += parseInt(client.cart[i].price);
+    }
+    const subTotal = totalCart * 1000;
+    totalCart = (totalCart / 100) * 10 + totalCart;
+    totalCart = (totalCart + 25)  * 1000;
+    
     res.locals.user = client;
+    res.locals.cartLength = cartLength;
+    res.locals.totals = totalCart.toString() + " VND";
+    res.locals.subTotals = subTotal.toString() + " VND";
     res.render('ShoppingCart');
   } else {
     res.render('ShoppingCart');

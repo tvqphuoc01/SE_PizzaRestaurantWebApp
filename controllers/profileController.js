@@ -62,7 +62,9 @@ const updateUser = async (req, res, next) => {
 
       const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
       const user = ref.docs[0].data();
+      const cartLength = user.cart.length;
       res.locals.user = user;
+      res.locals.cartLength = cartLength;
     }
     res.render('profilePage');
   } catch (error) {

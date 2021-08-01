@@ -48,7 +48,10 @@ html(lang="en")
                     li.nav-item
                         a(class="contact" href="/contact") CONTACT
                     li.nav-item
-                        a(class="fas fa-cart-plus fa-lg cart" href="/ShoppingCart")
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user

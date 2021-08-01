@@ -47,7 +47,10 @@ html(lang="en")
                     li.nav-item
                         a(class="contact" href="/contact") CONTACT
                     li.nav-item
-                        a(class="fas fa-cart-plus fa-lg cart" href="/ShoppingCart")
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
@@ -118,21 +121,26 @@ html(lang="en")
                 input(type="text" name="promo" placeholder="Enter Code")
                 a(href="#" class="btn") >
             .subtotal
-                ul 
-                    li.total
-                        span.label Subtotal 
-                        span.value $35.00
-                    li.total 
-                        span.label Shipping 
-                        span.value $5.00
-                    li.total
-                        span.label Tax
-                        span.value $4.00
-                    li.total(style="font-size: 1.25em;font-weight: bold;")
-                        span.label Total 
-                        span.value $44.00
-                    li.total 
-                        a(href="#" class="btn" style="width:100%;text-align:center") Check
+                if totals
+                    ul 
+                        li.total
+                            if subTotals
+                                span.label Subtotal 
+                                span.value=subTotals
+                            else
+                                span.label Subtotal 
+                                span.value 0 VND
+                        li.total 
+                            span.label Shipping 
+                            span.value 25.000 VND
+                        li.total
+                            span.label Tax
+                            span.value 10%
+                        li.total(style="font-size: 1.25em;font-weight: bold;")
+                            span.label Total 
+                            span.value=totals
+                        li.total 
+                            a(href="#" class="btn" style="width:100%;text-align:center") Check
         //Footer
         .footer
             .container-fluid.row 
