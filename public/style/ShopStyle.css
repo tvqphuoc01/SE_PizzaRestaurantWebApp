@@ -20,7 +20,7 @@
     text-align: center;
 }
 .service-section2{
-    padding-top:350px;
+    padding-top:300px;
 }
 .col-xs-12{
     width: 100%;
@@ -31,6 +31,7 @@
     font-style: italic;
     height: 72px;
     overflow: hidden;
+    text-align: center;
 }
 .cell-food p:hover{
     overflow: visible;
@@ -38,8 +39,6 @@
 .button input.boxed-color-xs{
     border: 0;
     background: #ef0400;
-    border-radius: 0px;
-    padding: 12px 20px;
     color: #fff !important;
     font-size: 15px;
     font-weight: bold;
@@ -62,11 +61,9 @@
 }
 .buttons_added {
     opacity:1;
-    display:inline-block;
-    display:-ms-inline-flexbox;
-    display:inline-flex;
     white-space:nowrap;
     vertical-align:top;
+    text-align: center;
 }
 .is-form {
     overflow:hidden;
@@ -106,5 +103,23 @@
     margin:0;
 }
 .img-responsive{
-    max-height: 251px;
+    width: 270px;
+    height: 270px;
+    padding: 8px;
+    border-radius: inherit;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    position: relative;
 }
+@media only screen and (max-width: 1199px) {
+    .img-responsive{
+        width: 220px;
+        height: 220px;
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .img-responsive{
+      line-height: 1em;
+    }
+  }
