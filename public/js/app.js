@@ -1,4 +1,4 @@
-let hpCharacters = [];
+    let hpCharacters = [];
     function myFunction() {
         var x = document.getElementById("search-bar");
         var y = document.getElementById("nav-list");
