@@ -3,7 +3,7 @@
 'use strict';
 
 const firebase = require('../db');
-const Client = require('../models/client');
+const Order = require('../models/client');
 const firestore = firebase.firestore();
 
 const clientLogin = function(req, res) {

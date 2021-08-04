@@ -22,6 +22,7 @@ const FAQRoutes = require('./routers/FAQ.routes');
 const staffLogin = require('./routers/staffLogin.router')
 const staffReservationRoutes = require('./routers/staffReservation.router')
 const cartRoutes = require('./routers/cart.router');
+const orderRoutes = require('./routers/order.router');
 
 // Views
 app.set('views', './views');
@@ -68,6 +69,8 @@ app.get('/Blog2', (req, res) => {
 app.get('/Blog3', (req, res) => {
   res.render('Blog3');
 });
+
+app.use('/placeOrder', orderRoutes);
 
 app.use('/Shop', shopRoutes);
 

@@ -23,6 +23,7 @@ html(lang="en")
     // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
     <script src="app.js"></script>
+    <script src="promoCode.js"></script>
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -92,55 +93,64 @@ html(lang="en")
                         each value in user.cart
                             if n % 2 == 0
                                 li.items
-                                    .infoWrap
+                                    form(method="POST", action='/ShoppingCart').infoWrap
                                         .cartSection
                                             img.itemImg(src=user.cart[n].imgUrl)
                                             h3=user.cart[n].dishName
                                             input(class="qty" type="text" value=user.cart[n].quantity)
+                                            input(type="text" name="Id_Mon" value=user.cart[n].Id_Mon style="display: none")
                                             p.stockStatus In Stock 
                                         .cartSection(style="text-align:center") 
                                             p(style="font-weight:bold;font-size:1.25em;")=user.cart[n].price
                                         .cartSection.removeWrap 
-                                            a(class="remove" href="#") x
+                                            input(class="remove" type="submit" value="X")
                                 - n++;
                             else
                                 li.items.even
-                                    .infoWrap
+                                    form(method="POST", action="/ShoppingCart").infoWrap
                                         .cartSection
                                             img.itemImg(src=user.cart[n].imgUrl)
                                             h3=user.cart[n].dishName
                                             input(class="qty" type="text" value=user.cart[n].quantity)
+                                            input(type="text" name="Id_Mon" value=user.cart[n].Id_Mon style="display: none")
                                             p.stockStatus In Stock 
                                         .cartSection(style="text-align:center") 
                                             p(style="font-weight:bold;font-size:1.25em;")=user.cart[n].price
                                         .cartSection.removeWrap 
-                                            a(class="remove" href="#") x
+                                            input(class="remove" type="submit" value="X")
                                 - n++;
             .promoCode
                 label(for ="promo") Have A Promo Code?
-                input(type="text" name="promo" placeholder="Enter Code")
-                a(href="#" class="btn") >
-            .subtotal
+                input(id="promo" type="text" name="promo" value= "" placeholder="Enter Code")
+                a(id="promoButton" href="#" class="btn" onclick="addPromo()" style="display: inline-block;") >
+            form(method="POST", action="/placeOrder").subtotal
                 if totals
                     ul 
                         li.total
                             if subTotals
                                 span.label Subtotal 
                                 span.value=subTotals
+                                input(type="text" name="subTotals" value=subTotals style="display: none")
                             else
                                 span.label Subtotal 
                                 span.value 0 VND
-                        li.total 
-                            span.label Shipping 
-                            span.value 25.000 VND
+                        li.total
+                            if subTotals 
+                                span.label Shipping 
+                                span.value 25.000 VND
+                                input(type="text" name="Shipping" value="25.000" style="display: none")
                         li.total
                             span.label Tax
                             span.value 10%
+                        li.total(id="discount" style="display: none;")
+                            span.label Discount
+                            span.value(id="Offer") 10%
                         li.total(style="font-size: 1.25em;font-weight: bold;")
                             span.label Total 
-                            span.value=totals
+                            span(id="totals").value=totals
+                            input(id="totalsInput" type="text" name="Total" value=totals style="display: none")
                         li.total 
-                            a(href="#" class="btn" style="width:100%;text-align:center") Check
+                            input(class="btn" style="width:100%;text-align:center" type="submit" value="CHECK")
         //Footer
         .footer
             .container-fluid.row 
