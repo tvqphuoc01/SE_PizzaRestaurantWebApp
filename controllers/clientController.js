@@ -29,6 +29,8 @@ const addClient = async (req, res, next) => {
       phone: data.phone,
       cart: [],
       avatar: data.avatar,
+      checkOrder: "",
+      historyOrder: []
     });
     res.render('logIn');
   } catch (error) {

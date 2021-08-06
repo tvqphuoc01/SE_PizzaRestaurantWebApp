@@ -23,7 +23,7 @@ const staffLogin = require('./routers/staffLogin.router')
 const staffReservationRoutes = require('./routers/staffReservation.router')
 const cartRoutes = require('./routers/cart.router');
 const orderRoutes = require('./routers/order.router');
-
+const doneOrderRoutes = require('./routers/doneOrder.router');
 // Views
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -71,6 +71,8 @@ app.get('/Blog3', (req, res) => {
 });
 
 app.use('/placeOrder', orderRoutes);
+
+app.use('/done', doneOrderRoutes);
 
 app.use('/Shop', shopRoutes);
 

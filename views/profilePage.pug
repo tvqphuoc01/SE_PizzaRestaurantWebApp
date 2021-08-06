@@ -85,6 +85,10 @@ head
           span(class="fa-stack fa-2x has-badge" data-count=cartLength)
             a(href="/ShoppingCart")
               i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+        else
+          span(class="fa-stack fa-2x has-badge" data-count=0)
+            a(href="/ShoppingCart")
+              i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
       li.nav-item
         i(class="fas fa-search fa-lg" onclick="myFunction()")
       if user

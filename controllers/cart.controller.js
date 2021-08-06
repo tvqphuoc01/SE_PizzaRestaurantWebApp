@@ -21,19 +21,39 @@ const cartGet = async function(req, res) {
     // res.locals.user = client;
     const ref = await firestore.collection('client').where('email', '==', userEmail).get();
     const client = ref.docs[0].data();
-    const cartLength = client.cart.length;
-    let totalCart = 0;
-    for (let i = 0; i < cartLength; i++) {
-      totalCart += parseInt(client.cart[i].price);
-    }
-    const subTotal = totalCart * 1000;
-    totalCart = (totalCart / 100) * 10 + totalCart;
-    totalCart = (totalCart + 25)  * 1000;
+
+    if(client.checkOrder === "") {
+      const cartLength = client.cart.length;
+      let totalCart = 0;
+      for (let i = 0; i < cartLength; i++) {
+        totalCart += parseInt(client.cart[i].price);
+      }
+      const subTotal = totalCart * 1000;
+      totalCart = (totalCart / 100) * 10 + totalCart;
+      totalCart = (totalCart + 25)  * 1000;
+
+      res.locals.checkCart = true;
+      res.locals.user = client;
+      res.locals.cartLength = cartLength;
+      res.locals.totals = totalCart.toString() + " VND";
+      res.locals.subTotals = subTotal.toString() + " VND";
+    } else {
+      const refOrder = await firestore.collection('order').doc(client.checkOrder).get();
+      const clientOrder = refOrder.data();
+      
+      //Neu don hang van con thi ko cho nguoi dung add them hang vao cart
+      let updates = {
+        // Set update cho cart 
+        cart: [],
+      }
     
-    res.locals.user = client;
-    res.locals.cartLength = cartLength;
-    res.locals.totals = totalCart.toString() + " VND";
-    res.locals.subTotals = subTotal.toString() + " VND";
+      await firestore.collection('client').doc(req.cookies.userId).update(updates);
+
+      res.locals.clientOrder = clientOrder;
+      res.locals.OrderId = client.checkOrder;
+      res.locals.user = client;
+      res.locals.checkCart = false;
+    }
     res.render('ShoppingCart');
   } else {
     res.render('ShoppingCart');
@@ -85,7 +105,7 @@ const cartPost = async function(req, res) {
     const subTotal = totalCart * 1000;
     totalCart = (totalCart / 100) * 10 + totalCart;
     totalCart = (totalCart + 25)  * 1000;
-    
+
     res.locals.user = client;
     res.locals.cartLength = cartLength;
     res.locals.totals = totalCart.toString() + " VND";
