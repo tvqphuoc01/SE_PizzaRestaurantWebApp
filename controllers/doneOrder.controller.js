@@ -20,9 +20,7 @@ const doneOrderPost = async (req, res) => {
         }); ;
         const ref = await firestore.collection('client').where('email', '==', userEmail).get();
         const client = ref.docs[0].data();
-        const refOrder = await firestore.collection('order').where('userId', '==', req.cookies.userId).get();
-        let OrderId = refOrder.docs[0].id;
-        client.historyOrder.push(OrderId);
+        client.historyOrder.push(client.checkOrder);
         //Set checkOrder cua User ve "" sau khi order
         let updates = {
             // Set update cho checkOrder 
