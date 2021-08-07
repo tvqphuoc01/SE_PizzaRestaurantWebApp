@@ -9,7 +9,6 @@ const clientController = require('../controllers/clientController');
 const validateClient = require('../validate/signUpValidate');
 
 router.post('/',
-    upload.single('avatar'),
     validateClient.validateNewUser,
     clientController.addClient,
 );

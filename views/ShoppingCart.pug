@@ -95,6 +95,9 @@ html(lang="en")
             if checkCart === true   
                 .cart
                     h1 My Cart 
+                    if errors
+                        .form-group
+                        .alert.alert-danger=errors
                     if user
                         ul.cartWrap
                             - var n = 0;

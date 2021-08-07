@@ -15,8 +15,7 @@ module.exports.validateNewUser = async function(req, res, next) {
     emailArray.push(doc.data().email);
     userNameArray.push(doc.data().userName);
   });
-
-
+  
   let checkEmail = true;
   let checkUserName = true;
 
@@ -52,10 +51,6 @@ module.exports.validateNewUser = async function(req, res, next) {
 
   if (!req.body.LastName) {
     errors.push('Last name is required !!!');
-  }
-
-  if (!req.body.Avatar) {
-    errors.push('Avatar is required !!!');
   }
 
   if (!req.body.Gender) {

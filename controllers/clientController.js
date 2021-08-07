@@ -15,7 +15,7 @@ const clientGet = function(req, res) {
 // Add new Client to Firebase
 const addClient = async (req, res, next) => {
   try {
-    req.body.avatar = req.file.path.split('\\').slice(1).join('/');
+    //req.body.avatar = req.file.path.split('\\').slice(1).join('/');
     const data = req.body;
 
     await firestore.collection('client').doc().set({
@@ -28,7 +28,7 @@ const addClient = async (req, res, next) => {
       address: data.address,
       phone: data.phone,
       cart: [],
-      avatar: data.avatar,
+      avatar: "",
       checkOrder: "",
       historyOrder: []
     });
