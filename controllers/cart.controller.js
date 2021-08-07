@@ -108,6 +108,7 @@ const cartPost = async function(req, res) {
 
     res.locals.user = client;
     res.locals.cartLength = cartLength;
+    res.locals.checkCart = true;
     res.locals.totals = totalCart.toString() + " VND";
     res.locals.subTotals = subTotal.toString() + " VND";
     res.render('ShoppingCart');
