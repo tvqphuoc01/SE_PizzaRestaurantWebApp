@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Viaoda+Libre&display=swap');
+
+
 .page-header{
     width: 98%;
 }
@@ -12,7 +18,7 @@
     width: 75%;
     max-width: 960px;
     margin: 0 auto;
-    padding: 1em 0;
+    /* padding: 1em 0; */
     color:black;
 }
 .cart .items{
@@ -58,8 +64,8 @@
     width: 2em;
     text-align: center;
     font-size: 1em;
-    padding: .25em;
-    margin: 1em .5em 0 0;
+    /* padding: .25em;
+    margin: 1em .5em 0 0; */
 }
 .stockStatus{
     color: #82CA9C;
@@ -115,7 +121,14 @@
 .promoCode a{
     text-decoration: none;
 }
-.btn{
+
+.promoCode .btn:hover{
+    padding-left:7%;
+    transition: all 0.25s linear;
+    background:tomato;
+}
+
+.next-btn{
     width: 15%;
     padding: .5em 0;
     border-radius: 0 1em 1em 0;
@@ -127,12 +140,7 @@
     font-weight: bold !important;
     transition: all 0.25s linear !important;
 }
-.promoCode .btn:hover{
-    color:white;
-    padding-left:7%;
-    transition: all 0.25s linear;
-    background:tomato;
-}
+
 .subtotal{
     width: 100%;
 }
@@ -159,4 +167,233 @@
     color:white;
     transition: all 0.25s linear;
     background:tomato;
+}
+
+.page-header-cart {
+    background-image: url("cart-caroul.jpg");
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 0;
+    padding-top: 150px;
+    padding-bottom: 60px;
+    width: 100%;
+}
+
+.font-raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+
+.font-playball {
+    font-family: 'Playball', cursive;
+}
+
+.font-weight-400 {
+    font-weight: 400;
+}
+
+.font-size-44 {
+    font-size: 44px;
+}
+
+.font-size-34 {
+    font-size: 34px;
+}
+
+.font-size-20 {
+    font-size: 20px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.white-color {
+    color: white;
+}
+
+.gold-color {
+    color: #C59D5F;
+}
+
+.mar-top-70 {
+    margin-top: 70px !important;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.cart-title {
+    font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 40px;
+text-transform: uppercase;
+}
+
+.pad-left-0 {
+    padding-left: 0;
+}
+
+.single-line {
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+
+.mar-top-20 {
+    margin-top: 20px;
+}
+
+.mar-bot-10 {
+    margin-bottom: 10px;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.food-img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-title {
+    font-family: 'Viaoda Libre', cursive;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 40px;
+}
+
+.mar-bot-0 {
+    margin-bottom: 0 !important;
+}
+
+.price-style {
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 30px;
+}
+
+.x-btn {
+    color: black;
+    border: none;
+    background: none;
+}
+
+.mar-bot-20 {
+    margin-bottom: 20px;
+}
+
+.mar-top-100 {
+    margin-top: 100px !important;
+}
+
+.promotion-title {
+    font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 40px;
+}
+
+.promotion-input {
+    background: #FFFFFF;
+    height: 50px;
+border: 1px solid #C59D5F;
+box-sizing: border-box;
+border-radius: 10px;
+
+font-family: Karla;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+padding-left: 15px;
+line-height: 40px;
+}
+
+.enter-btn {
+    background: black;
+    height: 40px;
+    font-family: Playball;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 24px;
+color: #C59D5F;
+}
+
+.enter-btn.btn:hover {
+    padding-left:7%;
+    transition: all 0.25s linear;
+    background: black !important;
+    color: #C59D5F !important;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.mar-bot-15 {
+    margin-bottom: 15px;
+}
+
+.mar-top-45 {
+    margin-top: 45px;
+}
+
+.red-color {
+    color: red;
+}
+
+.small-title {
+    font-family: Raleway;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 40px;
+text-transform: uppercase;
+}
+
+.checkout-btn {
+    background: #000000;
+    width: 100%;
+    height: 50px;
+border: 1px solid #DDDDDD;
+box-sizing: border-box;
+border-radius: 5px;
+font-family: Playball;
+font-style: normal;
+font-weight: normal;
+font-size: 25px !important;
+line-height: 24px;
+color: #C59D5F;
+}
+
+.checkout-btn.btn:hover {
+    padding-left:7%;
+    transition: all 0.25s linear;
+    color: #C59D5F !important;
+}
+
+.mar-bot-40 {
+    margin-bottom: 40px;
+}
+
+.done-btn.btn:hover {
+    
 }
