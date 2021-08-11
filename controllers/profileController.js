@@ -97,7 +97,16 @@ const profileGet = async function(req, res) {
     // res.locals.user = client;
     if (check === 0) {
       const ref = await firestore.collection('client').where('email', '==', userEmail).get();
+      const refOrder = await firestore.collection('order').where('userId', '==', req.cookies.userId).get();
       const user = ref.docs[0].data();
+      let userHistoryOrder = [];
+      let userHistoryOrderId = [];
+      for(let i = 0; i < user.historyOrder.length; i++) {
+        userHistoryOrder.push(refOrder.docs[i].data());
+        userHistoryOrderId.push(refOrder.docs[i].id);
+      }
+      res.locals.userHistoryId = userHistoryOrderId;
+      res.locals.userHistory = userHistoryOrder;
       res.locals.user = user;
     } else {
       const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
