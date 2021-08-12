@@ -26,7 +26,7 @@ const cartGet = async function(req, res) {
       const cartLength = client.cart.length;
       let totalCart = 0;
       for (let i = 0; i < cartLength; i++) {
-        totalCart += parseInt(client.cart[i].price);
+        totalCart += parseInt(client.cart[i].price) * parseInt(client.cart[i].quantity);
       }
       const subTotal = totalCart * 1000;
       totalCart = (totalCart / 100) * 10 + totalCart;

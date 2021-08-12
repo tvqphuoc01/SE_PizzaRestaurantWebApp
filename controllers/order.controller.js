@@ -62,7 +62,7 @@ const placeOrder = async (req, res) => {
                 date: date,
                 time: time,
                 cart: client.cart,
-                totals: data.Total * 1000,
+                totals: parseInt(data.Total),
                 shipFee: data.Shipping,
                 status: 4,
                 address: data.address,
