@@ -9,8 +9,11 @@ html(lang="en")
         // Boostrap & CSS
         link(rel="stylesheet" href="register_style.css")
         link(rel="stylesheet" href="indexStyle.css")
+        link(rel="stylesheet" href="reservation.css")
+        link(rel="stylesheet" href="ShoppingCart.css")        
+
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
-        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
@@ -68,55 +71,124 @@ html(lang="en")
                             a(class="contact" href="/signUp") SIGN UP     
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
-        //- Page Header
-        .page_header_login
-            img.Image_Pg_Header(src="site-img12.jpg" alt="Page header")
-            .pageH
-                .Page_header_content
-                    h2.content_header RESERVATION
-                    p.content_main Book a Table...!
-                //- Breadcrumb
-                .Breadcrumbs(style="font-family: 'Raleway',san-serif")
-                    a.Home(href="/" style="text-decoration: none;") Home
-                    i /
-                    p.Login_Form(href="") Reservation
+                    input(type="text" placeholder="Search Here ..... !", )
+
+        .page-header-reser 
+            .container.flex-col.justify-content-center.text-align-center 
+                p.header-title.white-color make a reservation
+                p.font-playball.font-size-34.gold-color Booking a table is easy!!
+
+        .slogan.mar-top-50 
+            .container 
+                .row.d-flex.justify-content-center.align-items-center 
+                    p.slogan-header reservation
+                .row.d-flex.justify-content-center.align-items-center 
+                    img(src='color-separator.png')
+                .row.d-flex.justify-content-center.align-items-center  
+                    p.slogan-text.text-align-center Numerous commentators have also referred to the supposed restaurant owner's eccentric habit of touting for custom outside his establishment, dressed in aristocratic fashion and brandishing a sword.
+                .row.d-flex.justify-content-center.align-items-center 
+                    .golden-line.flex-col.justify-content-center 
+                    //- i.fas.fa-circle.fa-xs.dot-line(style='width: 5px; height: 5px;')
+                    .golden-line.flex-col.justify-content-center  
+
+        .fill-in-reservation.mar-top-70 
+            .container 
+                .row
+                    .col-6
+                        .row
+                            .col-12.text-align-center
+                                p.form-title book a table
+                    .col-6
+                        .row
+                            .col-12.text-align-center
+                                p.form-title contact details
+                .row
+                    .col-6
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Date")
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Time")
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Sai Gon Center, Ho Chi Minh")
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="1 person")
+                    .col-6
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Name")
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Email")
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Phone")
+                        .row.flex-col.justify-content-center.mar-top-20
+                            .col-12
+                                input.box-input(id="promo" type="text" name="promo" value= "" placeholder="Message")
+
+        .re-footer.mar-top-70  
+            .page-re-footer 
+                .container.flex-col.justify-content-center
+                    .row.flex-col.justify-content-center.align-items-center 
+                        p.re-footer-title.text-align-center opening hours 
+                    .row.flex-col.justify-content-center.align-items-center  
+                        p.re-footer-subtitle.gold-color.text-align-center call for reservations
+                    .row.d-flex.justify-content-center.align-items-center 
+                        .golden-line.flex-col.justify-content-center 
+                        //- i.fas.fa-circle.fa-xs.dot-line(style='width: 5px; height: 5px;')
+                        .golden-line.flex-col.justify-content-center  
+                    .row.flex-col.justify-content-center.align-items-center.mar-top-30  
+                        p.re-footer-subtitle.gold-color.text-align-center everyday
+                    .row.flex-col.justify-content-center.align-items-center  
+                        p.re-footer-title.mar-bot-0.text-align-center 11:00
+                        p.re-footer-title.mar-bot-0.text-align-center 22:00
+                    .row.flex-col.justify-content-center.align-items-center.mar-top-30  
+                        p.re-footer-subtitle.gold-color.text-align-center (+84) 123 456 789
+
+
+
         //- Form register
-        .form.Log_in(style="max-width:50%; margin:auto;")
-            .frame_log_in 
-                h3 RESERVATION
-                .ROW 
-                    .col.inside.UserName
-                        input.text_login(type="username" placeholder="Username" name="username")
-                        i.fas.fa-user
-                    .col.inside.E-mail
-                        input.text_login(type="email" placeholder="Email address" name="email")
-                        i.fas.fa-envelope
-                    .col.inside.Password
-                        input.text_login(type="password" placeholder="Phone Number" name="password")
-                        i.fas.fa-lock
-                    .col.inside.Confirm
-                        input.text_login(type="date" id="start" name="trip-start" value="2018-07-22" min="2020-01-01" max="2025-12-31")
-                    .col.inside.Gender 
-                        select.Gender_List(name="Gender") Gender
-                            option(value="0" disabled=" selected disabled") Gender 
-                            option(value="1") Male 
-                            option(value="2") Female 
-                            option(value="3") Other     
-                    .col.inside.Guest 
-                        select.Gender_List(name="Guest")
-                            option(value="" disabled selected) Number of Guest
-                            option(value="1") 1
-                            option(value="2") 2
-                            option(value="3") 3
-                            option(value="3") 4
-                            option(value="3") 5
-                            option(value="3") 6
-                            option(value="3") 7
-                            option(value="0") More
-                    .clear
-                .button 
-                    a.btn.register(href="#" style="color: white; font-weight: bold") RESERVATION NOW
+            .form.Log_in(style="max-width:50%; margin:auto;")
+                .frame_log_in 
+                    h3 RESERVATION
+                    .ROW 
+                        .col.inside.UserName
+                            input.text_login(type="username" placeholder="Username" name="username")
+                            i.fas.fa-user
+                        .col.inside.E-mail
+                            input.text_login(type="email" placeholder="Email address" name="email")
+                            i.fas.fa-envelope
+                        .col.inside.Password
+                            input.text_login(type="password" placeholder="Phone Number" name="password")
+                            i.fas.fa-lock
+                        .col.inside.Confirm
+                            input.text_login(type="date" id="start" name="trip-start" value="2018-07-22" min="2020-01-01" max="2025-12-31")
+                        .col.inside.Gender 
+                            select.Gender_List(name="Gender") Gender
+                                option(value="0" disabled=" selected disabled") Gender 
+                                option(value="1") Male 
+                                option(value="2") Female 
+                                option(value="3") Other     
+                        .col.inside.Guest 
+                            select.Gender_List(name="Guest")
+                                option(value="" disabled selected) Number of Guest
+                                option(value="1") 1
+                                option(value="2") 2
+                                option(value="3") 3
+                                option(value="3") 4
+                                option(value="3") 5
+                                option(value="3") 6
+                                option(value="3") 7
+                                option(value="0") More
+                        .clear
+                    .button 
+                        a.btn.register(href="#" style="color: white; font-weight: bold") RESERVATION NOW
+
+
         .footer
             .container-fluid.row 
                 .col-6
