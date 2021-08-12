@@ -4,7 +4,7 @@ const firebase = require('../db');
 const Staff = require('../models/Staff');
 const firestore = firebase.firestore();
 
-const staffReservationGet = async function(req, res) {
+const StaffCheckOrderPost = async function(req, res) {
   if (req.cookies.userId) {
     let userEmail;
     const findEmail = await firestore.collection('staff').doc(req.cookies.userId).get().then((doc) => {
@@ -20,24 +20,27 @@ const staffReservationGet = async function(req, res) {
     // const client = ref.docs[0].data();
     // res.locals.user = client;
     const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
-    const refOrderList = await firestore.collection('order').get();
+    const userOfOrder = await firestore.collection('client').doc(req.body.Id).get();
+    const refOrder = await firestore.collection('order').where('userId', '==', req.body.Id).get();
+    const userOfOrderData = userOfOrder.data();
     let orderList = [];
-    refOrderList.docs.map(docs => orderList.push(docs.data()));
-    let newOrder = [];
+    refOrder.docs.map(docs => orderList.push(docs.data()));
+    let newOrder;
     for (let i = 0; i < orderList.length; i++) {
-      if(orderList[i].status == 4) {
-        newOrder.push(orderList[i]);
+      if(orderList[i].status != 5) {
+        newOrder = orderList[i];
       }
     }
     const client = ref.docs[0].data();
     res.locals.user = client;
     res.locals.newOrder = newOrder;
-    res.render('StaffReservation');
+    res.locals.OrderId = userOfOrderData.checkOrder;
+    res.render('StaffCheckOrder');
   } else {
-    res.render('StaffReservation');
+    res.render('StaffCheckOrder');
   }
 };
 
 module.exports = {
-  staffReservationGet,
+    StaffCheckOrderPost,
 };

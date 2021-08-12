@@ -10,7 +10,8 @@ html(lang="en")
     link(rel="stylesheet" href="serviceStyle.css")
     link(rel="stylesheet" href="menuStyle.css")
     link(rel="stylesheet" href="profileStyle.css")
-
+    link(rel="stylesheet" href="StaffReservation.css")
+    link(rel='stylesheet' href='staffDashboard.css')
 
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
@@ -39,29 +40,7 @@ html(lang="en")
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a>
                     li.nav-item 
                         a(class="contact" href="/Shop") SHOP
-                    li.nav-item.dropdown PAGES 
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="/aboutUs") About Us
-                            a(class="dropdown-item" href="/service") Service
                     li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
-                    li.nav-item 
-                        a(class="reservation" href="/reservation") RESERVATION
-                    li.nav-item 
-                        a(class="Blog" href="/Blog") BLOG
-                    li.nav-item
-                        a(class="contact" href="/contact") CONTACT
-                    li.nav-item
-                        if cartLength
-                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
-                                a(href="/ShoppingCart")
-                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
-                        else
-                            span(class="fa-stack fa-2x has-badge" data-count=0)
-                                a(href="/ShoppingCart")
-                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
-                    li.nav-item
-                        i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
                         li.nav-item
                             a(href="/profilePage")
@@ -86,220 +65,23 @@ html(lang="en")
         .page-header-cart
             .container
                 .col-lg-6.col-md-6
-                    h3.font-raleway.font-weight-700.font-size-44.white-color My Cart
-                    p.font-playball.font-weight-400.font-size-34.gold-color Laughter is brightest where food is best
-                .col-lg-6.col-md-6
-                    .breadcrumbs
-                        a(href="/" style="color:white") Home 
-                        i /       
-                        a Cart
+                    h3.font-raleway.font-weight-700.font-size-44.white-color Check Order List
 
 
         .bodyCart 
-            if checkCart === true  
-                .cart-style
-                    if errors 
-                        .form-group 
-                        .alert.alert-danger=errors
-                    if user
-                        .container.mar-top-100 
-                            .row
-                                .col-5.text-align-center 
-                                    p.cart-title products
-                                .col-2.text-align-center 
-                                    p.cart-title price
-                                .col-2.text-align-center 
-                                    p.cart-title qty
-                                .col-2.text-align-center
-                                    p.cart-title total
-                            ul.pad-left-0
-                                - var n = 0;
-                                each value in user.cart
-                                    .single-line.mar-top-20.mar-bot-20
-                                    li
-                                        form(method="POST" action='/ShoppingCart')
-                                            .row.mar-top-20.mar-bot-10
-                                                input(type="text" name="Id_Mon" value=user.cart[n].Id_Mon style="display: none")
-                                                .col-5.d-flex.justify-content-space-between
-                                                    .col-5.flex-col.justify-content-center
-                                                        img.food-img(src=user.cart[n].imgUrl)
-                                                    .col-7.flex-col.justify-content-center
-                                                        p.mar-bot-0.food-title=user.cart[n].dishName
-                                                .col-2.flex-col.justify-content-center.text-align-center 
-                                                    p.price-style.gold-color.mar-bot-0=user.cart[n].price
-
-                                                .col-2.flex-col.justify-content-center.align-items-center
-                                                    input.qty(type="text" value=user.cart[n].quantity)
-
-                                                .col-2.flex-col.justify-content-center.text-align-center  
-                                                    p.price-style.red-color.mar-bot-0=(user.cart[n].price*user.cart[n].quantity).toFixed(3)
-
-                                                .col-1.flex-col.justify-content-center.text-align-center.cartSection.removeWrap
-                                                    //- a(href='#')
-                                                    //-     i.fas.fa-times.x-btn
-                                                    button(class="x-btn" type="submit")
-                                                        i.fa.fa-times
-                                    - n++;
-
-                .promotion-code.mar-top-70 
-                    .container
-                        .row.col-12
-                            label.promotion-title.flex-col.justify-content-center(for ="promo") Have A Promo Code?
-                        .row
-                            .col-10.flex-col.justify-content-center
-                                input.promotion-input(id="promo" type="text" name="promo" value= "" placeholder="Enter Code")
-                            .col-2.flex-col.justify-content-center
-                                a(id="promoButton" href="#" class="enter-btn btn" onclick="addPromo()" style="display: inline-block;")
-                                    i.fas.fa-chevron-right
-
-                form(method="POST" action="/placeOrder").container.mar-top-70
-                    .promotion-code.mar-top-70 
-                        .container
-                            .row.col-12
-                                label.promotion-title.flex-col.justify-content-center(for ="promo") Shipping To?
-                            .row
-                                .col-12.flex-col.justify-content-center
-                                    input.promotion-input(id="promo" type="text" name="address" value= "" placeholder="Address")
-
-                    .row 
-                        .col-10 
-                            p.small-title Subtotal 
-                        .col-2 
-                            if subTotals
-                                p.gold-color.price-style.text-align-right.value=subTotals.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-                                input(type="text" name="subTotals" value=subTotals style="display: none")
-                            else 
-                                span.gold-color.text-align-right.value 0.0
-
-                    .row 
-                        .col-10 
-                            p.small-title Shipping 
-                        .col-2 
-                            if subTotals
-                                p.gold-color.price-style.text-align-right.value 25.000 VND
-                                input(type="text" name="Shipping" value="25.000" style="display: none")
-                            else 
-                                p.gold-color.text-align-right.value 0.0
-
-                    .row
-                        .col-10 
-                            p.small-title Tax 
-                        .col-2 
-                            p.price-style.gold-color.value.text-align-right 10%
-
-                    .row#discount(style='display: none;') 
-                        .col-10 
-                            p.small-title Discount 
-                        .col-2 
-                            p.price-style.gold-color.value.text-align-right(id="Offer") 10%
-
-                    .single-line.mar-bot-15
-                    .row 
-                        .col-10 
-                            p.small-title Total
-                        .col-2
-                            p.price-style.red-color.text-align-right(id="totals").value=totals.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-                            input(id="totalsInput" type="text" name="Total" value=totals style="display: none") 
-
-                    .row.mar-top-45 
-                        .col-12
-                            input.checkout-btn.btn(type="submit" value="Checkout")
-
-
-        //-Cart
-            .bodyCart 
-                if checkCart === true   
-                    .cart
-                        h1 My Cart 
-                        if errors
-                            .form-group
-                            .alert.alert-danger=errors
-                        if user
-                            ul.cartWrap
-                                - var n = 0;
-                                each value in user.cart
-                                    if n % 2 == 0
-                                        li.items.even
-                                            form(method="POST" action='/ShoppingCart').row.mar-top-20.mar-bot-10
-                                                input(type="text" name="Id_Mon" value=user.cart[n].Id_Mon style="display: none")
-                                                .col-5.d-flex.justify-content-space-between
-                                                    .col-5.flex-col.justify-content-center
-                                                        img.food-img(src=user.cart[n].imgUrl)
-                                                    .col-7.flex-col.justify-content-center
-                                                        p.mar-bot-0.food-title=user.cart[n].dishName
-                                                .col-2.flex-col.justify-content-center.text-align-center 
-                                                    p.price-style.gold-color.mar-bot-0=user.cart[n].price
-
-                                                .col-2.flex-col.justify-content-center.align-items-center
-                                                    input.qty(type="text" value=user.cart[n].quantity)
-
-                                                .col-2.flex-col.justify-content-center.text-align-center  
-                                                    p.price-style.red-color.mar-bot-0=(user.cart[n].price*user.cart[n].quantity).toFixed(3)
-
-                                                .cartSection.col-1.flex-col.justify-content-center.text-align-center.cartSection.removeWrap 
-                                                    input(class="remove" type="submit" value="X")
-
-                                        - n++;
-                                    else
-                                        li.items.even
-                                            form(method="POST" action="/ShoppingCart").infoWrap
-                                                .cartSection
-                                                    img.itemImg(src=user.cart[n].imgUrl)
-                                                    h3=user.cart[n].dishName
-                                                    input(class="qty" type="text" value=user.cart[n].quantity)
-                                                    input(type="text" name="Id_Mon" value=user.cart[n].Id_Mon style="display: none")
-                                                    p.stockStatus In Stock 
-                                                .cartSection(style="text-align:center") 
-                                                    p(style="font-weight:bold;font-size:1.25em;")=user.cart[n].price
-                                                .cartSection.removeWrap 
-                                                    input(class="remove" type="submit" value="X")
-                                        - n++;
-                    .promoCode
-                        label(for ="promo") Have A Promo Code?
-                        input(id="promo" type="text" name="promo" value= "" placeholder="Enter Code")
-                        a(id="promoButton" href="#" class="next-btn" onclick="addPromo()" style="display: inline-block;")
-                    form(method="POST" action="/placeOrder").subtotal
-                        if totals
-                            ul 
-                                li.total
-                                    if subTotals
-                                        span.label Subtotal 
-                                        span.value=subTotals
-                                        input(type="text" name="subTotals" value=subTotals style="display: none")
-                                    else
-                                        span.label Subtotal 
-                                        span.value 0 VND
-                                li.total
-                                    if subTotals 
-                                        span.label Shipping 
-                                        span.value 25.000 VND
-                                        input(type="text" name="Shipping" value="25.000" style="display: none")
-                                li.total
-                                    span.label Tax
-                                    span.value 10%
-                                li.total(id="discount" style="display: none;")
-                                    span.label Discount
-                                    span.value(id="Offer") 10%
-                                li.total(style="font-size: 1.25em;font-weight: bold;")
-                                    span.label Total 
-                                    span(id="totals").value=totals
-                                    input(id="totalsInput" type="text" name="Total" value=totals style="display: none")
-                                li.total 
-                                    input(class="btn" style="width:100%;text-align:center" type="submit" value="CHECK")
-
-        if checkCart === false
-            if clientOrder
+            if newOrder
                 .container.mar-bot-40
                     // Accepted
                     .card-body
                         .row
                             .col.d-flex.justify-content-between.align-items-center.align-content-center
-                                .id-order
-                                    .mb-0.d-flex.align-items-center
-                                        img#star.mr-1(src='https://img.icons8.com/color/26/000000/christmas-star.png' width='19' height='19')
-                                        h6.mb-0=OrderId
+                                if OrderId
+                                    .id-order
+                                        .mb-0.d-flex.align-items-center
+                                            img#star.mr-1(src='https://img.icons8.com/color/26/000000/christmas-star.png' width='19' height='19')
+                                            h6.mb-0=OrderId
                                 .status-order
-                                    if clientOrder.status === 0
+                                    if newOrder.status === 0
                                         h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
                                             p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
                                                 svg#Layer_1.pad-5(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 507.2 507.2' style='enable-background:new 0 0 507.2 507.2;' xml:space='preserve' width='30px' height='30px')
@@ -309,7 +91,7 @@ html(lang="en")
                                                         path(style='fill:#FFFFFF;' d='M260,310.4c11.2,11.2,11.2,30.4,0,41.6l-23.2,23.2c-11.2,11.2-30.4,11.2-41.6,0L93.6,272.8   c-11.2-11.2-11.2-30.4,0-41.6l23.2-23.2c11.2-11.2,30.4-11.2,41.6,0L260,310.4z')
                                                         path(style='fill:#FFFFFF;' d='M348.8,133.6c11.2-11.2,30.4-11.2,41.6,0l23.2,23.2c11.2,11.2,11.2,30.4,0,41.6l-176,175.2   c-11.2,11.2-30.4,11.2-41.6,0l-23.2-23.2c-11.2-11.2-11.2-30.4,0-41.6L348.8,133.6z')
                                                 span.text-muted Accepted
-                                    if clientOrder.status === 1
+                                    if newOrder.status === 1
                                         h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
                                             p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
                                                 svg#Layer_1.pad-5(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve' width='30px' height='30px')
@@ -320,7 +102,7 @@ html(lang="en")
                                                         path(style='fill:#FFFFFF;' d='M160.544,371.536c-5.12,0-10.232-1.952-14.144-5.856c-7.816-7.816-7.816-20.472,0-28.28   l193.832-193.832c7.816-7.816,20.472-7.816,28.28,0s7.816,20.472,0,28.28L174.688,365.68   C170.784,369.584,165.664,371.536,160.544,371.536z')
 
                                                 span.text-muted Cancelled
-                                    if clientOrder.status === 2
+                                    if newOrder.status === 2
                                         h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
                                             p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
                                                 svg#Capa_1(xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 512 512' height='30px' viewbox='0 0 512 512' width='30px')
@@ -350,7 +132,7 @@ html(lang="en")
                                                             path(d='m437 392c-24.814 0-45 20.186-45 45s20.186 45 45 45 45-20.186 45-45-20.186-45-45-45z' fill='#dfe7f4')
                                                         path(d='m451.854 434.876-10.345-72.42c-1.523-.092-2.965-.456-4.509-.456-8.882 0-17.291 1.824-25.204 4.671l10.351 72.453z' fill='#c7cfe1')
                                                 span.text-muted Delivering
-                                    if clientOrder.status === 3
+                                    if newOrder.status === 3
                                         h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
                                             p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
                                                 svg(xmlns='http://www.w3.org/2000/svg' height='30px' viewbox='-3 0 466 466.53152' width='30px')
@@ -386,7 +168,7 @@ html(lang="en")
                                                     path(d='m449.636719 117.65625-11.3125-11.3125c6.597656-6.613281 7.621093-16.960938 2.453125-24.742188l-3.445313-5.1875 13.3125-8.863281 3.445313 5.167969c9.386718 14.136719 7.523437 32.921875-4.453125 44.9375zm0 0' fill='#fbedbf')
                                                     path(d='m213.019531 242.113281c3.867188 0 7.179688-2.765625 7.871094-6.570312.691406-3.804688-1.4375-7.558594-5.054687-8.917969-30.464844-11.480469-53.289063-23.265625-62.402344-32.144531l-7.671875-8c-.265625-.21875-.550781-.417969-.847657-.59375-.480468 8.171875.308594 16.367187 2.335938 24.296875 19.464844 13.273437 40.636719 23.84375 62.945312 31.417968.902344.335938 1.859376.507813 2.824219.511719zm0 0' fill='#ee6d67')
                                                 span.text-muted Preparing
-                                    if clientOrder.status === 4
+                                    if newOrder.status === 4
                                         h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
                                             p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
                                             svg#Layer_1.pad-5(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve' width='30px' height='30px')
@@ -403,7 +185,7 @@ html(lang="en")
                                                 path(style='fill:#fdfd96;' d='M256,0v217.212c21.388,0,38.788,17.4,38.788,38.788s-17.4,38.788-38.788,38.788V512  c141.158,0,256-114.842,256-256S397.158,0,256,0z M380.121,294.788c-21.388,0-38.788-17.4-38.788-38.788s17.4-38.788,38.788-38.788  c21.388,0,38.788,17.4,38.788,38.788S401.509,294.788,380.121,294.788z')
                                                 path(style='fill:#fed26c;' d='M217.212,256c0-21.388,17.4-38.788,38.788-38.788V0C114.842,0,0,114.842,0,256s114.842,256,256,256  V294.788C234.612,294.788,217.212,277.388,217.212,256z M131.879,294.788c-21.388,0-38.788-17.4-38.788-38.788  s17.4-38.788,38.788-38.788s38.788,17.4,38.788,38.788S153.266,294.788,131.879,294.788z')
                                             span.text-muted Waiting
-                                    if clientOrder.status === 5
+                                    if newOrder.status === 5
                                         h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
                                             p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
                                                 svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 508 508' style='enable-background:new 0 0 508 508;' xml:space='preserve' width='30px' height='30px')
@@ -416,31 +198,34 @@ html(lang="en")
                                                 span.text-muted Done  
                             .col-12.d-flex.align-items-center.align-content-center.justify-content-between
                                 p.card-text.text-muted.small.mar-bot-0
-                                    span.text-muted=clientOrder.date
+                                    span.text-muted=newOrder.date
                                     i.fas.fa-circle.text-muted.small.pad-5.pad-bot-5 
-                                    span.text-muted=clientOrder.time
+                                    span.text-muted=newOrder.time
                                 p.card-text.text-muted.small
-                                    span.font-weight-bold.text-muted=clientOrder.totals.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                                    span.font-weight-bold.text-muted=newOrder.totals.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                     .single-line
                     .card-body
                         .col-12
                             - var n = 0;
-                            each value in clientOrder.cart
+                            each value in newOrder.cart
                                 .row
                                     .col-3.food-grid-item.grid-style-two.mar-bot-0
                                         .food-thumb.fixed-size(style='text-align: center;').flex-col.justify-content-center
-                                            img(src=clientOrder.cart[n].imgUrl)
+                                            img(src=newOrder.cart[n].imgUrl)
                                     .col-4.food-info.flex-col.justify-content-center
                                         h3.food-title.flex-col.justify-content-center
-                                            a.font-viaoda.font-size-20(href='/menu')=clientOrder.cart[n].dishName
+                                            a.font-viaoda.font-size-20(href='/menu')=newOrder.cart[n].dishName
                                     .col-2.right-align.flex-col.justify-content-center.text-align-center 
-                                        p.font-inter.font-size-16.mar-bot-0=clientOrder.cart[n].quantity
-                                    .col-3.reciepe-no.font-size-16.pad-0.price-style.red-color.text-align-right.flex-col.justify-content-center=(clientOrder.cart[n].price*clientOrder.cart[n].quantity).toFixed(3)
+                                        p.font-inter.font-size-16.mar-bot-0=newOrder.cart[n].quantity
+                                    .col-3.reciepe-no.font-size-16.pad-0.price-style.red-color.text-align-right.flex-col.justify-content-center=(newOrder.cart[n].price*newOrder.cart[n].quantity).toFixed(3)
                                 - n++;
-                    form(method="POST" action="/done").card-footer.bg-white.px-0
+                    form.card-footer.bg-white.px-0
                         .row
-                            .col-12.font-raleway
-                                input.done-btn.btn(type="submit" value="Done").bn34
+                            .col-12.font-raleway.row
+                                .col-3
+                                    input.btn.accept-btn(type="submit" value="Accept Order")
+                                .col-3
+                                    input.btn.accept-btn(type="submit" value="Cancel Order")
 
         //Footer
         .footer

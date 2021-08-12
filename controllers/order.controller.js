@@ -62,9 +62,10 @@ const placeOrder = async (req, res) => {
                 date: date,
                 time: time,
                 cart: client.cart,
-                totals: data.Total,
+                totals: data.Total * 1000,
                 shipFee: data.Shipping,
-                status: 4
+                status: 4,
+                address: data.address,
             });
             let OrderId = "";
             const refOrder = await firestore.collection('order').where('userId', '==', req.cookies.userId).get();

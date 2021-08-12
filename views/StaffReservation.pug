@@ -23,19 +23,7 @@ html(lang="en")
     <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
     // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
-
-    script. 
-        function myFunction() {
-            var x = document.getElementById("search-bar");
-            var y = document.getElementById("nav-list");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                    y.style.display = "none";
-                } else {
-                    x.style.display = "none";
-                    y.style.display = "flex";
-                }
-            }
+    <script src="app.js"></script>
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -239,60 +227,35 @@ html(lang="en")
 
                 #myTabContent.tab-content
                     #Orders.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='orders-tab')
-                        .container 
-                            .card-body.px-0 
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
-                                        img.border-rad-50(src='site-img24.jpg')
+                        if newOrder
+                            - var n = 0;
+                            each value in newOrder
+                                .container 
+                                    .card-body.px-0 
+                                        .row 
+                                            .col-lg-12.col-md-9.col-sm-8
+                                                .row.mar-bot-10
+                                                    .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="User ID: " + newOrder[n].userId
+                                                    .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600=newOrder[n].date + " " + newOrder[n].time
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Shipping to: " + newOrder[n].address
+                                                        p.font-source-serif.font-size-20.font-weight-300="Number of items: " + newOrder[n].cart.length
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Shipping Fee: " + newOrder[n].shipFee + " VND"
+                                                        p.font-source-serif.font-size-20.font-weight-300="Totals: " + newOrder[n].totals
 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row.mar-bot-10
-                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 Cus' name
-                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
-                                        .row
-                                            .col-12 
-                                                p.font-source-serif.font-size-20.font-weight-300 Shipping to: 227 Nguyen Van Cu, District 5
-                                                p.font-source-serif.font-size-20.font-weight-300 Number of items: 5
-
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row
-                                            .col-lg-6.col-md-6.col-sm-6.col-6
-                                                a.btn.accept-btn(href='#') Accept 
-                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
-                                                a.btn.cancel-btn(href='#') Cancel
-
-                            .card-footer.bg-white.px-0.mar-top-30 
-                                .row.mar-top-30 
-                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
-                                        img.border-rad-50(src='site-img24.jpg')
-
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row.mar-bot-10
-                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 Cus' name
-                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
-                                        .row
-                                            .col-12 
-                                                p.font-source-serif.font-size-20.font-weight-300 Shipping to: 227 Nguyen Van Cu, District 5
-                                                p.font-source-serif.font-size-20.font-weight-300 Number of items: 5
-
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row
-                                            .col-lg-6.col-md-6.col-sm-6.col-6
-                                                a.btn.accept-btn(href='#') Accept 
-                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
-                                                a.btn.cancel-btn(href='#') Cancel
-
-                            .row.mar-top-60
-                                .col-12 
-                                    a.btn.see-all-btn(href='#') See all orders
+                                        form(method="POST" action="/StaffCheckOrder").row 
+                                            .col-lg-2.col-md-3.col-sm-4 
+                                            .col-lg-10.col-md-9.col-sm-8
+                                                .row
+                                                    .col-lg-6.col-md-6.col-sm-6.col-6
+                                                        input(id="totalsInput" type="text" name="Id" value=newOrder[n].userId style="display: none")
+                                                        input.btn.accept-btn(type="submit" value="Check Order")
+                                - n++;
 
 
                     #Bookings.tab-pane.fade(role='tabpanel' aria-labelledby='bookings-tab')
