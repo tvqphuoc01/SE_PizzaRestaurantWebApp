@@ -36,12 +36,13 @@ const indexGet = async function(req, res) {
       const cartLength = user.cart.length;
       res.locals.user = user;
       res.locals.cartLength = cartLength;
+      res.render('index');
     } else {
       const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
       const user = ref.docs[0].data();
       res.locals.user = user;
+      res.redirect('StaffReservation');
     }
-    res.render('index');
   } else {
     res.render('index');
   }

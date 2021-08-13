@@ -25,7 +25,7 @@ const cartRoutes = require('./routers/cart.router');
 const orderRoutes = require('./routers/order.router');
 const doneOrderRoutes = require('./routers/doneOrder.router');
 const staffCheckOrderRoutes = require('./routers/staffCheckOrder.router')
-
+const updateStateOfOrderRoutes = require('./routers/updateStateOfOrder.router')
 // Views
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -73,6 +73,8 @@ app.get('/Blog3', (req, res) => {
 });
 
 app.use('/placeOrder', orderRoutes);
+
+app.use('/updateStateOfOrder', updateStateOfOrderRoutes);
 
 app.use('/done', doneOrderRoutes);
 

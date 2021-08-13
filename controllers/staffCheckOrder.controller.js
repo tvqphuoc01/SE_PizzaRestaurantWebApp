@@ -16,7 +16,7 @@ const StaffCheckOrderPost = async function(req, res) {
       }
     }).catch((error) => {
       console.log('Error getting document:', error);
-    }); ;
+    });
     // const client = ref.docs[0].data();
     // res.locals.user = client;
     const ref = await firestore.collection('staff').where('email', '==', userEmail).get();

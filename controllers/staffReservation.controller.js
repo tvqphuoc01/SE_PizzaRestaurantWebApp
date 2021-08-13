@@ -25,7 +25,7 @@ const staffReservationGet = async function(req, res) {
     refOrderList.docs.map(docs => orderList.push(docs.data()));
     let newOrder = [];
     for (let i = 0; i < orderList.length; i++) {
-      if(orderList[i].status == 4) {
+      if(orderList[i].status !== 5) {
         newOrder.push(orderList[i]);
       }
     }

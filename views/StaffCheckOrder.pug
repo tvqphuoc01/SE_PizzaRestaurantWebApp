@@ -219,13 +219,36 @@ html(lang="en")
                                         p.font-inter.font-size-16.mar-bot-0=newOrder.cart[n].quantity
                                     .col-3.reciepe-no.font-size-16.pad-0.price-style.red-color.text-align-right.flex-col.justify-content-center=(newOrder.cart[n].price*newOrder.cart[n].quantity).toFixed(3)
                                 - n++;
-                    form.card-footer.bg-white.px-0
+                    .card-footer.bg-white.px-0
                         .row
-                            .col-12.font-raleway.row
-                                .col-3
-                                    input.btn.accept-btn(type="submit" value="Accept Order")
-                                .col-3
-                                    input.btn.accept-btn(type="submit" value="Cancel Order")
+                            .col-12.font-raleway.row.d-flex.justify-content-center
+                                form(method="POST" action="/updateStateOfOrder").col-2
+                                    input.btn.btn-success(type="submit" value="Accept Order")
+                                    input(id="totalsInput" type="text" name="Id" value=OrderId style="display: none")
+                                    input(id="totalsInput" type="number" name="State" value=0 style="display: none")
+                                    input(id="totalsInput" type="text" name="UserId" value=newOrder.userId style="display: none")
+                                form(method="POST" action="/updateStateOfOrder").col-2
+                                    input.btn.btn-danger(type="submit" value="Cancel Order")
+                                    input(id="totalsInput" type="text" name="Id" value=OrderId style="display: none")
+                                    input(id="totalsInput" type="number" name="State" value=1 style="display: none")
+                                    input(id="totalsInput" type="text" name="UserId" value=newOrder.userId style="display: none")
+                                form(method="POST" action="/updateStateOfOrder").col-2
+                                    input.btn.btn-warning(type="submit" value="Prepare Order")
+                                    input(id="totalsInput" type="text" name="Id" value=OrderId style="display: none")
+                                    input(id="totalsInput" type="number" name="State" value=3 style="display: none")
+                                    input(id="totalsInput" type="text" name="UserId" value=newOrder.userId style="display: none")
+                                form(method="POST" action="/updateStateOfOrder").col-2
+                                    input.btn.btn-info(type="submit" value="Delivery Order")
+                                    input(id="totalsInput" type="text" name="Id" value=OrderId style="display: none")
+                                    input(id="totalsInput" type="number" name="State" value=2 style="display: none")
+                                    input(id="totalsInput" type="text" name="UserId" value=newOrder.userId style="display: none")
+                                form(method="POST" action="/updateStateOfOrder").col-2
+                                    input.btn.btn-light(type="submit" value="Done Order")
+                                    input(id="totalsInput" type="text" name="Id" value=OrderId style="display: none")
+                                    input(id="totalsInput" type="number" name="State" value=5 style="display: none")
+                                    input(id="totalsInput" type="text" name="UserId" value=newOrder.userId style="display: none")
+                                a(class="btn btn-primary col-2" href="/StaffReservation") Back
+
 
         //Footer
         .footer
