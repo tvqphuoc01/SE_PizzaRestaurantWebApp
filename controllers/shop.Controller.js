@@ -48,8 +48,20 @@ const shopPost = async function(req, res) {
     // res.locals.user = client;
     const ref = await firestore.collection('client').where('email', '==', userEmail).get();
     const client = ref.docs[0].data();
-    //Add mon vao cart cua Client 
-    client.cart.push(req.body);
+    let checkDish = 0;
+
+    //Kiem tra mon da ton tai trong cart hay chua neu co thi them so luong
+    client.cart.map(dish => {
+      if(dish.Id_Mon === req.body.Id_Mon) {
+        dish.quantity = parseInt(req.body.quantity) + parseInt(dish.quantity);
+        checkDish = 1;
+      }
+    });
+
+    //Add mon vao cart cua Client neu mon chua co trong cart
+    if(checkDish === 0) {
+      client.cart.push(req.body);
+    }
     let updates = {
       // Set update cho cart 
       cart: client.cart
