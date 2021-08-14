@@ -10,14 +10,12 @@ function addPromo() {
     var total1 = total.innerHTML;
     var totalBeforeDiscount = "";
     for (let i = 0; i < total1.length; i++) {
-        if(total1[i] != ' ') {
+        if(total1[i] !== ' ' && total1[i] !== '.') {
             totalBeforeDiscount += total1[i];
-        } else {
-            break;
         }
     }
     console.log(totalBeforeDiscount);
-    totalBeforeDiscount = parseFloat(totalBeforeDiscount) * 1000;
+    totalBeforeDiscount = parseFloat(totalBeforeDiscount);
     console.log(totalBeforeDiscount);
     var finalTotal = totalBeforeDiscount;
     for (let i = 0; i < promoCodeArr.length; i++) {
