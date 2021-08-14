@@ -27,7 +27,7 @@ const StaffCheckOrderPost = async function(req, res) {
     refOrder.docs.map(docs => orderList.push(docs.data()));
     let newOrder;
     for (let i = 0; i < orderList.length; i++) {
-      if(orderList[i].status != 5) {
+      if(orderList[i].status !== 5 && orderList[i].status !== 1) {
         newOrder = orderList[i];
       }
     }

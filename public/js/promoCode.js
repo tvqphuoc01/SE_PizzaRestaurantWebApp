@@ -7,7 +7,6 @@ function addPromo() {
     var discount = document.getElementById("discount");
     var offer = document.getElementById("Offer");
     var totalsInput = document.getElementById("totalsInput");
-
     var total1 = total.innerHTML;
     var totalBeforeDiscount = "";
     for (let i = 0; i < total1.length; i++) {
@@ -17,7 +16,9 @@ function addPromo() {
             break;
         }
     }
-    totalBeforeDiscount = parseInt(totalBeforeDiscount);
+    console.log(totalBeforeDiscount);
+    totalBeforeDiscount = parseFloat(totalBeforeDiscount) * 1000;
+    console.log(totalBeforeDiscount);
     var finalTotal = totalBeforeDiscount;
     for (let i = 0; i < promoCodeArr.length; i++) {
         if(promoCode === promoCodeArr[0] && checkPromo === 0) {
@@ -30,11 +31,15 @@ function addPromo() {
             checkPromo++;
         }
     }
-    finalTotal = finalTotal.toString() + " VND";
-    total = document.getElementById("totals").textContent = finalTotal;
+    console.log(finalTotal);
+    finalTotal = finalTotal + " VND";
+    console.log(finalTotal);
+    total = document.getElementById("totals").textContent = finalTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     totalsInput.value = finalTotal;
-    button.style.display = "none";
-    discount.style.display = "block";
+    if (checkPromo !== 0) {
+        button.style.display = "none";
+        discount.style.display = "block";
+    }
 }
 
 const loadPromo = async () => {

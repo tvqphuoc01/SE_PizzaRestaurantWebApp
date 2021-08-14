@@ -53,6 +53,7 @@ const orderStatusGet = async function(req, res) {
     }
     const client = ref.docs[0].data();
     
+    res.locals.user = client;
     res.locals.newOrder = newOrder;
     res.locals.acceptOrder = acceptOrder;
     res.locals.deliveryOrder = deliveryOrder;
