@@ -98,9 +98,12 @@ html(lang="en")
         .bodyCart 
             if checkCart === true  
                 .cart-style
-                    if errors 
-                        .form-group 
-                        .alert.alert-danger=errors
+                    if errors
+                        - var n = 0;
+                        each value in errors
+                            .form-group 
+                            .alert.alert-danger=errors[n]
+                            - n++;
                     if user
                         .container.mar-top-100 
                             .row
@@ -437,10 +440,11 @@ html(lang="en")
                                         p.font-inter.font-size-16.mar-bot-0=clientOrder.cart[n].quantity
                                     .col-3.reciepe-no.font-size-16.pad-0.price-style.red-color.text-align-right.flex-col.justify-content-center=(clientOrder.cart[n].price*clientOrder.cart[n].quantity).toFixed(3)
                                 - n++;
-                    form(method="POST" action="/done").card-footer.bg-white.px-0
-                        .row
-                            .col-12.font-raleway
-                                input.done-btn.btn(type="submit" value="Done").bn34
+                    if clientOrder.status === 5 || clientOrder.status === 1
+                        form(method="POST" action="/done").card-footer.bg-white.px-0
+                            .row
+                                .col-12.font-raleway
+                                    input.done-btn.btn(type="submit" value="Done").bn34
 
         //Footer
         .footer

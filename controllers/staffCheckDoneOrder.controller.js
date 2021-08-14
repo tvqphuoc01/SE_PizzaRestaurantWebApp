@@ -4,7 +4,7 @@ const firebase = require('../db');
 const Staff = require('../models/Staff');
 const firestore = firebase.firestore();
 
-const staffReservationGet = async function(req, res) {
+const StaffCheckDoneOrderPost = async function(req, res) {
   if (req.cookies.userId) {
     let userEmail;
     const findEmail = await firestore.collection('staff').doc(req.cookies.userId).get().then((doc) => {
@@ -16,28 +16,23 @@ const staffReservationGet = async function(req, res) {
       }
     }).catch((error) => {
       console.log('Error getting document:', error);
-    }); ;
+    });
     // const client = ref.docs[0].data();
     // res.locals.user = client;
     const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
-    const refOrderList = await firestore.collection('order').get();
-    let orderList = [];
-    refOrderList.docs.map(docs => orderList.push(docs.data()));
-    let newOrder = [];
-    for (let i = 0; i < orderList.length; i++) {
-      if(orderList[i].status !== 5 && orderList[i].status !== 1) {
-        newOrder.push(orderList[i]);
-      }
-    }
+    const refOrder = await firestore.collection('order').doc(req.body.IdOfOrder).get();
+    const newOrder = refOrder.data();
+    
     const client = ref.docs[0].data();
     res.locals.user = client;
     res.locals.newOrder = newOrder;
-    res.render('StaffReservation');
+    res.locals.OrderId = req.body.IdOfOrder;
+    res.render('StaffCheckOrder');
   } else {
-    res.render('StaffReservation');
+    res.render('StaffCheckOrder');
   }
 };
 
 module.exports = {
-  staffReservationGet,
+    StaffCheckDoneOrderPost,
 };

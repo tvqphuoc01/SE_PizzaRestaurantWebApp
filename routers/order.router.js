@@ -3,6 +3,8 @@ const router = express.Router();
 
 const orderController = require('../controllers/order.controller');
 
-router.post('/', orderController.placeOrder);
+const orderValidate = require('../validate/placeOrderValidate');
+
+router.post('/', orderValidate.validateNewOrder, orderController.placeOrder);
 
 module.exports = router;

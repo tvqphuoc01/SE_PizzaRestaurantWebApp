@@ -33,22 +33,11 @@ html(lang="en")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a>
-                    li.nav-item 
-                        a(class="contact" href="/Shop") SHOP
-                    li.nav-item.dropdown PAGES 
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="/aboutUs") About Us
-                            a(class="dropdown-item" href="/service") Service
                     li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
                     li.nav-item 
-                        a(class="reservation" href="/reservation") RESERVATION
+                        a(class="reservation" href="/orderStatus") ORDER
                     li.nav-item 
-                        a(class="Blog" href="/Blog") BLOG
-                    li.nav-item
-                        a(class="contact" href="/contact") CONTACT
-                    li.nav-item
-                        a(class="fas fa-cart-plus fa-lg cart" href="/ShoppingCart")
+                        a(class="Blog" href="/reservationStatus") RESERVATION
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user

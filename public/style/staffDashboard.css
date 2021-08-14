@@ -146,3 +146,8 @@ font-weight: 500;
 font-size: 25px;
 color: black;
 }
+
+.backBtn {
+    color: black;
+    background-color: #dc3545 !important;
+}

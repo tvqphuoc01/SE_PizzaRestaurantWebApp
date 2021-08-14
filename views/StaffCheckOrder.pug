@@ -247,7 +247,11 @@ html(lang="en")
                                     input(id="totalsInput" type="text" name="Id" value=OrderId style="display: none")
                                     input(id="totalsInput" type="number" name="State" value=5 style="display: none")
                                     input(id="totalsInput" type="text" name="UserId" value=newOrder.userId style="display: none")
-                                a(class="btn btn-primary col-2" href="/StaffReservation") Back
+                    .card-footer.bg-white.px-0
+                        .row
+                            a(class="btn col-4 backBtn" href="/orderStatus") Back to Order Controll
+                            .col-4
+                            a(class="btn col-4 backBtn" href="/StaffReservation") Back to Main Controll
 
 
         //Footer
