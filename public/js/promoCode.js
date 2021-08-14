@@ -14,9 +14,7 @@ function addPromo() {
             totalBeforeDiscount += total1[i];
         }
     }
-    console.log(totalBeforeDiscount);
     totalBeforeDiscount = parseFloat(totalBeforeDiscount);
-    console.log(totalBeforeDiscount);
     var finalTotal = totalBeforeDiscount;
     for (let i = 0; i < promoCodeArr.length; i++) {
         if(promoCode === promoCodeArr[0] && checkPromo === 0) {
@@ -29,9 +27,7 @@ function addPromo() {
             checkPromo++;
         }
     }
-    console.log(finalTotal);
     finalTotal = finalTotal + " VND";
-    console.log(finalTotal);
     total = document.getElementById("totals").textContent = finalTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     totalsInput.value = finalTotal;
     if (checkPromo !== 0) {
