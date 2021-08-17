@@ -28,6 +28,7 @@ const staffCheckOrderRoutes = require('./routers/staffCheckOrder.router')
 const updateStateOfOrderRoutes = require('./routers/updateStateOfOrder.router')
 const orderStatusRoutes = require('./routers/orderStatus.router')
 const staffCheckDoneOrderRoutes = require('./routers/staffCheckDoneOrder.router')
+
 // Views
 app.set('views', './views');
 app.set('view engine', 'pug');

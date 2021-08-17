@@ -15,6 +15,8 @@ class Client {
     this.avatar = avatar;
     this.checkOrder = "";
     this.historyOrder = [];
+    this.checkReservation = "";
+    this.historReservation = [];
   }
 }
 

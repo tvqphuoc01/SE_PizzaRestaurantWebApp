@@ -30,7 +30,9 @@ const addClient = async (req, res, next) => {
       cart: [],
       avatar: "",
       checkOrder: "",
-      historyOrder: []
+      historyOrder: [],
+      checkReservation: "",
+      historyReservation: [],
     });
     res.render('logIn');
   } catch (error) {

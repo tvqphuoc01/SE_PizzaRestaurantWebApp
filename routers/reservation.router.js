@@ -6,4 +6,6 @@ const reservationController = require('../controllers/reservation.Controller');
 
 router.get('/', reservationController.reservationGet);
 
+router.post('/', reservationController.reservationPost)
+
 module.exports = router;
