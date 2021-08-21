@@ -248,60 +248,34 @@ html(lang="en")
 
 
                     #Bookings.tab-pane.fade(role='tabpanel' aria-labelledby='bookings-tab')
-                        .container 
-                            .card-body.px-0 
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
-                                        img.border-rad-50(src='site-img24.jpg')
+                        if newReservation
+                            - var n = 0;
+                            each value in newReservation
+                                .container 
+                                    .card-body.px-0 
+                                        .row 
+                                            .col-lg-12.col-md-9.col-sm-8
+                                                .row.mar-bot-10
+                                                    .col-lg-9.col-md-8.col-sm-8.col-8.flex-col.justify-content-center
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="User ID: " + newReservation[n].userId
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="Name: " + newReservation[n].UserName
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Date: " + newReservation[n].date
+                                                        p.font-source-serif.font-size-20.font-weight-300="Time: " + newReservation[n].time
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Address: " + newReservation[n].address
+                                                        p.font-source-serif.font-size-20.font-weight-300="Number of Guest: " + newReservation[n].numberOfGuest
 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row.mar-bot-10
-                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 Cus' name
-                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
-                                        .row
-                                            .col-12 
-                                                p.font-source-serif.font-size-20.font-weight-300 Time: 18:00, 21 Aug 2021
-                                                p.font-source-serif.font-size-20.font-weight-300 Number of people: 5
-
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row
-                                            .col-lg-6.col-md-6.col-sm-6.col-6
-                                                a.btn.accept-btn(href='#') Accept 
-                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
-                                                a.btn.cancel-btn(href='#') Cancel
-
-                            .card-footer.bg-white.px-0.mar-top-30 
-                                .row.mar-top-30 
-                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
-                                        img.border-rad-50(src='site-img24.jpg')
-
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row.mar-bot-10
-                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 Cus' name
-                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
-                                        .row
-                                            .col-12 
-                                                p.font-source-serif.font-size-20.font-weight-300 Time: 19:00, 30 Aug 2021
-                                                p.font-source-serif.font-size-20.font-weight-300 Number of people: 5
-
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row
-                                            .col-lg-6.col-md-6.col-sm-6.col-6
-                                                a.btn.accept-btn(href='#') Accept 
-                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
-                                                a.btn.cancel-btn(href='#') Cancel
-
-                            .row.mar-top-60
-                                .col-12 
-                                    a.btn.see-all-btn(href='#') See all bookings
+                                        form(method="POST" action="/StaffCheckReservation").row 
+                                            .col-lg-2.col-md-3.col-sm-4 
+                                            .col-lg-10.col-md-9.col-sm-8
+                                                .row
+                                                    .col-lg-6.col-md-6.col-sm-6.col-6
+                                                        input(type="text" name="Id" value=newReservation[n].userId style="display: none")
+                                                        input.btn.accept-btn(type="submit" value="Check Reservation")
+                                - n++;
 
 
                     #Comments.tab-pane.fade(role='tabpanel' aria-labelledby='comments-tab')

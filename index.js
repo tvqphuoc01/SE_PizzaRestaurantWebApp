@@ -28,6 +28,11 @@ const staffCheckOrderRoutes = require('./routers/staffCheckOrder.router')
 const updateStateOfOrderRoutes = require('./routers/updateStateOfOrder.router')
 const orderStatusRoutes = require('./routers/orderStatus.router')
 const staffCheckDoneOrderRoutes = require('./routers/staffCheckDoneOrder.router')
+const staffCheckReservationRoutes = require('./routers/staffCheckReservation.router')
+const updateStateOfReservationRoutes = require('./routers/updateStateOfReservation.router')
+const reservationStatusRoutes = require('./routers/reservationStatus.router')
+const doneReservationRoutes = require('./routers/doneReservation.router');
+const cancelReservationRoutes = require('./routers/cancelReservation.router');
 
 // Views
 app.set('views', './views');
@@ -79,9 +84,17 @@ app.use('/placeOrder', orderRoutes);
 
 app.use('/orderStatus', orderStatusRoutes);
 
+app.use('/reservationStatus', reservationStatusRoutes);
+
 app.use('/updateStateOfOrder', updateStateOfOrderRoutes);
 
+app.use('/updateStateOfReservation', updateStateOfReservationRoutes);
+
 app.use('/done', doneOrderRoutes);
+
+app.use('/doneReservation', doneReservationRoutes);
+
+app.use('/cancelReservation', cancelReservationRoutes);
 
 app.use('/Shop', shopRoutes);
 
@@ -95,6 +108,8 @@ app.get('/logOut', (req, res) => {
 app.use('/staffLogin', staffLogin)
 
 app.use('/StaffCheckOrder', authMiddleware.authMiddleware, staffCheckOrderRoutes);
+
+app.use('/StaffCheckReservation', authMiddleware.authMiddleware, staffCheckReservationRoutes);
 
 app.use('/StaffCheckDoneOrder', authMiddleware.authMiddleware, staffCheckDoneOrderRoutes);
 

@@ -76,7 +76,7 @@ const reservationPost = async function(req, res) {
       email: req.body.Email,
       phone: req.body.Phone,
       numberOfGuest: req.body.Guest,
-      messange: req.body.Message
+      message: req.body.Message
     });
 
     let ReservationId = "";

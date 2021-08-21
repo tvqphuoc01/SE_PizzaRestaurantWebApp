@@ -38,9 +38,11 @@ html(lang="en")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a>
-                    li.nav-item 
-                        a(class="contact" href="/Shop") SHOP
                     li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/orderStatus") ORDER
+                    li.nav-item 
+                        a(class="Blog" href="/reservationStatus") RESERVATION
                     if user
                         li.nav-item
                             a(href="/profilePage")

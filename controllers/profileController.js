@@ -98,15 +98,30 @@ const profileGet = async function(req, res) {
     if (check === 0) {
       const ref = await firestore.collection('client').where('email', '==', userEmail).get();
       const refOrder = await firestore.collection('order').where('userId', '==', req.cookies.userId).get();
+      const refReservation = await firestore.collection('reservation').where('userId', '==', req.cookies.userId).get();
       const user = ref.docs[0].data();
+
+      //Tai lich su Order
       let userHistoryOrder = [];
       let userHistoryOrderId = [];
       for(let i = 0; i < user.historyOrder.length; i++) {
         userHistoryOrder.push(refOrder.docs[i].data());
         userHistoryOrderId.push(refOrder.docs[i].id);
       }
+
+      //Tai lich su dat ban
+      let userHistoryReservation = [];
+      let userHistoryReservationId = [];
+      for(let i = 0; i < user.historyReservation.length; i++) {
+        userHistoryReservation.push(refReservation.docs[i].data());
+        userHistoryReservationId.push(refReservation.docs[i].id);
+      }
+
+      //Res
       res.locals.userHistoryId = userHistoryOrderId;
       res.locals.userHistory = userHistoryOrder;
+      res.locals.userHistoryReservation = userHistoryReservation;
+      res.locals.userHistoryReservationId = userHistoryReservationId;
       res.locals.user = user;
     } else {
       const ref = await firestore.collection('staff').where('email', '==', userEmail).get();

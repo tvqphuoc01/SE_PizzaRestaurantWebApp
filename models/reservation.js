@@ -9,7 +9,7 @@ class Reservation {
       this.address = address;
       this.email = email;
       this.phone = phone;
-      this.messange = messange;
+      this.message = message;
     }
   }
   
