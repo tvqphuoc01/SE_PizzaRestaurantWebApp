@@ -18,18 +18,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
-        script. 
-            function myFunction() {
-                    var x = document.getElementById("search-bar");
-                    var y = document.getElementById("nav-list");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                            y.style.display = "none";
-                        } else {
-                            x.style.display = "none";
-                            y.style.display = "flex";
-                        }
-                    }
+        <script src="app.js"></script>
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -38,8 +27,9 @@ html(lang="en")
                     img(src="logo.png" alt="Butter logo")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
-                    li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
-                    li.nav-item SHOP
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item 
+                        a(class="contact" href="/Shop") SHOP
                     li.nav-item.dropdown PAGES 
                         i(class="fa fa-angle-down")
                         div(class="dropdown-content")
@@ -53,22 +43,35 @@ html(lang="en")
                     li.nav-item
                         a(class="contact" href="/contact") CONTACT
                     li.nav-item
-                        a(class="fas fa-cart-plus fa-lg cart" href="/ShoppingCart")
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                        else
+                            span(class="fa-stack fa-2x has-badge" data-count=0)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
                         li.nav-item
-                            i(class="fas fa-user-circle fa-lg")
-                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
                             a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
                     else
                         li.nav-item
                             a(class="contact" href="/logIn") LOGIN
                         li.nav-item
-                            a(class="contact" href="/signUp") SIGN UP  
+                            a(class="contact" href="/signUp") SIGN UP      
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text", placeholder="Search Here ..... !", )
+                    input(type="text" id="searchBar" placeholder="Search Here ..... !")
+                    div(id="search_List")
+                        ul(id="dishesList")
         .page_header_login
             img.Image_Pg_Header(src="site-img10.jpg" alt="Page header")
             .pageH
