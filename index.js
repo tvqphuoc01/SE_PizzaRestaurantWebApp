@@ -60,7 +60,7 @@ app.get('/menu', (req, res) => {
 
 app.use('/signUp', clientRoutes);
 
-app.use('/reservation', reservationRoutes);
+app.use('/reservation', authMiddleware.authMiddleware,reservationRoutes);
 
 app.use('/profilePage', authMiddleware.authMiddleware, profileRoutes);
 
