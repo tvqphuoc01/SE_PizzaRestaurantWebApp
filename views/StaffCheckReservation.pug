@@ -31,19 +31,18 @@ html(lang="en")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
                     li.nav-item.dropdown <a class="home" href="/"> HOME </a>
-                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
                     li.nav-item 
                         a(class="reservation" href="/orderStatus") ORDER
                     li.nav-item 
                         a(class="Blog" href="/reservationStatus") RESERVATION
                     if user
                         li.nav-item
-                            a(href="/profilePage")
+                            a(href="/staffProfile")
                                 img(src=user.avatar alt="Avatar" class="avatar-nav")
                         li.nav-item.dropdown
-                            a(class="contact" href="/profilePage")= user.userName
+                            a(class="contact" href="/staffProfile")= user.userName
                             div(class="dropdown-content")
-                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/staffProfile") Profile
                                 a(class="dropdown-item" href="/logOut") Log Out
                     else
                         li.nav-item

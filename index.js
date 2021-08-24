@@ -35,6 +35,7 @@ const updateStateOfReservationRoutes = require('./routers/updateStateOfReservati
 const reservationStatusRoutes = require('./routers/reservationStatus.router')
 const doneReservationRoutes = require('./routers/doneReservation.router');
 const cancelReservationRoutes = require('./routers/cancelReservation.router');
+const staffProfileRoutes = require('./routers/staffProfile.router');
 const AdminRoutes = require('./routers/Admin.router');
 const AdminLogintRoutes = require('./routers/AdminLogin.router');
 
@@ -114,6 +115,8 @@ app.use('/Admin', AdminMiddleware.AdminMiddleware, AdminRoutes);
 app.use('/AdminLogin', AdminLogintRoutes);
 
 app.use('/staffLogin', staffLogin);
+
+app.use('/staffProfile', authMiddleware.authMiddleware, staffProfileRoutes);
 
 app.use('/StaffCheckOrder', authMiddleware.authMiddleware, staffCheckOrderRoutes);
 

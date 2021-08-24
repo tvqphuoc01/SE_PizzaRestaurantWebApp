@@ -1,5 +1,5 @@
 class Reservation {
-    constructor(id, userId, UserName, date, time, address, email, phone, messange) {
+    constructor(id, userId, UserName, date, time, address, email, phone, message) {
       this.id = id;
       this.userId = userId;
       this.UserName = UserName;
