@@ -1,4 +1,4 @@
-class Staff {
+class Admin {
     constructor(id, userName, passWord, email, FirstName, LastName, Gender, avatar) {
       this.id = id;
       this.email = email;
@@ -6,11 +6,10 @@ class Staff {
       this.passWord = passWord;
       this.firstName = FirstName;
       this.lastName = LastName;
-      this.address = address;
       this.phone = phone;
       this.gender = Gender;
       this.avatar = avatar;
     }
   }
   
-module.exports = Staff;
+module.exports = Admin;

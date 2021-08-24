@@ -5,7 +5,9 @@ const cookieParser = require('cookie-parser');
 const port = 3000;
 const bodyParser = require('body-parser');
 
+// Middleware
 const authMiddleware = require('./middleware/authMiddleware');
+const AdminMiddleware = require('./middleware/adminMiddleware');
 
 // Routes
 const clientRoutes = require('./routers/clientRouter');
@@ -33,6 +35,8 @@ const updateStateOfReservationRoutes = require('./routers/updateStateOfReservati
 const reservationStatusRoutes = require('./routers/reservationStatus.router')
 const doneReservationRoutes = require('./routers/doneReservation.router');
 const cancelReservationRoutes = require('./routers/cancelReservation.router');
+const AdminRoutes = require('./routers/Admin.router');
+const AdminLogintRoutes = require('./routers/AdminLogin.router');
 
 // Views
 app.set('views', './views');
@@ -105,7 +109,11 @@ app.get('/logOut', (req, res) => {
   res.render('index');
 });
 
-app.use('/staffLogin', staffLogin)
+app.use('/Admin', AdminMiddleware.AdminMiddleware, AdminRoutes);
+
+app.use('/AdminLogin', AdminLogintRoutes);
+
+app.use('/staffLogin', staffLogin);
 
 app.use('/StaffCheckOrder', authMiddleware.authMiddleware, staffCheckOrderRoutes);
 
