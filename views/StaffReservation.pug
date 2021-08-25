@@ -8,7 +8,7 @@ html(lang="en")
     link(rel="stylesheet" href="indexStyle.css")
     link(rel="stylesheet" href="StaffReservation.css")
     link(rel='stylesheet' href='staffDashboard.css')
-    //- link(rel="stylesheet" href="profileStyle.css")
+
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
@@ -205,12 +205,6 @@ html(lang="en")
                             a#orders-tab.nav-link.active(data-toggle='tab' href='#Orders' role='tab' aria-controls='Orders' aria-selected='true') Orders
                         li.nav-item
                             a#bookings-tab.nav-link(data-toggle='tab' href='#Bookings' role='tab' aria-controls='Bookings' aria-selected='false') Bookings
-                        li.nav-item
-                            a#comments-tab.nav-link(data-toggle='tab' href='#Comments' role='tab' aria-controls='Comments' aria-selected='false') Comments
-                        li.nav-item
-                            a#edits-tab.nav-link(data-toggle='tab' href='#Edits' role='tab' aria-controls='Edits' aria-selected='false') Edits
-                        li.nav-item
-                            a#overview-tab.nav-link(data-toggle='tab' href='#Overview' role='tab' aria-controls='Overview' aria-selected='false') Overview
 
 
                 #myTabContent.tab-content
@@ -275,88 +269,6 @@ html(lang="en")
                                                         input(type="text" name="Id" value=newReservation[n].userId style="display: none")
                                                         input.btn.accept-btn(type="submit" value="Check Reservation")
                                 - n++;
-
-
-                    #Comments.tab-pane.fade(role='tabpanel' aria-labelledby='comments-tab')
-                        .container 
-                            .card-body.px-0 
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
-                                        img.border-rad-50(src='site-img24.jpg')
-                                        p.font-source-sans.font-size-20.font-weight-600.mar-top-5 Cus' name
-
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row.mar-bot-10
-                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                .d-flex
-                                                    i.fas.fa-star.yellow-color
-                                                    i.fas.fa-star.yellow-color
-                                                    i.fas.fa-star.yellow-color
-                                                    i.fas.fa-star.yellow-color
-                                                    i.far.fa-star.yellow-color
-                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
-                                        .row
-                                            .col-12 
-                                                p.font-source-serif.font-size-20.font-weight-300 Great price and excellent food.
-                                                p.font-source-serif.font-size-20.font-weight-300 Service is friendly and prompt. I come here at least the few times a week. I recommend the Seafood Pizza.
-
-                                .row 
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row
-                                            .col-lg-6.col-md-6.col-sm-6.col-6
-                                                a.btn.accept-btn(href='#') Reply 
-                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
-                                                a.btn.cancel-btn(href='#') Report
-
-                            .card-footer.bg-white.px-0.mar-top-30 
-                                .row.mar-top-30 
-                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
-                                        img.border-rad-50(src='site-img24.jpg')
-                                        p.font-source-sans.font-size-20.font-weight-600.mar-top-5 Cus' name
-
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row.mar-bot-10
-                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                .d-flex
-                                                    i.fas.fa-star.yellow-color
-                                                    i.fas.fa-star.yellow-color
-                                                    i.fas.fa-star.yellow-color
-                                                    i.fas.fa-star.yellow-color
-                                                    i.far.fa-star.yellow-color
-                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
-                                        .row
-                                            .col-12 
-                                                p.font-source-serif.font-size-20.font-weight-300 Great price and excellent food.
-                                                p.font-source-serif.font-size-20.font-weight-300 Service is friendly and prompt. I come here at least the few times a week. I recommend the Seafood Pizza.
-
-                                .row
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row 
-                                            .col-12.align-text-center
-                                                img.border-rad-10px(src='soda_picture.jpg')
-
-                                .row.mar-top-20 
-                                    .col-lg-2.col-md-3.col-sm-4 
-                                    .col-lg-10.col-md-9.col-sm-8
-                                        .row
-                                            .col-lg-6.col-md-6.col-sm-6.col-6
-                                                a.btn.accept-btn(href='#') Reply 
-                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
-                                                a.btn.cancel-btn(href='#') Report
-
-                            .row.mar-top-60
-                                .col-12 
-                                    a.btn.see-all-btn(href='#') See all comments
-
-
-                    #Edits.tab-pane.fade(role='tabpanel' aria-labelledby='edits-tab')
-
-
-                    #Overview.tab-pane.fade.p-3(role='tabpanel' aria-labelledby='overview-tab')
 
 
 

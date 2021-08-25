@@ -8,8 +8,11 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         // Boostrap & CSS
         link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="StaffReservation.css")
+        link(rel='stylesheet' href='staffDashboard.css')
+        link(rel='stylesheet' href='admin.css')
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
-        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
@@ -17,13 +20,14 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
-        
+
         // The core Firebase JS SDK is always required and must be listed first
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
         // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
         <script src="app.js"></script>
+
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
             //Navbar
@@ -32,40 +36,21 @@ html(lang="en")
                     img(src="logo.png" alt="Butter logo")
             .col-10.d-flex.justify-content-center
                 ul(id="nav-list").nav.align-items-center
-                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item.dropdown <a class="home" href="/admin"> HOME </a>
                     li.nav-item 
-                        a(class="contact" href="/Shop") SHOP
-                    li.nav-item.dropdown PAGES 
-                        i(class="fa fa-angle-down")
-                        div(class="dropdown-content")
-                            a(class="dropdown-item" href="/aboutUs") About Us
-                            a(class="dropdown-item" href="/service") Service
-                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                        a(class="reservation" href="#") ORDER
                     li.nav-item 
-                        a(class="reservation" href="/reservation") RESERVATION
-                    li.nav-item 
-                        a(class="Blog" href="/Blog") BLOG
-                    li.nav-item
-                        a(class="contact" href="/contact") CONTACT
-                    li.nav-item
-                        if cartLength
-                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
-                                a(href="/ShoppingCart")
-                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
-                        else
-                            span(class="fa-stack fa-2x has-badge" data-count=0)
-                                a(href="/ShoppingCart")
-                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                        a(class="Blog" href="#") RESERVATION
                     li.nav-item
                         i(class="fas fa-search fa-lg" onclick="myFunction()")
                     if user
                         li.nav-item
-                            a(href="/profilePage")
+                            a(href="/staffProfile")
                                 img(src=user.avatar alt="Avatar" class="avatar-nav")
                         li.nav-item.dropdown
-                            a(class="contact" href="/profilePage")= user.userName
+                            a(class="contact" href="/staffProfile")= user.userName
                             div(class="dropdown-content")
-                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/staffProfile") Profile
                                 a(class="dropdown-item" href="/logOut") Log Out
                     else
                         li.nav-item
@@ -74,160 +59,483 @@ html(lang="en")
                             a(class="contact" href="/signUp") SIGN UP      
                 div.col-12(id="search-bar")
                     i(class="fas fa-search fa-lg" onclick="myFunction()")
-                    input(type="text" id="searchBar" placeholder="Search Here ..... !")
-                    div(id="search_List")
-                        ul(id="dishesList")
-        div(id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel")
-            ol(class="carousel-indicators")
-                li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
-                li(data-target="#carouselExampleIndicators" data-slide-to="1")
-                li(data-target="#carouselExampleIndicators" data-slide-to="2")
-            div(class="carousel-inner" role="listbox")
-            //Slide One
-            div(class="carousel-item active" style="background-image: url('slider-bg.jpg')")
-                div(class="carousel-caption d-none d-md-block")
-                    h2(class="display-4") First Slide
-                    p(class="lead") This is a description for the first slide.
-            //Slide Two
-            div(class="carousel-item" style="background-image: url('slider-bg1.jpg')")
-                div(class="carousel-caption d-none d-md-block")
-                    h2(class="display-4") Second Slide 
-                    p(class="lead") This is a description for the second slide.
-            //Slide Three
-            div(class="carousel-item" style="background-image: url('slider-bg2.jpg')")
-                div(class="carousel-caption d-none d-md-block")
-                    h2(class="display-4") Third Slide
-                    p(class="lead") This is a description for the third slide.
-            a(class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev")
-                span(class="carousel-control-prev-icon" aria-hidden="true")
-                span(class="sr-only") Previous
-            a(class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next")
-                span(class="carousel-control-next-icon" aria-hidden="true")
-                span(class="sr-only") Next
-        .section.row.container-fluid  
-            .col-2
-            .col-8
-                p.section_01 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                    br
-                    img(src="site-img04.jpg")
-            .col-2
-        .section.row.container-fluid 
-            .col-1 
-            .col-10.row.section_02
-                .col-6
-                    img(src="site-img51.jpg")
-                .col-6
-                    div(class="card whitebox" style="width: 30rem; height: 30rem")
-                        div(class="card-body")
-                            h5.cardMainHeader OUT STORY
-                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            button(type="button" class="btn btn-danger btn-lg customBtn") KNOW MORE
-            .col-1
-        .section_03.row
-            .col-1
-            .col-10.row
-                .col-4
-                    div(class="card" style="width: 18rem;")
-                        img(class="card-img-top" src="site-img18.jpg" alt="Card image cap")
-                        div(class="card-body")
-                            h5(class="card-title") CHICKEN PIZZA
-                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            div.row
-                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
-                                div.col-2
-                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
-                .col-4
-                    div(class="card" style="width: 18rem;")
-                        img(class="card-img-top" src="site-img19.jpg" alt="Card image cap")
-                        div(class="card-body")
-                            h5(class="card-title") VEG. BURGER 
-                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            div.row
-                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
-                                div.col-2
-                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
-                .col-4
-                    div(class="card" style="width: 18rem;")
-                        img(class="card-img-top" src="site-img20.jpg" alt="Card image cap")
-                        div(class="card-body")
-                            h5(class="card-title") VEG. PIZZA
-                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            div.row
-                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
-                                div.col-2
-                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
-                                
-            .col-1
-        .section_04
-            .container-fluid.row
-                .col-4
-                .col-8
-                    h1.Offers-tittle SPECIAL OFFERS
-                    .row 
-                        .col-6
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Chicken Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Spl. Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Veg. Burger
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                        .col-6
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Chicken Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Spl. Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-                            .menu-card 
-                                .menu-item.row 
-                                    h3.col-10 Veg. Burger
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
-        .section_05
-            .container-fluid.row
-                .col-1 
-                .col-10 
-                    h1 FROM OUR BLOG
-                    .blog-card.row 
-                        .col-4 
-                            img(src="site-img06.jpg")
-                            p
-                                a(href="/Blog1") Bulum elt dap mauris necmale
-                            h2 Nulla imperdiet sit amet magna Vesti bulum eltdap mauris Nulla imperdiet sit amet magna.
-                        .col-4 
-                            img(src="site-img07.jpg")
-                            p
-                                a(href="#") Bulum elt dap mauris necmale
-                            h2 Nulla imperdiet sit amet magna Vesti bulum eltdap mauris Nulla imperdiet sit amet magna.
-                        .col-4
-                            img(src="site-img08.jpg")
-                            p
-                                a(href="#") Bulum elt dap mauris necmale
-                            h2 Nulla imperdiet sit amet magna Vesti bulum eltdap mauris Nulla imperdiet sit amet magna.
-                .col-1 
+                    input(type="text" placeholder="Search Here ..... !", )
+
+        .top-slogan
+            .container.align-text-center 
+                p.font-playball.font-size-34.gold-color Teammates make everything great and successfull
+
+        .top-brand
+            .container
+                .d-flex
+                    p.font-playball.font-size-34.flex-col.justify-content-center.mar-bot-0 Butter! 
+                    p.font-raleway.font-size-25.flex-col.justify-content-center.mar-bot-0 &nbsp;is open.
+                p.font-raleway.font-size-20 Sai Gon Center, Ho Chi Minh city
+
+        //Tab
+        .menu-dashboard 
+            .container 
+                .profile-head 
+                    ul#myTab.nav.nav-tabs.card-header-tabs(role='tablist')
+                        li.nav-item
+                            a#orders-tab.nav-link.active(data-toggle='tab' href='#Orders' role='tab' aria-controls='Orders' aria-selected='true') Orders
+                        li.nav-item
+                            a#bookings-tab.nav-link(data-toggle='tab' href='#Bookings' role='tab' aria-controls='Bookings' aria-selected='false') Bookings
+                        li.nav-item
+                            a#comments-tab.nav-link(data-toggle='tab' href='#Comments' role='tab' aria-controls='Comments' aria-selected='false') Comments
+                        li.nav-item
+                            a#edits-tab.nav-link(data-toggle='tab' href='#Edits' role='tab' aria-controls='Edits' aria-selected='false') Edits
+                        li.nav-item
+                            a#overview-tab.nav-link(data-toggle='tab' href='#Overview' role='tab' aria-controls='Overview' aria-selected='false') Overview
+
+
+                #myTabContent.tab-content
+                    #Orders.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='orders-tab')
+                        if newOrder
+                            - var n = 0;
+                            each value in newOrder
+                                .container 
+                                    .card-body.px-0 
+                                        .row 
+                                            .col-lg-12.col-md-9.col-sm-8
+                                                .row.mar-bot-10
+                                                    .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="User ID: " + newOrder[n].userId
+                                                    .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600=newOrder[n].date + " " + newOrder[n].time
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Shipping to: " + newOrder[n].address
+                                                        p.font-source-serif.font-size-20.font-weight-300="Number of items: " + newOrder[n].cart.length
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Shipping Fee: " + newOrder[n].shipFee + " VND"
+                                                        p.font-source-serif.font-size-20.font-weight-300="Totals: " + newOrder[n].totals + " VND"
+
+                                        form(method="POST" action="/StaffCheckOrder").row 
+                                            .col-lg-2.col-md-3.col-sm-4 
+                                            .col-lg-10.col-md-9.col-sm-8
+                                                .row
+                                                    .col-lg-6.col-md-6.col-sm-6.col-6
+                                                        input(id="totalsInput" type="text" name="Id" value=newOrder[n].userId style="display: none")
+                                                        input.btn.accept-btn(type="submit" value="Check Order")
+                                - n++;
+
+
+                    #Bookings.tab-pane.fade(role='tabpanel' aria-labelledby='bookings-tab')
+                        if newReservation
+                            - var n = 0;
+                            each value in newReservation
+                                .container 
+                                    .card-body.px-0 
+                                        .row 
+                                            .col-lg-12.col-md-9.col-sm-8
+                                                .row.mar-bot-10
+                                                    .col-lg-9.col-md-8.col-sm-8.col-8.flex-col.justify-content-center
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="User ID: " + newReservation[n].userId
+                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="Name: " + newReservation[n].UserName
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Date: " + newReservation[n].date
+                                                        p.font-source-serif.font-size-20.font-weight-300="Time: " + newReservation[n].time
+                                                .row
+                                                    .col-12 
+                                                        p.font-source-serif.font-size-20.font-weight-300="Address: " + newReservation[n].address
+                                                        p.font-source-serif.font-size-20.font-weight-300="Number of Guest: " + newReservation[n].numberOfGuest
+
+                                        form(method="POST" action="/StaffCheckReservation").row 
+                                            .col-lg-2.col-md-3.col-sm-4 
+                                            .col-lg-10.col-md-9.col-sm-8
+                                                .row
+                                                    .col-lg-6.col-md-6.col-sm-6.col-6
+                                                        input(type="text" name="Id" value=newReservation[n].userId style="display: none")
+                                                        input.btn.accept-btn(type="submit" value="Check Reservation")
+                                - n++;
+
+
+                    #Comments.tab-pane.fade(role='tabpanel' aria-labelledby='comments-tab')
+                        .container 
+                            .card-body.px-0 
+                                .row 
+                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
+                                        img.border-rad-50(src='site-img24.jpg')
+                                        p.font-source-sans.font-size-20.font-weight-600.mar-top-5 Cus' name
+
+                                    .col-lg-10.col-md-9.col-sm-8
+                                        .row.mar-bot-10
+                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
+                                                .d-flex
+                                                    i.fas.fa-star.yellow-color
+                                                    i.fas.fa-star.yellow-color
+                                                    i.fas.fa-star.yellow-color
+                                                    i.fas.fa-star.yellow-color
+                                                    i.far.fa-star.yellow-color
+                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
+                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
+                                        .row
+                                            .col-12 
+                                                p.font-source-serif.font-size-20.font-weight-300 Great price and excellent food.
+                                                p.font-source-serif.font-size-20.font-weight-300 Service is friendly and prompt. I come here at least the few times a week. I recommend the Seafood Pizza.
+
+                                .row 
+                                    .col-lg-2.col-md-3.col-sm-4 
+                                    .col-lg-10.col-md-9.col-sm-8
+                                        .row
+                                            .col-lg-6.col-md-6.col-sm-6.col-6
+                                                a.btn.accept-btn(href='#') Reply 
+                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
+                                                a.btn.cancel-btn(href='#') Report
+
+                            .card-footer.bg-white.px-0.mar-top-30 
+                                .row.mar-top-30 
+                                    .col-lg-2.col-md-3.col-sm-4.flex-col.justify-content-center.align-items-center 
+                                        img.border-rad-50(src='site-img24.jpg')
+                                        p.font-source-sans.font-size-20.font-weight-600.mar-top-5 Cus' name
+
+                                    .col-lg-10.col-md-9.col-sm-8
+                                        .row.mar-bot-10
+                                            .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
+                                                .d-flex
+                                                    i.fas.fa-star.yellow-color
+                                                    i.fas.fa-star.yellow-color
+                                                    i.fas.fa-star.yellow-color
+                                                    i.fas.fa-star.yellow-color
+                                                    i.far.fa-star.yellow-color
+                                            .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
+                                                p.mar-bot-0.font-source-sans.font-size-20.font-weight-600 30 minutes ago
+                                        .row
+                                            .col-12 
+                                                p.font-source-serif.font-size-20.font-weight-300 Great price and excellent food.
+                                                p.font-source-serif.font-size-20.font-weight-300 Service is friendly and prompt. I come here at least the few times a week. I recommend the Seafood Pizza.
+
+                                .row
+                                    .col-lg-2.col-md-3.col-sm-4 
+                                    .col-lg-10.col-md-9.col-sm-8
+                                        .row 
+                                            .col-12.align-text-center
+                                                img.border-rad-10px(src='soda_picture.jpg')
+
+                                .row.mar-top-20 
+                                    .col-lg-2.col-md-3.col-sm-4 
+                                    .col-lg-10.col-md-9.col-sm-8
+                                        .row
+                                            .col-lg-6.col-md-6.col-sm-6.col-6
+                                                a.btn.accept-btn(href='#') Reply 
+                                            .col-lg-6.col-md-6.col-sm-6.col-6.align-text-right
+                                                a.btn.cancel-btn(href='#') Report
+
+                            .row.mar-top-60
+                                .col-12 
+                                    a.btn.see-all-btn(href='#') See all comments
+
+
+                    #Edits.tab-pane.fade(role='tabpanel' aria-labelledby='edits-tab')
+                        .container.mar-top-60
+                            .table
+                                .table-title
+                                    .row
+                                        .col-sm-6
+                                            h2
+                                                | Manage 
+                                                b Employees
+                                        .col-sm-6
+                                            a.btn.btn-success(href='#addEmployeeModal' data-toggle='modal')
+                                                i.material-icons.fas.fa-plus-circle
+                                                span Add New Employee
+                                            a.btn.btn-danger(href='#deleteEmployeeModal' data-toggle='modal')
+                                                i.material-icons.fa.fa-times-circle-o
+                                                span Delete
+                                table.table.table-striped.table-hover
+                                    thead
+                                        tr
+                                            th
+                                                span.custom-checkbox
+                                                    input#selectAll(type='checkbox')
+                                                    label(for='selectAll')
+                                            th Name
+                                            th Email
+                                            th Address
+                                            th Phone
+                                            th Actions
+                                    tbody
+                                        tr
+                                            td
+                                                span.custom-checkbox.flex-col.justify-content-center.align-items-center
+                                                    input#checkbox1(type='checkbox' name='options[]' value='1')
+                                                    label(for='checkbox1')
+                                            td Trần Văn Quý Phước
+                                            td leader@mail.com
+                                            td Trái Đất
+                                            td 0123456789
+                                            td
+                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
+                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
+                                        tr
+                                            td
+                                                span.custom-checkbox
+                                                    input#checkbox2(type='checkbox' name='options[]' value='1')
+                                                    label(for='checkbox2')
+                                            td Phạm Hồng Quân
+                                            td dev1@mail.com
+                                            td Trái Đất
+                                            td 0123456789
+                                            td
+                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
+                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
+                                        tr
+                                            td
+                                                span.custom-checkbox
+                                                    input#checkbox3(type='checkbox' name='options[]' value='1')
+                                                    label(for='checkbox3')
+                                            td Đỗ Tiến Trung
+                                            td dev2@mail.com
+                                            td Trái Đất
+                                            td 0123456789
+                                            td
+                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
+                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
+                                        tr
+                                            td
+                                                span.custom-checkbox
+                                                    input#checkbox4(type='checkbox' name='options[]' value='1')
+                                                    label(for='checkbox4')
+                                            td Đặng Hoàn Mỹ
+                                            td ba@mail.com
+                                            td Mars
+                                            td 0123456789
+                                            td
+                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
+                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
+                                        tr
+                                            td
+                                                span.custom-checkbox
+                                                    input#checkbox5(type='checkbox' name='options[]' value='1')
+                                                    label(for='checkbox5')
+                                            td Huỳnh Trọng Phúc
+                                            td tavuong@mail.com
+                                            td Trái Đất
+                                            td 0123456789
+                                            td
+                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
+                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
+
+
+                        // Edit Modal HTML
+                        #addEmployeeModal.modal.fade
+                            .modal-dialog
+                                .modal-content
+                                    form
+                                        .modal-header
+                                            h4.modal-title Add Employee
+                                            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+                                        .modal-body
+                                            .form-group
+                                                label First Name 
+                                                input.form-control(type='text' required='')
+                                            .form-group
+                                                label Last Name
+                                                input.form-control(type='text' required='')
+                                            .form-group
+                                                label Email
+                                                input.form-control(type='email' required='')
+                                            .form-group
+                                                label Address
+                                                textarea.form-control(required='')
+                                            .form-group
+                                                label Phone
+                                                input.form-control(type='text' required='')
+                                            .form-group
+                                                label Password
+                                                input.form-control(type='text' required='')
+                                        .modal-footer
+                                            input.btn.btn-default.cancel-small-btn(type='button' data-dismiss='modal' value='Cancel')
+                                            input.btn.btn-success(type='submit' value='Add')
+                        // Edit Modal HTML
+                        #editEmployeeModal.modal.fade
+                            .modal-dialog
+                                .modal-content
+                                    form
+                                        .modal-header
+                                            h4.modal-title Edit Employee
+                                            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+                                        .modal-body
+                                            .form-group
+                                                label First Name 
+                                                input.form-control(type='text' required='')
+                                            .form-group
+                                                label Last Name
+                                                input.form-control(type='text' required='')
+                                            .form-group
+                                                label Email
+                                                input.form-control(type='email' required='')
+                                            .form-group
+                                                label Address
+                                                textarea.form-control(required='')
+                                            .form-group
+                                                label Phone
+                                                input.form-control(type='text' required='')
+                                            .form-group
+                                                label Password
+                                                input.form-control(type='text' required='')
+                                        .modal-footer
+                                            input.btn.btn-default.cancel-small-btn(type='button' data-dismiss='modal' value='Cancel')
+                                            input.btn.btn-info(type='submit' value='Save')
+                        // Delete Modal HTML
+                        #deleteEmployeeModal.modal.fade
+                            .modal-dialog
+                                .modal-content
+                                    form
+                                        .modal-header
+                                            h4.modal-title Delete Employee
+                                            button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
+                                        .modal-body
+                                            p Are you sure you want to delete these Records?
+                                            p.text-warning
+                                                small This action cannot be undone.
+                                        .modal-footer
+                                            input.btn.btn-default.cancel-small-btn(type='button' data-dismiss='modal' value='Cancel')
+                                            input.btn.btn-danger(type='submit' value='Delete')
+
+
+                    #Overview.tab-pane.fade.p-3(role='tabpanel' aria-labelledby='overview-tab')
+                        .container 
+                            .row 
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-warning.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-warning.text-uppercase.mb-1.font-nunito
+                                                        | Successful bookings
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 251
+                                                .col-auto
+                                                    i.fas.fa-check-circle.fa-2x.text-gray-300
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-danger.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-danger.text-uppercase.mb-1.font-nunito
+                                                        | Cancelled bookings
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 12
+                                                .col-auto
+                                                    i.fas.fa-times-circle.fa-2x.text-gray-300
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-info.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-info.text-uppercase.mb-1.font-nunito
+                                                        | Successful orders
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 251
+                                                .col-auto
+                                                    i.fas.fa-check-circle.fa-2x.text-gray-300
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-danger.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-danger.text-uppercase.mb-1.font-nunito
+                                                        | Cancelled orders
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 12
+                                                .col-auto
+                                                    i.fas.fa-times-circle.fa-2x.text-gray-300
+                            .row 
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-success.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-success.text-uppercase.mb-1.font-nunito
+                                                        | Employees
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 12
+                                                .col-auto
+                                                    i.fas.fa-user-check.fa-2x.text-gray-300
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-primary.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1.font-nunito
+                                                        | Customers
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 102
+                                                .col-auto
+                                                    i.fas.fa-smile.fa-2x.text-gray-300
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-warning.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-warning.text-uppercase.mb-1.font-nunito
+                                                        | Pending reservations
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 0
+                                                .col-auto
+                                                    i.fas.fa-clock.fa-2x.text-gray-300
+                                .col-xl-3.col-md-6.mb-4
+                                    .card.border-left-info.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-info.text-uppercase.mb-1.font-nunito
+                                                        | Pending orders
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 12
+                                                .col-auto
+                                                    i.fas.fa-clock.fa-2x.text-gray-300
+
+
+                            .row
+                                .col-12.mb-2
+                                    .card.border-left-pink.shadow.h-100.py-2
+                                        .card-body
+                                            .row.no-gutters.align-items-center
+                                                .col.mr-2
+                                                    .text-xs.font-weight-bold.text-pink.text-uppercase.mb-1.font-nunito
+                                                        | Earnings
+                                                    .h5.mb-0.font-weight-bold.text-gray-800.font-nunito 12,000,000 VND
+                                                .col-auto
+                                                    i.fas.fa-dollar-sign.fa-2x.text-gray-300
+                            .row
+                                .col-12.mb-2
+                                    .card.card-header-actions.h-100
+                                        .card-header.font-nunito
+                                            | Progress Tracker
+                                        .card-body.font-nunito
+                                            h4.small.font-nunito
+                                                | Orders Reached
+                                                span.float-end.fw-bold 25%
+                                            .progress.mb-4
+                                                .progress-bar.bg-info(role='progressbar' style='width: 25%' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100')
+                                            h4.small.font-nunito
+                                                | Reservation Reached
+                                                span.float-end.fw-bold 100%
+                                            .progress.mb-4.font-nunito
+                                                .progress-bar.bg-warning(role='progressbar' style='width: 100%' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100')
+                                            h4.small.font-nunito
+                                                | Target Reached
+                                                span.float-end.fw-bold 62.5%
+                                            .progress.mb-4.font-nunito
+                                                .progress-bar.bg-success(role='progressbar' style='width: 62.5%' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100')
+                                            h4.small.font-nunito
+                                                | Orders Target
+                                                span.float-end.fw-bold 1000
+
+                                            h4.small.font-nunito
+                                                | Reservation Target
+                                                span.float-end.fw-bold 200
+
+
+
+
         //Footer
         .footer
             .container-fluid.row 
