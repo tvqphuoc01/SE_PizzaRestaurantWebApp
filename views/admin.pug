@@ -27,6 +27,7 @@ html(lang="en")
         // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
         <script src="app.js"></script>
+        <script src="admin.js"></script>
 
     body
         .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
@@ -78,81 +79,14 @@ html(lang="en")
                 .profile-head 
                     ul#myTab.nav.nav-tabs.card-header-tabs(role='tablist')
                         li.nav-item
-                            a#orders-tab.nav-link.active(data-toggle='tab' href='#Orders' role='tab' aria-controls='Orders' aria-selected='true') Orders
-                        li.nav-item
-                            a#bookings-tab.nav-link(data-toggle='tab' href='#Bookings' role='tab' aria-controls='Bookings' aria-selected='false') Bookings
-                        li.nav-item
                             a#comments-tab.nav-link(data-toggle='tab' href='#Comments' role='tab' aria-controls='Comments' aria-selected='false') Comments
                         li.nav-item
-                            a#edits-tab.nav-link(data-toggle='tab' href='#Edits' role='tab' aria-controls='Edits' aria-selected='false') Edits
+                            a#edits-tab.nav-link.active(data-toggle='tab' href='#Edits' role='tab' aria-controls='Edits' aria-selected='true') Edits
                         li.nav-item
                             a#overview-tab.nav-link(data-toggle='tab' href='#Overview' role='tab' aria-controls='Overview' aria-selected='false') Overview
 
 
                 #myTabContent.tab-content
-                    #Orders.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='orders-tab')
-                        if newOrder
-                            - var n = 0;
-                            each value in newOrder
-                                .container 
-                                    .card-body.px-0 
-                                        .row 
-                                            .col-lg-12.col-md-9.col-sm-8
-                                                .row.mar-bot-10
-                                                    .col-lg-9.col-md-8.col-sm-6.col-6.flex-col.justify-content-center
-                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="User ID: " + newOrder[n].userId
-                                                    .col-lg-3.col-md-4.col-sm-6.col-6.flex-col.justify-content-center.align-text-right
-                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600=newOrder[n].date + " " + newOrder[n].time
-                                                .row
-                                                    .col-12 
-                                                        p.font-source-serif.font-size-20.font-weight-300="Shipping to: " + newOrder[n].address
-                                                        p.font-source-serif.font-size-20.font-weight-300="Number of items: " + newOrder[n].cart.length
-                                                .row
-                                                    .col-12 
-                                                        p.font-source-serif.font-size-20.font-weight-300="Shipping Fee: " + newOrder[n].shipFee + " VND"
-                                                        p.font-source-serif.font-size-20.font-weight-300="Totals: " + newOrder[n].totals + " VND"
-
-                                        form(method="POST" action="/StaffCheckOrder").row 
-                                            .col-lg-2.col-md-3.col-sm-4 
-                                            .col-lg-10.col-md-9.col-sm-8
-                                                .row
-                                                    .col-lg-6.col-md-6.col-sm-6.col-6
-                                                        input(id="totalsInput" type="text" name="Id" value=newOrder[n].userId style="display: none")
-                                                        input.btn.accept-btn(type="submit" value="Check Order")
-                                - n++;
-
-
-                    #Bookings.tab-pane.fade(role='tabpanel' aria-labelledby='bookings-tab')
-                        if newReservation
-                            - var n = 0;
-                            each value in newReservation
-                                .container 
-                                    .card-body.px-0 
-                                        .row 
-                                            .col-lg-12.col-md-9.col-sm-8
-                                                .row.mar-bot-10
-                                                    .col-lg-9.col-md-8.col-sm-8.col-8.flex-col.justify-content-center
-                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="User ID: " + newReservation[n].userId
-                                                        p.mar-bot-0.font-source-sans.font-size-20.font-weight-600="Name: " + newReservation[n].UserName
-                                                .row
-                                                    .col-12 
-                                                        p.font-source-serif.font-size-20.font-weight-300="Date: " + newReservation[n].date
-                                                        p.font-source-serif.font-size-20.font-weight-300="Time: " + newReservation[n].time
-                                                .row
-                                                    .col-12 
-                                                        p.font-source-serif.font-size-20.font-weight-300="Address: " + newReservation[n].address
-                                                        p.font-source-serif.font-size-20.font-weight-300="Number of Guest: " + newReservation[n].numberOfGuest
-
-                                        form(method="POST" action="/StaffCheckReservation").row 
-                                            .col-lg-2.col-md-3.col-sm-4 
-                                            .col-lg-10.col-md-9.col-sm-8
-                                                .row
-                                                    .col-lg-6.col-md-6.col-sm-6.col-6
-                                                        input(type="text" name="Id" value=newReservation[n].userId style="display: none")
-                                                        input.btn.accept-btn(type="submit" value="Check Reservation")
-                                - n++;
-
-
                     #Comments.tab-pane.fade(role='tabpanel' aria-labelledby='comments-tab')
                         .container 
                             .card-body.px-0 
@@ -229,7 +163,7 @@ html(lang="en")
                                     a.btn.see-all-btn(href='#') See all comments
 
 
-                    #Edits.tab-pane.fade(role='tabpanel' aria-labelledby='edits-tab')
+                    #Edits.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='edits-tab')
                         .container.mar-top-60
                             .table
                                 .table-title
@@ -242,159 +176,98 @@ html(lang="en")
                                             a.btn.btn-success(href='#addEmployeeModal' data-toggle='modal')
                                                 i.material-icons.fas.fa-plus-circle
                                                 span Add New Employee
-                                            a.btn.btn-danger(href='#deleteEmployeeModal' data-toggle='modal')
-                                                i.material-icons.fa.fa-times-circle-o
-                                                span Delete
                                 table.table.table-striped.table-hover
                                     thead
                                         tr
                                             th
-                                                span.custom-checkbox
-                                                    input#selectAll(type='checkbox')
-                                                    label(for='selectAll')
                                             th Name
                                             th Email
+                                            th Username
                                             th Address
                                             th Phone
                                             th Actions
                                     tbody
-                                        tr
-                                            td
-                                                span.custom-checkbox.flex-col.justify-content-center.align-items-center
-                                                    input#checkbox1(type='checkbox' name='options[]' value='1')
-                                                    label(for='checkbox1')
-                                            td Trần Văn Quý Phước
-                                            td leader@mail.com
-                                            td Trái Đất
-                                            td 0123456789
-                                            td
-                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
-                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
-                                        tr
-                                            td
-                                                span.custom-checkbox
-                                                    input#checkbox2(type='checkbox' name='options[]' value='1')
-                                                    label(for='checkbox2')
-                                            td Phạm Hồng Quân
-                                            td dev1@mail.com
-                                            td Trái Đất
-                                            td 0123456789
-                                            td
-                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
-                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
-                                        tr
-                                            td
-                                                span.custom-checkbox
-                                                    input#checkbox3(type='checkbox' name='options[]' value='1')
-                                                    label(for='checkbox3')
-                                            td Đỗ Tiến Trung
-                                            td dev2@mail.com
-                                            td Trái Đất
-                                            td 0123456789
-                                            td
-                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
-                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
-                                        tr
-                                            td
-                                                span.custom-checkbox
-                                                    input#checkbox4(type='checkbox' name='options[]' value='1')
-                                                    label(for='checkbox4')
-                                            td Đặng Hoàn Mỹ
-                                            td ba@mail.com
-                                            td Mars
-                                            td 0123456789
-                                            td
-                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
-                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
-                                        tr
-                                            td
-                                                span.custom-checkbox
-                                                    input#checkbox5(type='checkbox' name='options[]' value='1')
-                                                    label(for='checkbox5')
-                                            td Huỳnh Trọng Phúc
-                                            td tavuong@mail.com
-                                            td Trái Đất
-                                            td 0123456789
-                                            td
-                                                a.edit(href='#editEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-edit(data-toggle='tooltip' title='Edit')
-                                                a.delete(href='#deleteEmployeeModal' data-toggle='modal')
-                                                    i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' title='Delete')
-
+                                        - var n = 0;
+                                        if staffList
+                                            each value in staffList
+                                                tr
+                                                    td
+                                                        span.custom-checkbox.flex-col.justify-content-center.align-items-center
+                                                            input#checkbox1(type='checkbox' name='options[]' value='1')
+                                                            label(for='checkbox1')
+                                                    td=staffList[n].lastName + " " + staffList[n].firstName
+                                                    td=staffList[n].email
+                                                    td(id="username" + n)=staffList[n].userName
+                                                    td=staffList[n].address
+                                                    td=staffList[n].phone
+                                                    td
+                                                        a.edit(href='#editEmployeeModal' data-toggle='modal')
+                                                            i.material-icons.fas.fa-edit(data-toggle='tooltip' onclick='addUserNameForEdit('+ n +')' title='Edit')
+                                                        a.delete(href='#deleteEmployeeModal' data-toggle='modal')
+                                                            i.material-icons.fas.fa-trash-alt(data-toggle='tooltip' onclick='addUserNameForDelete('+ n +')' title='Delete')
+                                                - n++;
 
                         // Edit Modal HTML
                         #addEmployeeModal.modal.fade
                             .modal-dialog
                                 .modal-content
-                                    form
+                                    form(method="POST", action="/addEmployee")
                                         .modal-header
                                             h4.modal-title Add Employee
                                             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
                                         .modal-body
                                             .form-group
                                                 label First Name 
-                                                input.form-control(type='text' required='')
+                                                input.form-control(type='text' name="firstName" required='')
                                             .form-group
                                                 label Last Name
-                                                input.form-control(type='text' required='')
+                                                input.form-control(type='text' name="lastName" required='')
                                             .form-group
                                                 label Email
-                                                input.form-control(type='email' required='')
+                                                input.form-control(type='email' name="email" required='')
                                             .form-group
                                                 label Address
-                                                textarea.form-control(required='')
+                                                textarea.form-control(name="address" required='')
                                             .form-group
                                                 label Phone
-                                                input.form-control(type='text' required='')
-                                            .form-group
-                                                label Password
-                                                input.form-control(type='text' required='')
+                                                input.form-control(name="phone" type='text' required='')
                                         .modal-footer
+                                            input(type="text" name="numberOfStaff" value=staffListLength style="display: none")
                                             input.btn.btn-default.cancel-small-btn(type='button' data-dismiss='modal' value='Cancel')
                                             input.btn.btn-success(type='submit' value='Add')
                         // Edit Modal HTML
                         #editEmployeeModal.modal.fade
                             .modal-dialog
                                 .modal-content
-                                    form
+                                    form(method="POST", action="/editEmployee")
                                         .modal-header
                                             h4.modal-title Edit Employee
                                             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
                                         .modal-body
                                             .form-group
                                                 label First Name 
-                                                input.form-control(type='text' required='')
+                                                input.form-control(type='text' name="firstName" required='')
                                             .form-group
                                                 label Last Name
-                                                input.form-control(type='text' required='')
+                                                input.form-control(type='text' name="lastName" required='')
                                             .form-group
                                                 label Email
-                                                input.form-control(type='email' required='')
+                                                input.form-control(type='email' name="email" required='')
                                             .form-group
                                                 label Address
-                                                textarea.form-control(required='')
+                                                textarea.form-control(name="address" required='')
                                             .form-group
                                                 label Phone
-                                                input.form-control(type='text' required='')
-                                            .form-group
-                                                label Password
-                                                input.form-control(type='text' required='')
+                                                input.form-control(name="phone" type='text' required='')
                                         .modal-footer
+                                            input(id="usernamePost" type="text" name="usernamePost" value="" style="display: none")
                                             input.btn.btn-default.cancel-small-btn(type='button' data-dismiss='modal' value='Cancel')
                                             input.btn.btn-info(type='submit' value='Save')
                         // Delete Modal HTML
                         #deleteEmployeeModal.modal.fade
                             .modal-dialog
                                 .modal-content
-                                    form
+                                    form(method="POST", action="/deleteEmployee")
                                         .modal-header
                                             h4.modal-title Delete Employee
                                             button.close(type='button' data-dismiss='modal' aria-hidden='true') &times;
@@ -403,6 +276,7 @@ html(lang="en")
                                             p.text-warning
                                                 small This action cannot be undone.
                                         .modal-footer
+                                            input(id="deleteUsernamePost" type="text" name="usernamePost" value="" style="display: none")
                                             input.btn.btn-default.cancel-small-btn(type='button' data-dismiss='modal' value='Cancel')
                                             input.btn.btn-danger(type='submit' value='Delete')
 

@@ -23,10 +23,23 @@ const adminGet = async function(req, res) {
     const ref = await firestore.collection('Admin').where('email', '==', userEmail).get();
     const refOrderList = await firestore.collection('order').get();
     const refReservationList = await firestore.collection('reservation').get();
-    
+    const refStaff = await firestore.collection('staff').get();
+
     let orderList = [];
     let reservationList = [];
-    
+    let staffList = [];
+
+    //Staff
+    refStaff.docs.map(docs => staffList.push(docs.data()));
+    //Sort staff by FirstName
+    staffList.sort(
+      function(a, b){
+        if(a.firstName < b.firstName) { return -1; }
+        if(a.firstName > b.firstName) { return 1; }
+        return 0;
+      }
+    );
+
     //Order
     refOrderList.docs.map(docs => orderList.push(docs.data()));
     let newOrder = [];
@@ -49,6 +62,8 @@ const adminGet = async function(req, res) {
     res.locals.user = client;
     res.locals.newOrder = newOrder;
     res.locals.newReservation = newReservation;
+    res.locals.staffList = staffList;
+    res.locals.staffListLength = staffList.length;
     res.render('admin');
   } else {
     res.render('admin');

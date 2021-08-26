@@ -38,7 +38,9 @@ const cancelReservationRoutes = require('./routers/cancelReservation.router');
 const staffProfileRoutes = require('./routers/staffProfile.router');
 const AdminRoutes = require('./routers/Admin.router');
 const AdminLogintRoutes = require('./routers/AdminLogin.router');
-
+const addEmployee = require('./routers/addEmployee.router');
+const editEmoloyee = require('./routers/editEmployee.router');
+const deleteEmployee = require('./routers/deleteEmployee.router');
 // Views
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -113,6 +115,12 @@ app.get('/logOut', (req, res) => {
 app.use('/Admin', AdminMiddleware.AdminMiddleware, AdminRoutes);
 
 app.use('/AdminLogin', AdminLogintRoutes);
+
+app.use('/addEmployee', AdminMiddleware.AdminMiddleware, addEmployee);
+
+app.use('/editEmployee', AdminMiddleware.AdminMiddleware, editEmoloyee);
+
+app.use('/deleteEmployee', AdminMiddleware.AdminMiddleware, deleteEmployee)
 
 app.use('/staffLogin', staffLogin);
 

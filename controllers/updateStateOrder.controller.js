@@ -11,14 +11,14 @@ const updateStateOrderPost = async (req, res) => {
         //Lay thong tin cua Staff
         let userEmail;
         const findEmail = await firestore.collection('staff').doc(req.cookies.userId).get().then((doc) => {
-        if (doc.exists) {
-            userEmail = doc.data().email;
-        } else {
-            // doc.data() will be undefined in this case
-            console.log('No such document!');
-        }
-        }).catch((error) => {
-            console.log('Error getting document:', error);
+            if (doc.exists) {
+                userEmail = doc.data().email;
+            } else {
+                // doc.data() will be undefined in this case
+                console.log('No such document!');
+            }
+            }).catch((error) => {
+                console.log('Error getting document:', error);
         });
         const ref = await firestore.collection('staff').where('email', '==', userEmail).get();
         const userOfOrder = await firestore.collection('client').doc(req.body.UserId).get();
