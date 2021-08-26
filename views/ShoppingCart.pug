@@ -445,7 +445,11 @@ html(lang="en")
                             .row
                                 .col-12.font-raleway
                                     input.done-btn.btn(type="submit" value="Done").bn34
-
+                    else if clientOrder.status === 4
+                        form(method="POST" action="/cancelOrderClient").card-footer.bg-white.px-0
+                            .row
+                                .col-12.font-raleway
+                                    input.done-btn.btn(type="submit" value="Cancel").bn34
         //Footer
         .footer
             .container-fluid.row 
