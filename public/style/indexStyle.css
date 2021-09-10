@@ -209,7 +209,7 @@
 }
 
 .section_01 {
-    padding: 50px;
+    padding-top: 50px;
     font-family: 'Caveat', cursive;
     font-size: 24pt;
     text-align: center;
@@ -230,11 +230,23 @@
 .cardMainHeader {
     font-style:oblique;
     font-size: 24pt;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+.textMainHeader {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    text-align: justify;
 }
 
 .customBtn { 
     border-radius: 0% !important;
-    background-color: #ef0400 !important;
+    background-color:green !important;
+    border-color: greenyellow !important;
 }
 
 .customBtn:hover { 
@@ -259,7 +271,8 @@
 .section_03 .card {
     padding-left: 0;
     padding-right: 0;
-    margin: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     border: 0;
 }
 
@@ -268,6 +281,7 @@
     text-transform: uppercase;
     font-weight: 700 !important;
     font-size: 18pt;
+    text-transform: uppercase;
 }
 
 .section_03 .card {
@@ -325,7 +339,6 @@
 }
 
 .menu-card span {
-    padding-top: 10px;
     font-size: 18pt;
     align-items: center;
     color: #ef0400;
@@ -475,4 +488,31 @@ ul, li, ol {
 }
 .cart{
     color:white
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+
+.section_002 {
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 40px;
+    color:black;
+    text-align: center;
+}
+
+.card-text {
+    font-family: 'Raleway', sans-serif;
+}
+
+.price-tag {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: red;
+    margin-bottom: 0 !important;
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }

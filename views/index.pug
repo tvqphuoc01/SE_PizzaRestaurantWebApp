@@ -9,7 +9,7 @@ html(lang="en")
         // Boostrap & CSS
         link(rel="stylesheet" href="indexStyle.css" )
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
-        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
@@ -17,7 +17,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
-        
+
         // The core Firebase JS SDK is always required and must be listed first
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
@@ -86,18 +86,18 @@ html(lang="en")
             //Slide One
             div(class="carousel-item active" style="background-image: url('slider-bg.jpg')")
                 div(class="carousel-caption d-none d-md-block")
-                    h2(class="display-4") First Slide
-                    p(class="lead") This is a description for the first slide.
+                    h2(class="display-4") Perfect
+                    p(class="lead") Fresh out of the oven
             //Slide Two
             div(class="carousel-item" style="background-image: url('slider-bg1.jpg')")
                 div(class="carousel-caption d-none d-md-block")
-                    h2(class="display-4") Second Slide 
-                    p(class="lead") This is a description for the second slide.
+                    h2(class="display-4") Real
+                    p(class="lead") Bite into tender juicy goodness.
             //Slide Three
             div(class="carousel-item" style="background-image: url('slider-bg2.jpg')")
                 div(class="carousel-caption d-none d-md-block")
-                    h2(class="display-4") Third Slide
-                    p(class="lead") This is a description for the third slide.
+                    h2(class="display-4") Tasty
+                    p(class="lead") All the flavor, not on your dreams.
             a(class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev")
                 span(class="carousel-control-prev-icon" aria-hidden="true")
                 span(class="sr-only") Previous
@@ -107,56 +107,55 @@ html(lang="en")
         .section.row.container-fluid  
             .col-2
             .col-8
-                p.section_01 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                p.section_01 Please be a traveler, not a tourist. Try new things, meet new people, and look beyond what’s right in front of you. Those are the keys to understanding this amazing world we live in.
                     br
-                    img(src="site-img04.jpg")
+                    p.section_002 Andrew Zimmern
             .col-2
         .section.row.container-fluid 
-            .col-1 
-            .col-10.row.section_02
-                .col-6
-                    img(src="site-img51.jpg")
-                .col-6
-                    div(class="card whitebox" style="width: 30rem; height: 30rem")
-                        div(class="card-body")
-                            h5.cardMainHeader OUT STORY
-                            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            button(type="button" class="btn btn-danger btn-lg customBtn") KNOW MORE
-            .col-1
+            .col-12
+                .row
+                    .col-6
+                        img(src="site-img51.jpg")
+                    .col-6
+                        div(class="card whitebox" style="width: 30rem; height: 30rem")
+                            div(class="card-body")
+                                h5.cardMainHeader OUR STORY
+                                p.textMainHeader Starting from simple things, but the elements of earth, air and water have cultivated great things from us. The delicious pizzas are made from quality flour selected from the highest grade.
+                                    br
+                                    | The fresh, succulent tomatoes are carefully cultivated from the selection of varieties, taking care of the right temperature to grow in the best way. The seafood and meat are carefully selected at the input so that the chef can create great dishes. We say no to ingredients of unknown origin, products containing chemical residues and withered foods. We always guarantee with all our heart that we will bring our customers the best food. 
+                                button(type="button" class="btn btn-danger btn-lg customBtn") KNOW MORE
+
         .section_03.row
             .col-1
-            .col-10.row
-                .col-4
-                    div(class="card" style="width: 18rem;")
-                        img(class="card-img-top" src="site-img18.jpg" alt="Card image cap")
+            .col-10.row  
+                .col-lg-4.col-md-4
+                    div(class="card")
+                        img(class="card-img-top" src="Seafood Deluxe.png" alt="Card image cap")
                         div(class="card-body")
-                            h5(class="card-title") CHICKEN PIZZA
-                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            div.row
-                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
-                                div.col-2
-                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
-                .col-4
-                    div(class="card" style="width: 18rem;")
-                        img(class="card-img-top" src="site-img19.jpg" alt="Card image cap")
+                            h5(class="card-title") SEAFOOD DELUXE
+                            p(class="card-text") Prawn, crab sticks and calamari with Marinara sauce</p>
+                            .row.card-text
+                                p.price-tag.col-lg-6.flex-col.justify-content-center 129,000 VND
+                                a(href="/Shop" class="btn btn-primary customBtn col-lg-6") GO TO SHOP
+                .col-lg-4.col-md-4
+                    div(class="card")
+                        img(class="card-img-top" src="ZucchiniBasil.png" alt="Card image cap")
                         div(class="card-body")
-                            h5(class="card-title") VEG. BURGER 
-                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            div.row
-                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
-                                div.col-2
-                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
-                .col-4
-                    div(class="card" style="width: 18rem;")
-                        img(class="card-img-top" src="site-img20.jpg" alt="Card image cap")
+                            h5(class="card-title") Zucchini Basil Sauce
+                            p(class="card-text") Zucchini and Basil with House-made Latic Cheese</p>
+                            .row.card-text
+                                p.price-tag.col-lg-6.flex-col.justify-content-center 147,000 VND
+                                a(href="/Shop" class="btn btn-primary customBtn col-lg-6") GO TO SHOP
+                .col-lg-4.col-md-4
+                    div(class="card")
+                        img(class="card-img-top" src="BurrataHam.png" alt="Card image cap")
                         div(class="card-body")
-                            h5(class="card-title") VEG. PIZZA
-                            p(class="card-text") Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            div.row
-                                a(href="#" class="btn btn-primary customBtnPrice col-5") Price: $ 4.95
-                                div.col-2
-                                a(href="#" class="btn btn-danger customBtn col-5") Order Now
-                                
+                            h5(class="card-title") Burrata Parma Ham
+                            p(class="card-text") Burrata is high-qualified that is so great when combining with ham</p>
+                            .row.card-text
+                                p.price-tag.col-lg-6.flex-col.justify-content-center 299,000 VND
+                                a(href="/Shop" class="btn btn-primary customBtn col-lg-6") GO TO SHOP
+
             .col-1
         .section_04
             .container-fluid.row
@@ -167,45 +166,45 @@ html(lang="en")
                         .col-6
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Chicken Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Seafood Deluxe
+                                    span.col-4.offers-price  129.000
+                                p Prawn, crab sticks and calamari with Marinara sauce
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Seafood and Peach
+                                    span.col-4.offers-price  169.000
+                                p Shrimp, Ham, Peach "exploded" together with Thousand Island sauce
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Spl. Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Tropical Seafood
+                                    span.col-4.offers-price  129.000
+                                p Crab sticks, pineapples and Thousand Island sauce
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Veg. Burger
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Aloha
+                                    span.col-4.offers-price  119.000
+                                p Ham, pepperoni, pork sausage and juicy pineapple with Thousand Island sauce
                         .col-6
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Chicken Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Pasta shrimp rose
+                                    span.col-4.offers-price  129.000
+                                p The juiciness of fresh shrimps combined with delectable rosé sauce
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Pasta bolognese
+                                    span.col-4.offers-price  119.000
+                                p Italian-style mince beef sauce finely mixed with pasta
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Spl. Veg. Pizza
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Signature salad
+                                    span.col-4.offers-price  69.000
+                                p Broccoli, purple cabbage, apple mixed with boiled quail eggs and Salad sauce
                             .menu-card 
                                 .menu-item.row 
-                                    h3.col-10 Veg. Burger
-                                    span.col-2.offers-price  $4.95
-                                p Phasellus sollicitudin sapien id luctus tempor.
+                                    h3.col-8 Chicken Strip Salad
+                                    span.col-4.offers-price  69.000
+                                p Crispy chicken salad with quail eggs, bacon, parmesan and Thousand Island
         .section_05
             .container-fluid.row
                 .col-1 
@@ -213,20 +212,23 @@ html(lang="en")
                     h1 FROM OUR BLOG
                     .blog-card.row 
                         .col-4 
-                            img(src="site-img06.jpg")
+                            a(href='/Blog1')
+                                img(src="pizza4.png")
                             p
-                                a(href="/Blog1") Bulum elt dap mauris necmale
-                            h2 Nulla imperdiet sit amet magna Vesti bulum eltdap mauris Nulla imperdiet sit amet magna.
+                                a(href="/Blog1") The story of the pizza
+                            h2 Pizza, garnished with Mozzarella and tomatoes, was normally known as the dish for poor people until it became a famous dish for the wealthy when Queen Margherita had it as a meal as well.
                         .col-4 
-                            img(src="site-img07.jpg")
+                            a(href='/Blog2')
+                                img(src="pizza-grilled-cheese-3103.jpg")
                             p
-                                a(href="#") Bulum elt dap mauris necmale
-                            h2 Nulla imperdiet sit amet magna Vesti bulum eltdap mauris Nulla imperdiet sit amet magna.
+                                a(href="/Blog2") Pizza Grilled Cheese Recipe
+                            h2 Pizza grilled cheese: perfect for those times when a pizza craving hits but you're too hangry to wait the 30-40 minutes for delivery!
                         .col-4
-                            img(src="site-img08.jpg")
+                            a(href='/Blog3')
+                                img(src="slice-large.jpg")
                             p
-                                a(href="#") Bulum elt dap mauris necmale
-                            h2 Nulla imperdiet sit amet magna Vesti bulum eltdap mauris Nulla imperdiet sit amet magna.
+                                a(href="/Blog3") 16 Pizza Taste And Texture Tips
+                            h2 There are a number of taste and texture issues that you will encounter when starting to make pizza. This list is set of common pizza dough problems and some ways to improve next time.
                 .col-1 
         //Footer
         .footer
