@@ -32,7 +32,7 @@ function addPromo() {
     totalsInput.value = finalTotal;
     if (checkPromo !== 0) {
         button.style.display = "none";
-        discount.style.display = "line";
+        discount.style.display = "inline-block";
     }
 }
 
