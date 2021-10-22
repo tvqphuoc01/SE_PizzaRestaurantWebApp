@@ -1,0 +1,916 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="serviceStyle.css")
+        link(rel="stylesheet" href="ShopStyle.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet")
+        <script src="app.js"></script>
+        <script src="shop.js"></script>
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="/")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item 
+                         a(class="Shop" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                        else
+                            span(class="fa-stack fa-2x has-badge" data-count=0)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP  
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text" id="searchBar" placeholder="Search Here ..... !")
+                    div(id="search_List")
+                        ul(id="dishesList")
+        //Header
+        .page-header(style="padding-top:90px")
+            .container
+                .col-md-6
+                    h3.left-section1 Shop
+                    h4.left-section2 Our Product 
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/" style="color:white") Home 
+                        i /       
+                        a Shop
+        //Section2
+        .service-section2
+            .container 
+                .kind
+                    h1(style="color:red;") PIZZA
+                    .row
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_1", method="POST", action='/Shop')
+                            .cell-food
+                                img.img-responsive(src="Seafood Deluxe.png" alt="Seafood Deluxe")
+                                .menu-item
+                                    h3
+                                        span Seafood Deluxe  
+                                    h2.price 129.000VNĐ
+                                p Prawn, crab sticks & calamari with Marinara sauce
+                                .row
+                                    .col-6
+                                        .buttons_added
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_1')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_1" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_1')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_1" style="display: none")
+                                            input(type="text" name="dishName" value="Seafood Deluxe" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Seafood Deluxe.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_2", method="POST", action='/Shop')
+                            .cell-food
+                                img.img-responsive(src="Seafood & Peach.png" alt="Seafood & Peach")
+                                .menu-item
+                                    h3
+                                        span Seafood & Peach
+                                    h2.price 169.000VNĐ
+                                p Shrimp, Ham, Peach "exploded" together with Thousand Island sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_2')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_2" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_2')" value="+") 
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_2" style="display: none")
+                                            input(type="text" name="dishName" value="Seafood & Peach" style="display: none")
+                                            input(type="text" name="price" value="169.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Seafood & Peach.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_3", method="POST", action='/Shop')
+                            .cell-food
+                                img.img-responsive(src="Seafood Pesto.png" alt="Seafood Pesto")
+                                .menu-item
+                                    h3
+                                        span Seafood Pesto
+                                    h2.price 169.000VNĐ
+                                p Shrimp, crab stick, squid, broccoli and green Pesto sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_3')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_3" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_3')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_3" style="display: none")
+                                            input(type="text" name="dishName" value="Seafood Pesto" style="display: none")
+                                            input(type="text" name="price" value="169.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Seafood Pesto.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_4", method="POST", action='/Shop')
+                            .cell-food
+                                img.img-responsive(src="Seafood Cocktail.png" alt="Seafood Cocktail")
+                                .menu-item
+                                    h3
+                                        span Seafood Cocktail
+                                    h2.price 129.000VNĐ
+                                p Fresh prawns, succulent crab sticks, ham and juicy pineapples with Thousand Island sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_4')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_4" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_4')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_4" style="display: none")
+                                            input(type="text" name="dishName" value="Seafood Cocktail" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Seafood Cocktail.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_5", method="POST", action='/Shop')
+                            .cell-food
+                                img.img-responsive(src="Tropical Seafood.png" alt="Tropical Seafood")
+                                .menu-item
+                                    h3
+                                        span Tropical Seafood
+                                    h2.price 129.000VNĐ
+                                p Crab sticks, pineapples and Thousand Island sauce
+                                .row
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_5')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_5" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_5')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_5" style="display: none")
+                                            input(type="text" name="dishName" value="Tropical Seafood" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Tropical Seafood.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_6", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Aloha.png" alt="Aloha")
+                                .menu-item
+                                    h3 
+                                        span Aloha
+                                    h2.price 119.000VNĐ
+                                p Ham, pepperoni, pork sausage and juicy pineapple with Thousand Island sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_6')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_6" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_6')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_6" style="display: none")
+                                            input(type="text" name="dishName" value="Aloha" style="display: none")
+                                            input(type="text" name="price" value="119.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Aloha.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_7", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Bacon Super Delight.png" alt="Bacon Super Delight")
+                                .menu-item
+                                    h3
+                                        span Bacon Super Delight
+                                    h2.price 119.000VNĐ
+                                p Italian sausages, bacon, ham, green capsicums and tomatoes
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_7')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_7" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_7')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_7" style="display: none") 
+                                            input(type="text" name="dishName" value="Bacon Super Delight" style="display: none")
+                                            input(type="text" name="price" value="119.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Bacon Super Delight.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_8", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Canadian Bacon.jpg" alt="Canadian Bacon")
+                                .menu-item
+                                    h3
+                                        span Canadian Bacon
+                                    h2.price 119.000VNĐ
+                                p Ham, bacon bits and corns
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_8')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_8" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_8')" value="+")
+                                    .col-6
+                                        .button(style="float: right")
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_8" style="display: none") 
+                                            input(type="text" name="dishName" value="Canadian Bacon" style="display: none")
+                                            input(type="text" name="price" value="119.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Canadian Bacon.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_9", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pizza-cheese.jpg" alt="Cheese Lover")
+                                .menu-item
+                                    h3
+                                        span Cheese Lover
+                                    h2.price 79.000VNĐ
+                                p A triple-layer of Mozzarella cheese on top of tomato sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_9')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_9" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_9')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_9" style="display: none") 
+                                            input(type="text" name="dishName" value="Cheese Lover" style="display: none")
+                                            input(type="text" name="price" value="79.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pizza-cheese.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_10", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="248-2486762_tropical-hawaiian-pizza-hut-hd-png-download.png" alt="Hawaiian Paradise")
+                                .menu-item
+                                    h3
+                                        span Hawaiian Paradise
+                                    h2.price 109.000VNĐ
+                                p Hawaiian-flavored pizza with hams and pineapples
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_10')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_10" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_10')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_10" style="display: none")  
+                                            input(type="text" name="dishName" value="Hawaiian Paradise" style="display: none")
+                                            input(type="text" name="price" value="109.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="248-2486762_tropical-hawaiian-pizza-hut-hd-png-download.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_31", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src='ZucchiniBasil.png' alt='Zucchini Basil Sauce')
+                                .menu-item
+                                    h3
+                                        span Zucchini Basil Sauce
+                                    h2.price 147.000VNĐ
+                                p Zucchini and Basil with House-made Latic Cheese
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_31')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_31" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_31')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_31" style="display: none") 
+                                            input(type="text" name="dishName" value="Zucchini Basil Sauce" style="display: none")
+                                            input(type="text" name="price" value="147.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="ZucchiniBasil.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_32", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src='BurrataHam.png' alt='Burrata Parma Ham')
+                                .menu-item
+                                    h3
+                                        span Burrata Parma Ham
+                                    h2.price 299.000VNĐ
+                                p With farm-fresh milk and professional skills, Burrata is high-qualified that is so great when combining with ham.
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_32')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_32" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_32')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_32" style="display: none")
+                                            input(type="text" name="dishName" value="Burrata Parma Ham" style="display: none")
+                                            input(type="text" name="price" value="299.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="BurrataHam.png" style="display: none")
+                .kind
+                    h1(style="color:red;") PASTA
+                    .row
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_11", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Stir fried pasta with spicy seafood.png" alt="Stir fried pasta with spicy seafood")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Stir fried pasta with spicy seafood  
+                                    h2.price 129.000VNĐ
+                                p Pasta stir fried with fresh seafood cooked with lots of spices and garlic
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_11')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_11" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_11')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_11" style="display: none")
+                                            input(type="text" name="dishName" value="Stir fried pasta with spicy seafood" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Stir fried pasta with spicy seafood.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_12", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pasta shrimp rose.png" alt="Pasta shrimp rose")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Pasta shrimp rose
+                                    h2.price 129.000VNĐ
+                                p The juiciness of fresh shrimps combined with delectable rosé sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_12')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_12" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_12')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_12" style="display: none")
+                                            input(type="text" name="dishName" value="Pasta shrimp rose" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pasta shrimp rose.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_13", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pasta bolognese.png" alt="Pasta bolognese")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Pasta bolognese
+                                    h2.price 129.000VNĐ
+                                p Italian-style mince beef sauce finely mixed with pasta
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_13')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_13" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_13')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_13" style="display: none")
+                                            input(type="text" name="dishName" value="Pasta bolognese" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pasta bolognese.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_14", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Stir fried pasta with spicy sausage.png" alt="Stir fried pasta with spicy sausage")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Stir fried pasta with spicy sausage
+                                    h2.price 129.000VNĐ
+                                p Pasta stir fried with parsley sausages, fresh herbs and Italian basil
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_14')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_14" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_14')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_14" style="display: none")
+                                            input(type="text" name="dishName" value="Stir fried pasta with spicy sausage" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Stir fried pasta with spicy sausage.png" style="display: none")
+                .kind
+                    h1(style="color:red;") SALAD
+                    .row
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_15", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Chicken Strip Salad.png" alt="Chicken Strip Salad")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Chicken Strip Salad  
+                                    h2.price 69.000VNĐ
+                                p Crispy chicken salad with quail eggs, bacon, parmesan and Thousand Island
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_15')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_15" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_15')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_15" style="display: none")
+                                            input(type="text" name="dishName" value="Chicken Strip Salad" style="display: none")
+                                            input(type="text" name="price" value="69.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Chicken Strip Salad.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_16", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Crispy Salmon Skin Salad.png" alt="Crispy Salmon Skin Salad")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Crispy Salmon Skin Salad
+                                    h2.price 69.000VNĐ
+                                p Salad with crispy salmon skin and red cabbage, cherry tomatoes, corn with Yuzu sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_16')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_16" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_16')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_16" style="display: none")
+                                            input(type="text" name="dishName" value="Crispy Salmon Skin Salad" style="display: none")
+                                            input(type="text" name="price" value="69.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Crispy Salmon Skin Salad.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_17", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Signature salad.png" alt="Signature salad")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Signature salad
+                                    h2.price 69.000VNĐ
+                                p Broccoli, purple cabbage, apple mixed with boiled quail eggs and Salad sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_17')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_17" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_17')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_17" style="display: none")
+                                            input(type="text" name="dishName" value="Signature salad" style="display: none")
+                                            input(type="text" name="price" value="69.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Signature salad.png" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_18", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Caesar's salad.png" alt="Caesar's salad")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Caesar's salad
+                                    h2.price 69.000VNĐ
+                                p Salad with caesar dressing
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_18')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_18" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_18')" value="+")
+                                    .col-6 
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_18" style="display: none")
+                                            input(type="text" name="dishName" value="Caesar's salad" style="display: none")
+                                            input(type="text" name="price" value="69.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Caesar's salad.png" style="display: none")   
+                .kind
+                    h1(style="color:red;") DESSERT
+                    .row
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_19", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Muc_Chien_Gion_400x275.jpg" alt="Crispy fried calamari")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Calamari 
+                                    h2.price 99.000VNĐ
+                                p Crispy fried calamari
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_19')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_19" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_19')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_19" style="display: none")
+                                            input(type="text" name="dishName" value="Calamari" style="display: none")
+                                            input(type="text" name="price" value="99.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Muc_Chien_Gion_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_20", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Banh_Cuon_Pho_Mai_400x275.jpg" alt="Cheesy Pops")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Cheesy Pops
+                                    h2.price 69.000VNĐ
+                                p Filled with 2 types of cheese
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_20')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_20" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_20')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_20" style="display: none")
+                                            input(type="text" name="dishName" value="Cheesy Pops" style="display: none")
+                                            input(type="text" name="price" value="69.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Banh_Cuon_Pho_Mai_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_21", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Ga_Cay_Pho_Mai_Han_Quoc_400x275.jpg" alt="KOREAN STYLE CHEESY CHICKEN")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Korean Style Cheesy Chicken
+                                    h2.price 129.000VNĐ
+                                p Chicken thigh fillet with Korean spicy sauce, sweet corn, onion, topped with melted mozzarella cheese
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_21')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_21" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_21')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_21" style="display: none")
+                                            input(type="text" name="dishName" value="Korean Style Cheesy Chicken" style="display: none")
+                                            input(type="text" name="price" value="129.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Ga_Cay_Pho_Mai_Han_Quoc_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_22", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Banh_Mi_Bo_Toi_400x275.jpg" alt="Garlic Bread")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Garlic Bread
+                                    h2.price 29.000VNĐ
+                                p Deliciously crusty grilled bread covered with savory garlic-butter sauce
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_22')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_22" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_22')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_22" style="display: none") 
+                                            input(type="text" name="dishName" value="Garlic Bread" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Banh_Mi_Bo_Toi_400x275.jpg" style="display: none")
+                .kind
+                    h1(style="color:red;") DRINK
+                    .row
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_23", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pepsi Can.jpeg" alt="Pepsi Can 320Ml")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Pepsi Can 320Ml
+                                    h2.price 29.000VNĐ
+                                p Pepsi Lon 320ml
+                                .row    
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_23')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_23" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_23')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_23" style="display: none")
+                                            input(type="text" name="dishName" value="Pepsi Can 320Ml" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pepsi Can.jpeg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_24", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pepsi_Lemon_Can_400x275.jpg" alt="Pepsi Lemon Can 320Ml")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Pepsi Lemon Can 320Ml
+                                    h2.price 29.000VNĐ
+                                p Pepsi Lemon Lon 320ml
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_24')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_24" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_24')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_24" style="display: none")
+                                            input(type="text" name="dishName" value="Pepsi Lemon Can 320Ml" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pepsi_Lemon_Can_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_25", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pepsi Black Can.jpeg" alt="Pepsi No Calories Can 320Ml")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Pepsi No Calories Can 320Ml
+                                    h2.price 29.000VNĐ
+                                p Pepsi No Calories Lon 320ml
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_25')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_25" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_25')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_25" style="display: none")
+                                            input(type="text" name="dishName" value="Pepsi No Calories Can 320Ml" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pepsi Black Can.jpeg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_26", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="7Up_Can_400x275.jpg" alt="7Up Can 320Ml")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span 7Up Can 320Ml
+                                    h2.price 29.000VNĐ
+                                p 7Up Lon 320ml
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_26')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_26" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_26')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_26" style="display: none") 
+                                            input(type="text" name="dishName" value="7Up Can 320Ml" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="7Up_Can_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_27", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Mirinda_Orange_Can_400x275.jpg" alt="Mirinda Orange Can 320Ml")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Mirinda Orange Can 320Ml
+                                    h2.price 29.000VNĐ
+                                p Mirinda Orange Lon 320Ml
+                                .row    
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_27')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_27" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_27')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_27" style="display: none")
+                                            input(type="text" name="dishName" value="Mirinda Orange Can 320Ml" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Mirinda_Orange_Can_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_28", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Mirinda_Soda_Can_400x275.jpg" alt="Mirinda Soda Can 320Ml")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Mirinda Soda Can 320Ml
+                                    h2.price 29.000VNĐ
+                                p Mirinda Soda Lon 320Ml
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_28')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_28" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_28')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_28" style="display: none")
+                                            input(type="text" name="dishName" value="Mirinda Soda Can 320Ml" style="display: none")
+                                            input(type="text" name="price" value="29.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Mirinda_Soda_Can_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_29", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="Pepsi_1.5L_400x275.jpg" alt="Pepsi 1.5L")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span Pepsi 1.5L
+                                    h2.price 39.000VNĐ
+                                p PEPSI Chai 1.5L
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_29')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_29" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_29')" value="+")
+                                    .col-6
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_29" style="display: none")
+                                            input(type="text" name="dishName" value="Pepsi 1.5L" style="display: none")
+                                            input(type="text" name="price" value="39.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="Pepsi_1.5L_400x275.jpg" style="display: none")
+                        form.col-lg-3.col-sm-6.col-md-6.m-bottom(id = "Mon_30", method="POST", action='/Shop')
+                            .cell-food 
+                                img.img-responsive(src="7Up_1.5L_400x275.jpg" alt="7Up 1.5L")
+                                .menu-item
+                                    h3(style="font-weight: 700 !important") 
+                                        span 7Up 1.5L
+                                    h2.price 39.000VNĐ
+                                p 7Up Chai 1.5L
+                                .row 
+                                    .col-6
+                                        .buttons_added 
+                                            input.minus.is-form(type="button" onclick="decreaseValue('number_Mon_30')" value="-")
+                                            input(aria-label="quantity" class="input-qty" id="number_Mon_30" max="5" min="1" name="quantity" type="number" value="0")
+                                            input.plus.is-form(type= "button" onclick="incrementValue('number_Mon_30')" value="+")  
+                                    .col-6  
+                                        .button
+                                            input.btn.boxed-color-xs(style="text-transform: uppercase;font-weight: 700 !important" type="submit" value="Order Now")
+                                            input(type="text" name="Id_Mon" value="Mon_30" style="display: none")
+                                            input(type="text" name="dishName" value="7Up 1.5L" style="display: none")
+                                            input(type="text" name="price" value="39.000" style="display: none")
+                                            input(type="text" name="imgUrl" value="7Up_1.5L_400x275.jpg" style="display: none")                        
+        //Section3
+        .service-section3
+            .container
+                h3.text-center(style="color:white;text-transform: uppercase;font-size: 20px !important;font-weight: 700 !important;") Testimonials
+                h4.text-center(style="color:white;text-transform: uppercase;font-size: px !important;font-weight: 700 !important;") What people say
+                div(id = "carousel-example-generic1" class="carousel slide" data-ride="carousel")
+                    ol.carousel-indicators 
+                        li(data-target="#carousel-example-generic1" data-slide-to="0" class="active")
+                        li(data-target="#carousel-example-generic1" data-slide-to="1")
+                        li(data-target="#carousel-example-generic1" data-slide-to="2") 
+                    .carousel-inner(role = "listbox")
+                        //Slide 1
+                        div(class="carousel-item carousel-item-service active")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    description slide 1
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+                        //Slide 2
+                        div(class="carousel-item carousel-item-service")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    description slide 2
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+                        //Slide 3
+                        div(class="carousel-item carousel-item-service")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    description slide 3
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+        //Section4
+        .service-section4
+            .container 
+                .row 
+                    .col-md-6 
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-utensils" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Online Ordering 
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-wifi" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Offer Free Wi-Fi
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-vihara" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Conference Halls
+                                    p description
+                    .col-md-6 
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="far fa-calendar-check" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Table Ordering
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-puzzle-piece" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Games at The Table
+                                    p description
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-door-open" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Home Delivery 
+                                    p description
+                                    
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>
+
+
+
+
+                        
+                           
+
+                

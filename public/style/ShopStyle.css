@@ -1,0 +1,125 @@
+.menu-item{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.menu-item h3{
+    background: #fff none repeat scroll 0 0;
+    margin: 5px 0;
+    text-align: center;
+    color: #010101;
+    font-size: 20px;
+    font-weight: 700 !important;
+    height: 43px;
+}
+.menu-item .price{
+    background: #fff none repeat scroll 0 0;
+    color: #ef0400;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.service-section2{
+    padding-top:300px;
+}
+.col-xs-12{
+    width: 100%;
+}
+.cell-food p{
+    margin-bottom: 40px;
+    font-family: sans-serif, 'Raleway';
+    font-style: italic;
+    height: 72px;
+    overflow: hidden;
+    text-align: center;
+}
+.cell-food p:hover{
+    overflow: visible;
+}
+.button input.boxed-color-xs{
+    border: 0;
+    background: #ef0400;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: bold;
+}
+.button a.boxed-color-xs:hover{
+    background-color: black;
+}
+.kind h1{
+    color:red;
+    font-weight: 800;
+    letter-spacing: 30px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+}
+.kind{
+    padding-top: 30px;
+    border-style: solid;
+    border-width: 0 0 5px 0;
+}
+.buttons_added {
+    opacity:1;
+    white-space:nowrap;
+    vertical-align:top;
+    text-align: center;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.input-qty {
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+.img-responsive{
+    width: 270px;
+    height: 270px;
+    padding: 8px;
+    border-radius: inherit;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    position: relative;
+}
+@media only screen and (max-width: 1199px) {
+    .img-responsive{
+        width: 220px;
+        height: 220px;
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .img-responsive{
+      line-height: 1em;
+    }
+  }

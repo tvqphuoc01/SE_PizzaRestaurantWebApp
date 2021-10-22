@@ -1,0 +1,518 @@
+.container-fluid {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.mainNavBar {
+    background-color: black;
+    color: white;
+}
+
+.mainNavBar .col-2, .col-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mainNavBar .nav-item {
+    margin-right: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.mainNavBar .nav-item:hover {
+    color: red;
+    transition: all 0.6s;
+}
+
+.mainNavBar #search-bar {
+    display: none;
+}
+
+.reservation, .contact, .Blog {
+    color: #fff;
+}
+
+.reservation:hover, .contact:hover, .Blog:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.avatar-nav {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.home {
+    color: #fff;
+}
+
+.home:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.contact {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+.contact:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.fa-stack[data-count]:after{
+  position:absolute;
+  right:0%;
+  top:0%;
+  content: attr(data-count);
+  font-size:40%;
+  padding:.6em;
+  border-radius:999px;
+  line-height:.75em;
+  color: white;
+  color:red;
+  text-align:center;
+  min-width:2em;
+  font-weight:bold;
+  background: white;
+  border-style:solid;
+}
+
+.fa-circle {
+  color:#DF0000;
+}
+
+.red-cart {
+	color: #DF0000; background:white;
+}
+.Shop {
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+.Shop:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+.menu {
+    color: #fff;
+}
+
+.menu:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+
+#dishesList {
+    max-width: 50%;
+    padding: 10px;
+    margin-left: 55px;
+}
+
+.dishes {
+    list-style-type: none;
+    color: black;
+    background-color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 24pt;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: left;
+    transition: all 0.6s;
+}
+
+.dishes img {
+    max-height: 100px;
+}
+
+.dishes:hover {
+    background-color: red;
+}
+
+#dishesList a:hover {
+    text-decoration: none;
+}
+
+#search-bar input {
+    width: 80%;
+    padding: 10px;
+    background-color: #000000F2;
+    margin-left: 30px;
+    color: white;
+    font-style: italic;
+    box-shadow: none;
+    font-size: 18pt;
+}
+
+#search-bar input:focus {
+    border: 2px solid black !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    transition: all 0.5s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    font-size: 14pt;
+    font-style: italic;
+    transition: all 0.6s;
+    border-bottom: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+
+.dropdown-content a:hover {
+    color: red;
+    background-color: black;
+}
+
+.carosel {
+    margin-top: 40px;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.section_01 {
+    padding-top: 50px;
+    font-family: 'Caveat', cursive;
+    font-size: 24pt;
+    text-align: center;
+}
+
+.section_02 {
+    padding-bottom: 50px;
+}
+
+.whitebox {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    padding: 15px;
+    border: 1px solid white !important;
+    border-radius: 0% !important;
+}
+
+.cardMainHeader {
+    font-style:oblique;
+    font-size: 24pt;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    color: black;
+}
+
+.textMainHeader {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+}
+
+.customBtn { 
+    border-radius: 0% !important;
+    background-color:green !important;
+    border-color: greenyellow !important;
+}
+
+.customBtn:hover { 
+    background-color: #000000 !important;
+    color: white;
+    border-color: #000000;
+    transition: all 0.7s;
+}
+
+.section_03 {
+    background-image: url('parallax-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 600px;
+    margin-top: 30px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.section_03 .card {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border: 0;
+}
+
+.section_03 .card-title {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700 !important;
+    font-size: 18pt;
+    text-transform: uppercase;
+}
+
+.section_03 .card {
+    position: relative;
+}
+
+.section_03 .price {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 25px;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+    z-index: 9;
+}
+
+.section_03 .customBtnPrice {
+    border-radius: 0% !important;
+    background-color: #04aa6d !important;
+}
+
+.section_04 {
+    background-image: url('parallax-bg2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height:700px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.section_04 .container-fluid {
+    padding: 80px !important;
+    min-height: 700px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.section_04 .Offers-tittle {
+    font-size: 24pt;
+    font-weight: 700 !important;
+    padding: 10px;
+    
+}
+
+.section_04 .menu-card {
+    padding: 10px;
+    align-items: center;
+}
+
+.menu-card h3 {
+    padding-bottom: 0;
+}
+
+.menu-card span {
+    font-size: 18pt;
+    align-items: center;
+    color: #ef0400;
+    font-weight: 700;
+}
+
+.section_05 {
+    min-height: 550px;
+    width: 100%;
+}
+
+.section_05 h1 {
+    padding: 25px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.section_05 h2 {
+    padding-top: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12pt;
+}
+
+.section_05 p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.section_05 img {
+    max-width: 100%;
+}
+
+.section_05 a {
+    color: black;
+}
+
+.section_05 a:hover {
+    text-decoration: none;
+    color: #ef0400;
+    transition: all 0.5s;
+}
+
+.footer {
+    min-height: 400px;
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+    padding: 80px;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.address-info {
+    padding: 0;
+    margin: 0;
+}
+
+.address-info li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title-line {
+    background-color: #ef0400;
+    height: 2px;
+    margin: 10px auto 25px 0;
+    padding: 0;
+    width: 36px;
+}
+
+.customer-sp {
+    padding: 0;
+    margin: 0;
+}
+
+.customer-sp li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.customer-sp a {
+    color: #fff;
+}
+
+.customer-sp a:hover {
+    text-decoration: none;
+    color: #ef0400;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.Copyright {
+    min-height: 100px;
+    background-color: #1f1f1f;
+}
+
+.copyRight-title {
+    color: #fff;
+    padding: 35px;
+    text-align: center;
+    font-size: 12pt;
+    font-family: 'Raleway', sans-serif;
+}
+
+.social-list {
+    padding: 35px;
+    text-align: center;
+}
+
+.social-app {
+    display: inline-block;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.fa-facebook-square {
+    color: #4267B2;
+}
+
+.fa-instagram { 
+    font-size:30px;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube {
+    color: red
+}
+
+.fa-twitter-square {
+    color: #00b6f1;
+}
+
+.cart:hover {
+    text-decoration: none;
+    color: red;
+    transition: all 0.7s;
+}
+.cart{
+    color:white
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+
+.section_002 {
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 40px;
+    color:black;
+    text-align: center;
+}
+
+.card-text {
+    font-family: 'Raleway', sans-serif;
+}
+
+.price-tag {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: red;
+    margin-bottom: 0 !important;
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}

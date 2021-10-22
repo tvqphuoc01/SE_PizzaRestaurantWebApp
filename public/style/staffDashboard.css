@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;300;400;600;700&display=swap');
+
+.font-raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.font-source-sans {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.font-source-serif {
+    font-family: 'Source Serif Pro', serif;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.font-weight-300 {
+    font-weight: 300;
+}
+
+.top-slogan {
+    padding-top: 100px;
+}
+.align-text-center {
+    text-align: center;
+}
+
+.font-playball {
+    font-family: 'Playball', cursive;
+}
+
+.font-size-34 {
+    font-size: 34px;
+}
+
+.gold-color {
+    color: #C59D5F;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.font-size-25 {
+    font-size: 25px;
+}
+
+.font-size-20 {
+    font-size: 20px;
+}
+
+.mar-bot-0 {
+    margin-bottom: 0px !important;
+}
+
+.mar-bot-10 {
+    margin-bottom: 10px;
+}
+
+.mar-top-5 {
+    margin-top: 5px;
+}
+
+.mar-top-30 {
+    margin-top: 30px;
+}
+
+.mar-top-20 {
+    margin-top: 20px;
+}
+
+.mar-top-60 {
+    margin-top: 60px;
+}
+
+.border-rad-50 {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.border-rad-10px {
+    border-radius: 10px;
+    width: 50%;
+    height: auto;
+}
+
+.align-text-right {
+    text-align: right;
+}
+
+.accept-btn {
+    background: #0BAAA8;
+color: #E7EFEF;
+font-family: 'Source Sans Pro', sans-serif;
+font-style: normal;
+font-weight: 600 !important;
+font-size: 20px !important;
+}
+
+.cancel-btn {
+    color: #4D88B2;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+
+.see-all-btn {
+    background: #D1F1F5;
+    border-radius: 7px;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal !important;
+    font-size: 25px !important;
+    color: #09A9A7;
+}
+
+.yellow-color {
+    color: yellow;
+}
+
+.profile-head .nav-tabs {
+margin-bottom: 3%;
+}
+.profile-head .nav-tabs .nav-link {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+border: none;
+color: #A5A5A5;
+}
+.profile-head .nav-tabs .nav-link.active {
+border: none;
+border-bottom: 2px solid;
+font-family: 'Raleway', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 25px;
+color: black;
+}
+
+.backBtn {
+    color: black;
+    background-color: #dc3545 !important;
+}

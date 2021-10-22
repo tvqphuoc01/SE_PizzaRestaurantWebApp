@@ -1,0 +1,349 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="register_style.css")
+        link(rel="stylesheet" href="indexStyle.css")
+        link(rel="stylesheet" href="reservation.css")
+        link(rel="stylesheet" href="ShoppingCart.css")        
+
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="/")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a> 
+                    li.nav-item
+                        a(class="Shop" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                        else
+                            span(class="fa-stack fa-2x has-badge" data-count=0)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP     
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text" placeholder="Search Here ..... !", )
+
+        .page-header-reser 
+            .container.flex-col.justify-content-center.text-align-center 
+                p.header-title.white-color make a reservation
+                p.font-playball.font-size-34.gold-color Booking a table is easy!!
+
+        .slogan.mar-top-50 
+            .container 
+                .row.d-flex.justify-content-center.align-items-center 
+                    p.slogan-header reservation
+                .row.d-flex.justify-content-center.align-items-center 
+                    img(src='color-separator.png')
+                .row.d-flex.justify-content-center.align-items-center  
+                    p.slogan-text.text-align-center Numerous commentators have also referred to the supposed restaurant owner's eccentric habit of touting for custom outside his establishment, dressed in aristocratic fashion and brandishing a sword.
+                .row.d-flex.justify-content-center.align-items-center 
+                    .golden-line.flex-col.justify-content-center 
+                    //- i.fas.fa-circle.fa-xs.dot-line(style='width: 5px; height: 5px;')
+                    .golden-line.flex-col.justify-content-center
+
+        if checkReservation === ""
+            .fill-in-reservation.mar-top-70 
+                form(method="POST" action="/reservation").container 
+                    .row
+                        .col-6
+                            .row
+                                .col-12.text-align-center
+                                    p.form-title book a table
+                        .col-6
+                            .row
+                                .col-12.text-align-center
+                                    p.form-title contact details
+                    .row
+                        .col-6
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    input.box-input(type="date" id="date" name="date" value="2021-01-01" min="2021-01-01" max="2035-12-31")
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    input.box-input(type="time" id="time" name="time")
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    select.box-input(name="Location")
+                                        option(value="" disabled selected) Select Restaurant
+                                        option(value="Landmark 81") Landmark 81
+                                        option(value="Saigon Centre") Saigon Centre
+                                        option(value="Vincom Center Đồng Khởi") Vincom Center Đồng Khởi
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    select.box-input(name="Guest")
+                                        option(value="" disabled selected) Number of Guest
+                                        option(value="1") 1
+                                        option(value="2") 2
+                                        option(value="3") 3
+                                        option(value="4") 4
+                                        option(value="5") 5
+                                        option(value="6") 6
+                                        option(value="7") 7
+                                        option(value="0") ≥ 8
+                        .col-6
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    input.box-input(type="text" name="Name" value= "" placeholder="Name")
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    input.box-input(type="text" name="Email" value= "" placeholder="Email")
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    input.box-input(type="text" name="Phone" value= "" placeholder="Phone")
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    input.box-input(type="text" name="Message" value= "" placeholder="Message")
+                    .row.mar-top-45 
+                        .col-12
+                            input.checkout-btn.btn(type="submit" value="Make Reservation")
+
+        if checkReservation !== ""    
+            .fill-in-reservation.mar-top-70
+                .container 
+                    .row
+                        .col-12
+                            .row
+                                .col-12.text-align-center
+                                    p.form-title Reservation Infomation
+                    .row
+                        .col-12
+                            .row
+                                .col-12.text-align-center
+                                    if clientReservation.status === 1
+                                        h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
+                                            p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
+                                                svg#Layer_1.pad-5(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 507.2 507.2' style='enable-background:new 0 0 507.2 507.2;' xml:space='preserve' width='30px' height='30px')
+                                                    circle(style='fill:#32BA7C;' cx='253.6' cy='253.6' r='253.6')
+                                                    path(style='fill:#0AA06E;' d='M188.8,368l130.4,130.4c108-28.8,188-127.2,188-244.8c0-2.4,0-4.8,0-7.2L404.8,152L188.8,368z')
+                                                    g
+                                                        path(style='fill:#FFFFFF;' d='M260,310.4c11.2,11.2,11.2,30.4,0,41.6l-23.2,23.2c-11.2,11.2-30.4,11.2-41.6,0L93.6,272.8   c-11.2-11.2-11.2-30.4,0-41.6l23.2-23.2c11.2-11.2,30.4-11.2,41.6,0L260,310.4z')
+                                                        path(style='fill:#FFFFFF;' d='M348.8,133.6c11.2-11.2,30.4-11.2,41.6,0l23.2,23.2c11.2,11.2,11.2,30.4,0,41.6l-176,175.2   c-11.2,11.2-30.4,11.2-41.6,0l-23.2-23.2c-11.2-11.2-11.2-30.4,0-41.6L348.8,133.6z')
+                                                span.text-muted Accepted
+                                    if clientReservation.status === 2
+                                        h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
+                                            p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
+                                                svg#Layer_1.pad-5(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve' width='30px' height='30px')
+                                                    circle(style='fill:#E21B1B;' cx='256' cy='256' r='256')
+                                                    path(style='fill:#C40606;' d='M510.28,285.304L367.912,142.936L150.248,368.608l140.928,140.928  C406.352,493.696,497.056,401.288,510.28,285.304z')
+                                                    g
+                                                        path(style='fill:#FFFFFF;' d='M354.376,371.536c-5.12,0-10.232-1.952-14.144-5.856L146.408,171.848   c-7.816-7.816-7.816-20.472,0-28.28s20.472-7.816,28.28,0L368.52,337.4c7.816,7.816,7.816,20.472,0,28.28   C364.608,369.584,359.496,371.536,354.376,371.536z')
+                                                        path(style='fill:#FFFFFF;' d='M160.544,371.536c-5.12,0-10.232-1.952-14.144-5.856c-7.816-7.816-7.816-20.472,0-28.28   l193.832-193.832c7.816-7.816,20.472-7.816,28.28,0s7.816,20.472,0,28.28L174.688,365.68   C170.784,369.584,165.664,371.536,160.544,371.536z')
+
+                                                span.text-muted Cancelled
+                                    if clientReservation.status === 0
+                                        h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
+                                            p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
+                                            svg#Layer_1.pad-5(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve' width='30px' height='30px')
+                                                g
+                                                    path(style='fill:#FFFFFF;' d='M131.879,248.242c-4.278,0-7.758,3.48-7.758,7.758c0,4.278,3.48,7.758,7.758,7.758   c4.278,0,7.758-3.48,7.758-7.758C139.636,251.722,136.156,248.242,131.879,248.242z')
+                                                    path(style='fill:#FFFFFF;' d='M131.879,217.212c-21.388,0-38.788,17.4-38.788,38.788s17.4,38.788,38.788,38.788   s38.788-17.4,38.788-38.788S153.266,217.212,131.879,217.212z M131.879,271.515c-8.569,0-15.515-6.946-15.515-15.515   c0-8.569,6.946-15.515,15.515-15.515c8.567,0,15.515,6.946,15.515,15.515C147.394,264.569,140.446,271.515,131.879,271.515z')
+                                                    path(style='fill:#FFFFFF;' d='M131.879,240.485c-8.569,0-15.515,6.946-15.515,15.515c0,8.569,6.946,15.515,15.515,15.515   c8.567,0,15.515-6.946,15.515-15.515C147.394,247.431,140.446,240.485,131.879,240.485z M131.879,263.758   c-4.278,0-7.758-3.48-7.758-7.758c0-4.278,3.48-7.758,7.758-7.758c4.278,0,7.758,3.48,7.758,7.758   C139.636,260.278,136.156,263.758,131.879,263.758z')
+                                                    path(style='fill:#FFFFFF;' d='M256,248.242c-4.278,0-7.758,3.48-7.758,7.758c0,4.278,3.48,7.758,7.758,7.758   c4.278,0,7.758-3.48,7.758-7.758C263.758,251.722,260.278,248.242,256,248.242z')
+                                                    path(style='fill:#FFFFFF;' d='M256,217.212c-21.388,0-38.788,17.4-38.788,38.788s17.4,38.788,38.788,38.788   s38.788-17.4,38.788-38.788S277.388,217.212,256,217.212z M256,271.515c-8.569,0-15.515-6.946-15.515-15.515   c0-8.569,6.946-15.515,15.515-15.515c8.569,0,15.515,6.946,15.515,15.515C271.515,264.569,264.569,271.515,256,271.515z')
+                                                    path(style='fill:#FFFFFF;' d='M256,240.485c-8.569,0-15.515,6.946-15.515,15.515c0,8.569,6.946,15.515,15.515,15.515   c8.569,0,15.515-6.946,15.515-15.515C271.515,247.431,264.569,240.485,256,240.485z M256,263.758c-4.278,0-7.758-3.48-7.758-7.758   c0-4.278,3.48-7.758,7.758-7.758c4.278,0,7.758,3.48,7.758,7.758C263.758,260.278,260.278,263.758,256,263.758z')
+                                                    path(style='fill:#FFFFFF;' d='M372.364,256c0,4.278,3.48,7.758,7.758,7.758c4.278,0,7.758-3.48,7.758-7.758   c0-4.278-3.48-7.758-7.758-7.758C375.844,248.242,372.364,251.722,372.364,256z')
+                                                    path(style='fill:#FFFFFF;' d='M341.333,256c0,21.388,17.4,38.788,38.788,38.788c21.388,0,38.788-17.4,38.788-38.788   s-17.4-38.788-38.788-38.788C358.734,217.212,341.333,234.612,341.333,256z M395.636,256c0,8.569-6.946,15.515-15.515,15.515   c-8.569,0-15.515-6.946-15.515-15.515c0-8.569,6.946-15.515,15.515-15.515C388.69,240.485,395.636,247.431,395.636,256z')
+                                                    path(style='fill:#FFFFFF;' d='M364.606,256c0,8.569,6.946,15.515,15.515,15.515c8.569,0,15.515-6.946,15.515-15.515   c0-8.569-6.946-15.515-15.515-15.515C371.552,240.485,364.606,247.431,364.606,256z M387.879,256c0,4.278-3.48,7.758-7.758,7.758   c-4.278,0-7.758-3.48-7.758-7.758c0-4.278,3.48-7.758,7.758-7.758C384.399,248.242,387.879,251.722,387.879,256z')
+                                                path(style='fill:#fdfd96;' d='M256,0v217.212c21.388,0,38.788,17.4,38.788,38.788s-17.4,38.788-38.788,38.788V512  c141.158,0,256-114.842,256-256S397.158,0,256,0z M380.121,294.788c-21.388,0-38.788-17.4-38.788-38.788s17.4-38.788,38.788-38.788  c21.388,0,38.788,17.4,38.788,38.788S401.509,294.788,380.121,294.788z')
+                                                path(style='fill:#fed26c;' d='M217.212,256c0-21.388,17.4-38.788,38.788-38.788V0C114.842,0,0,114.842,0,256s114.842,256,256,256  V294.788C234.612,294.788,217.212,277.388,217.212,256z M131.879,294.788c-21.388,0-38.788-17.4-38.788-38.788  s17.4-38.788,38.788-38.788s38.788,17.4,38.788,38.788S153.266,294.788,131.879,294.788z')
+                                            span.text-muted Waiting
+                                    if clientReservation.status === 3
+                                        h6.card-subtitle.text-muted.d-flex.align-items-center.align-content-center
+                                            p.card-text.text-muted.small.d-flex.align-items-center.align-content-center
+                                                svg#Capa_1(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewbox='0 0 508 508' style='enable-background:new 0 0 508 508;' xml:space='preserve' width='30px' height='30px')
+                                                    circle(style='fill:#FFD15C;' cx='253.55' cy='201.7' r='201.7')
+                                                    g
+                                                        path(style='fill:#40596B;' d='M90.15,319.7L20.75,440l81-4.3l36.8,72.3l64.2-111.3C156.75,384.8,117.25,357.1,90.15,319.7z')
+                                                        path(style='fill:#40596B;' d='M417.35,319.1c-26.9,37.5-66.4,65.3-112.3,77.4l64.4,111.5l36.8-72.3l81,4.3L417.35,319.1z')
+                                                    circle(style='fill:#F8B64C;' cx='253.55' cy='201.7' r='146.2')
+                                                    path(style='fill:#FFFFFF;' d='M353.75,185.9c4.5-4.4,2-12.1-4.2-13l-57.7-8.4c-2.5-0.4-4.6-1.9-5.7-4.2l-25.8-52.3  c-2.8-5.7-10.9-5.7-13.7,0l-25.7,52.3c-1.1,2.2-3.3,3.8-5.7,4.2l-57.7,8.4c-6.2,0.9-8.7,8.6-4.2,13l41.7,40.7  c1.8,1.8,2.6,4.3,2.2,6.7l-9.8,57.4c-1.1,6.2,5.5,11,11.1,8l51.6-27.1c2.2-1.2,4.9-1.2,7.1,0l51.6,27.1c5.6,2.9,12.1-1.8,11.1-8  l-9.9-57.4c-0.4-2.5,0.4-5,2.2-6.7L353.75,185.9z')
+                                                span.text-muted Done
+                    .row
+                        .col-6
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.date
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.time
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.address
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.numberOfGuest
+                        .col-6
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.UserName
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.email
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.phone
+                            .row.flex-col.justify-content-center.mar-top-20
+                                .col-12
+                                    p.box-input.d-flex.align-items-center=clientReservation.message
+                    if clientReservation.status === 0
+                        form(method="POST" action="/cancelReservation")
+                            .row.mar-top-45 
+                                .col-12
+                                    input.checkout-btn.btn(type="submit" value="Cancel")
+                    else
+                        form(method="POST" action="/doneReservation")
+                            .row.mar-top-45 
+                                .col-12
+                                    input.checkout-btn.btn(type="submit" value="Done")
+
+        .re-footer.mar-top-70  
+            .page-re-footer 
+                .container.flex-col.justify-content-center
+                    .row.flex-col.justify-content-center.align-items-center 
+                        p.re-footer-title.text-align-center opening hours 
+                    .row.flex-col.justify-content-center.align-items-center  
+                        p.re-footer-subtitle.gold-color.text-align-center call for reservations
+                    .row.d-flex.justify-content-center.align-items-center 
+                        .golden-line.flex-col.justify-content-center 
+                        //- i.fas.fa-circle.fa-xs.dot-line(style='width: 5px; height: 5px;')
+                        .golden-line.flex-col.justify-content-center  
+                    .row.flex-col.justify-content-center.align-items-center.mar-top-30  
+                        p.re-footer-subtitle.gold-color.text-align-center everyday
+                    .row.flex-col.justify-content-center.align-items-center  
+                        p.re-footer-title.mar-bot-0.text-align-center 11:00
+                        p.re-footer-title.mar-bot-0.text-align-center 22:00
+                    .row.flex-col.justify-content-center.align-items-center.mar-top-30  
+                        p.re-footer-subtitle.gold-color.text-align-center (+84) 123 456 789
+
+
+
+        //- Form register
+            .form.Log_in(style="max-width:50%; margin:auto;")
+                .frame_log_in 
+                    h3 RESERVATION
+                    .ROW 
+                        .col.inside.UserName
+                            input.text_login(type="username" placeholder="Username" name="username")
+                            i.fas.fa-user
+                        .col.inside.E-mail
+                            input.text_login(type="email" placeholder="Email address" name="email")
+                            i.fas.fa-envelope
+                        .col.inside.Password
+                            input.text_login(type="password" placeholder="Phone Number" name="password")
+                            i.fas.fa-lock
+                        .col.inside.Confirm
+                            input.text_login(type="date" id="start" name="trip-start" value="2018-07-22" min="2020-01-01" max="2025-12-31")
+                        .col.inside.Gender 
+                            select.Gender_List(name="Gender") Gender
+                                option(value="0" disabled=" selected disabled") Gender 
+                                option(value="1") Male 
+                                option(value="2") Female 
+                                option(value="3") Other     
+                        .col.inside.Guest 
+                            select.Gender_List(name="Guest")
+                                option(value="" disabled selected) Number of Guest
+                                option(value="1") 1
+                                option(value="2") 2
+                                option(value="3") 3
+                                option(value="3") 4
+                                option(value="3") 5
+                                option(value="3") 6
+                                option(value="3") 7
+                                option(value="0") More
+                        .clear
+                    .button 
+                        a.btn.register(href="#" style="color: white; font-weight: bold") RESERVATION NOW
+
+
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>

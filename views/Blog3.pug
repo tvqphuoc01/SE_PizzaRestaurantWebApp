@@ -1,0 +1,412 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="Blog3Style.css" )
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        
+        // The core Firebase JS SDK is always required and must be listed first
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-firestore.js"></script>
+        // TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
+        script. 
+            function myFunction() {
+                    var x = document.getElementById("search-bar");
+                    var y = document.getElementById("nav-list");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "flex";
+                        }
+                    }
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item 
+                        a(class="Shop" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP  
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //Header
+        .page-header
+            .container(style="max-width: 95% !important;")
+                .col-md-6.left-padd0(style="opacity: 1")
+                    h3(style="font-size: 45px;color:white") BLOG3 
+                    h4(style="font-size: 18px;font-family: 'Raleway', sans-serif;font-weight:300 !important;color:white") 16 Pizza Taste And Texture Tips
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/" style="color:white; text-decoration:none") Home 
+                        i /       
+                        a(href="/Blog" style="color:white;text-decoration: none;") Blog
+                        i / 
+                        a(style="color:white") Blog3
+        //Section1
+        .section1
+            .container(style="border-right: 0px;border-left: 0px;border-style:inset; padding-top:15px;padding-bottom:15px")
+                h1(style="text-align:center;color:red") 16 Pizza Taste And Texture Tips: The Perfect Slice
+        //
+        .the-post 
+            .container 
+                img.image-center(src="slice-large.jpg")
+                p.post.
+                    There are a number of taste and texture issues that you will encounter when starting to make pizza.
+                    This list is set of common pizza dough problems and some ways to improve next time.
+                h2 <strong>How To Make Pizza Crust Crispy</strong>
+                p.post To get a crispy crust you need several things. Heat, a thinly stretched dough and enough water in the dough. 
+                p.post. 
+                    Yes that’s right, <strong>you need more water in the dough.</strong> 
+                    It may sounds counter intuitive to add more water to your dough to make it more crispy, 
+                    but i’ll explain why it works. More water means more steam when it hits the hot oven, 
+                    so it springs up and makes it lighter and crispier. 
+                    I would advise making your dough as wet as you can handle in the kneading phase, 
+                    as more water makes it stickier and harder to work with. If you are into hydration percentages, 
+                    then 63-65% water to flour is a good place to start and then you can push it higher.
+                p.post. 
+                    <strong>Next you need heat in the form of a hot oven and a pizza stone. </strong>
+                    You can use a pizza stone, pizza steel, or at least a thick baking sheet. 
+                    Heat it up for at least 30 minutes before putting the pizza on, using a thin sheet or peel to transfer.
+                p.post. 
+                    My best tip for making pizza in a home oven is using a pizza “steel”. 
+                    This adds intense heat from below like a brick oven would – I have 
+                    <a rel="noreferrer noopener" href="https://www.amazon.com/dp/B00NMLKW6Q?tag=crustkingdom-20" target="_blank" data-amzn-asin="B00NMLKW6Q">this steel from Amazon</a> 
+                    which is significantly lower priced than the original brand, but works perfectly. 
+                    Steel is more conductive than stone so transfers more heat, they don’t shatter and they are easier to clean. 
+                    If it’s out of your price range then the 2nd best option is a <a href="https://www.amazon.com/dp/B06XGV3RS4?tag=crustkingdom-20" target="_blank" rel="noreferrer noopener" data-amzn-asin="B06XGV3RS4"> pizza stone made from cordierite</a>
+                p.post. 
+                    <strong>Aim to stretch the pizza as thin as you can without breaking</strong>. 
+                    This comes with practice, and with a dough that is well rested and extensible. 
+                    Stretching by hand is better than using a rolling pin as you don’t deflate it.
+                img.image-center(src="pepperoni-pizza-large.jpg")
+                h2(style="margin-top:25px;") <strong>How To Keep Pizza Crust From Getting Hard</strong>
+                p(style="padding-left:20px;") You might find that your pizza is too dense, too tough or too dry.
+                p.post. 
+                    <strong> This is probably due to cooking your pizza in an oven which is not hot enough and so you baked it for too long.</strong>
+                    If you are using a baking sheet which isn’t pre-heated, your cooking time ends up around 
+                    10-15 minutes – this just causes the pizza to dry out and get hard.
+                p.post. 
+                    Instead, you should fire up your oven as hot as it can go and leave a pizza stone to heat up for at least 30 minutes. 
+                    The pizza will cook in 5-8 minutes, with a crust that has a crisp exterior and a chewy, tender interior.
+                p.post. 
+                    <strong>It will also cause the crust to spring up more rapidly as the dough expands in the extreme heat, leaving a lighter and more airy crust</strong>
+                    . Making sure your dough is not too dry is key, as a more moist dough will spring better. Try not to add too much extra flour when kneading.
+                p.post. 
+                    <strong>You shouldn’t roll out the dough with a rolling pin either</strong>
+                     – this will squash the air out and leave you with a crust that resembles a cracker. Stretching by hand will ensure it stays nice and light.
+                img.image-center(src="fryingpan.jpg")
+                h2(style="margin-top:25px;") <strong>Stop Pizza Dough Sticking To Hands</strong>
+                p(style="padding-left:20px;") Simply put, your pizza dough is very wet. You can add small dustings of flour to help, or rub some oil onto your hands to prevent sticking.
+                p.post. 
+                    <strong>At the start of the kneading process the dough is more likely to stick to the hands</strong>. 
+                    It will change from a shaggy lump into a smooth, stretchy ball and become less sticky. 
+                    If you can get through the initial part then you should be fine.
+                p.post. 
+                    <strong>A wet dough cooks better than a dry dough, so don’t go drowning it in flour</strong>. 
+                    Instead you should sprinkle small amounts of flour, or olive oil when ever you require it – just enough 
+                    that it doesn’t become too sticky to work with. A dough scraper is a good tool for very sticky dough, 
+                    as you can knead a few times then gather together with the scraper.
+                img.image-center(src="dough-proof-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Too Elastic</strong>
+                p(style="padding-left:20px;"). 
+                    A dough that is too elastic is displaying its high gluten content. 
+                    Gluten is this stretchy network which builds up from kneading and proofing.
+                p.post. 
+                    Gluten also degrades over time and loses strength, so <strong>allowing your dough to proof for longer will relax the dough</strong> 
+                    enough to stretch it out easily. Try giving it 24 hours in the fridge.
+                p.post. 
+                    Another big problem is a <strong>dough that is too cold</strong>. 
+                    You need to wait until the dough ball is up to room temperature before you open it. 
+                    Try a 2 hour rest on the worktop before you start stretching the dough. If the dough springs back, 
+                    leave it rest for 10 minutes more and then return to it and it should have relaxed.
+                p.post. 
+                    Once you get better at stretching, you can find a few tricks to get the dough open. 
+                    I find that draping the dough over your upturned fists and pulling apart always works, even with the tightest dough. 
+                    The gravity and the stretch should start easing the dough open – just move around the circle as you go.
+                h2(style="margin-top:25px;") <strong>Pizza Dough Not Rising</strong>
+                p(style="padding-left:20px;") A pizza dough that hasn’t risen indicates that there has been a problem with the yeast activity. It could be dead, or have been inhibited.
+                p.post. 
+                    <strong>You can test the quality of your yeast by activating it in water before you add it to your flour</strong>. 
+                    If you add water, whisk it for 30 seconds and then give it a few minutes to activate. 
+                    If the yeast dissolves and foams slightly on the surface then you know it is ready to use, 
+                    if not then its probably dead so don’t use it.
+                p.post. 
+                    <strong>A low proofing temperature can slow yeast activity</strong>. 
+                    Make sure that you place your dough in a warmer place to promote fermentation. 
+                    If you are proofing the dough in the fridge then it will naturally take longer to rise.
+                p.post. 
+                    <strong>Heat can kill yeast</strong> – make sure when you activate the yeast the water isn’t too hot. 
+                    Around 130F/54C will kill yeast, so aim around 110F/43C. If you don’t have a thermometer then you can gauge 
+                    it roughly by touch – you want water that has had the coolness taken off, just make sure its not hot.
+                p.post. 
+                    Too much salt can inhibit yeast activity. Make sure your recipe doesn’t have excessive amounts, 
+                    and ensure the yeast doesn’t come in direct contact with the salt before the other ingredients.
+                img.image-center(src="autolyse1.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Not Cooking On Bottom</strong>
+                p(style="padding-left:20px;").
+                    If your pizza is still doughy on the bottom, when the toppings are all cooked, this indicates that 
+                    <strong>there hasn’t been enough heat coming from the bottom.</strong>
+                p.post. 
+                    If you put your pizza on a cold cooking tray when you put it into the oven, then this is a big indicator. 
+                    You need to heat up the surface that you are cooking on before the dough arrives.
+                p.post. 
+                    <a rel="noreferrer noopener" href="https://www.amazon.com/dp/B00NMLKW6Q?tag=crustkingdom-20" target="_blank" data-amzn-asin="B00NMLKW6Q">Invest in a pizza stone or steel</a>
+                     from Amazon and pre-heat. This gives the crispiest crusts on the bottom, cuts your cooking time, 
+                     and produces consistent results every time. At the very least, you need to get a thick baking sheet and 
+                     pre-heat it for at least 30 minutes.
+                p.post Get a pizza peel to transfer your pizza easily to the hot surface.
+                img.image-center(src="brown-base-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Won’t Brown</strong>
+                p(style="padding-left:20px;").
+                    Browning happens either when extreme heat almost chars the dough when cooked rapidly 
+                    or when you use sugars in your dough, which caramelise when cooking.
+                p.post. 
+                    If you aren’t using a wood fired pizza oven, then your temperatures in a home oven will never compete. 
+                    <strong>You should add some sugar to your recipe</strong>, around 1.5-2% of the total flour added, 
+                    and this should brown up the crust nicely. At this amount, it won’t add a noticeable sweetness.
+                p.post. 
+                    Always try to get the most heat from your oven by pre-heating and using a pizza stone or steel. 
+                    <strong>And remember to always cook your pizza long enough</strong> – when you think it’s done you can probably 
+                    go a minute or so more and get a browner, more flavorful pizza.
+                img.image-center(src="undercooked-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Tastes Bland</strong>
+                p(style="padding-left:20px;").
+                    Pizza can taste like cardboard if you’re not careful. Its usually down to using a recipe that is too simple, and too quick. 
+                    Like quite a lot of food, flavor in pizza takes time to develop.
+                p.post. 
+                    Pizza dough ferments when yeast consumes the starches in the flour. 
+                    <strong>This fermentation process adds more complex flavors to the dough</strong>, and this is why it is important to 
+                    give your dough a long, slow fermentation.
+                p.post. 
+                    Allowing your dough to proof in the fridge slows the fermentation process down and allows flavor 
+                    to develop without it over fermenting. I recommend 24 hours as a minimum, and up to 3 days.
+                p.post. 
+                    Recipes which state to rise for an hour should only be used in an emergency. If you can proof for 4 hours at room 
+                    temperature that is a much better dough to use on the same day.
+                p.post. 
+                    <strong>Another factor for lack of flavor is too little salt</strong>. Salt is a flavor enhancer and really 
+                    allows the flavors to punch more. Try upping the salt to around 2% of the total flour used. You will need an accurate 
+                    scales to measure this – it’s worth it.
+                h2(style="margin-top:25px;") <strong>Pizza Dough Tastes Like Flour</strong>
+                p(style="padding-left:20px;").
+                    Pizza dough can end up with a floury, starchy taste even if you followed the recipe to plan and allowed to rise for a 
+                    lengthy period. This might be because you didn’t have enough salt or oil in the recipe.
+                p.post.
+                    <strong>Salt enhances flavor</strong>, bringing out the good flavors and ensuring it doesn’t taste a bland, raw floury taste. 
+                    Try upping the salt to 2% of the total flour weight of the recipe.
+                p.post.
+                    <strong>Extra virgin olive oil adds some nice flavor and chewiness</strong>. Maybe your recipe didn’t include oil because it 
+                    was a Neapolitan pizza recipe – New York style which is best for a home oven, usually has the addition of oil.
+                p.post.
+                    Neapolitan pizza dough doesn’t usually have oil in the recipe, but because it is cooked in a wood fired oven, 
+                    you get all the benefits of the wood smoke and charring to add flavor.
+                img.image-center(src="dough-ball-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Tastes Like Yeast</strong>
+                p(style="padding-left:20px;") Pizza and bread baked at home often has this yeasty taste which is typical of an amateur home bake. Why doesn’t a bakery have it?
+                p.post. 
+                    The answer lie in the ingredients and time. If you want a quick pizza, then recipes usually call for a large amount 
+                    of yeast which is kick started with some sugar. This rises rapidly and ensures the pizza appears to cook well – but the flavor 
+                    isn’t great.
+                p.post.
+                    The key a more advanced baker would use, is to <strong>use less yeast and allow it to ferment slowly over a day or so</strong>. 
+                    This avoids the overly yeasty taste, and the extra time fermenting when rising adds other flavors.
+                p.post.
+                    Try reducing the yeast to 0.5-1% of the total weight of flour, or using a starter like poolish, and then fermenting over 1-3 days in the fridge.
+                img.image-center(src="yeast-cropped-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Tastes Bitter</strong>
+                p(style="padding-left:20px;") A bitter taste on your pizza is probably from flour than has gone rancid, or something that has burned while cooking such as excess flour, or other debris in your oven.
+                p.post. 
+                    <strong>Check that your flour is not rancid</strong>. You are probably familiar with a raw flour taste and smell – rancid flour 
+                    will be much more unpleasant. Be careful with anything that could make you ill.
+                p.post. 
+                    <strong>Flour also burns to become bitter</strong>. Too much flour or semolina could have been used on your pizza peel while 
+                    transferring to the oven. This burns quickly on the underside of the base as it touches the hot pizza stone directly. Ensure you 
+                    have enough flour to stock the pizza sticking but not excess amounts.
+                h2(style="margin-top:25px;") <strong>Pizza Dough Smells Sour</strong>
+                p(style="padding-left:20px;"). 
+                    You might have left your dough to slow proof for a day or two in the fridge. Upon removing the cover you get hit with this 
+                    strong sour smell. It’s the same reason people might ask why their pizza tastes like alcohol or their pizza tastes like beer. 
+                    The dough is <strong>fermenting</strong>.
+                p.post.
+                    The yeast you added consumes the starches in the flour, and produces by-products of carbon dioxide and, yes, alcohol. This 
+                    fermentation adds to the texture and flavor of the dough.
+                p.post.
+                    <strong>A smell of sourness doesn’t indicate the dough is rancid</strong>. Dough can be stored in the fridge for days 
+                    (I find 3 days is optimum, and then it starts actually tasting overly alcoholic). Be careful not to leave dough in warmer 
+                    temperatures where bugs could grow, and always cook it thoroughly.
+                p.post.
+                    The alcohol produced mostly evaporates when it is baked, so if you still taste this strongly, you might have under baked or 
+                    fermented for too long.
+                img.image-center(src="proofing-fridge-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Too Dry</strong>
+                p(style="padding-left:20px;"). 
+                    You simply need more water here. You might be confused because you followed the recipe exactly – but the thing is, 
+                    <strong>different flours will absorb different amounts of water</strong>, sometimes drastically.
+                p.post.
+                    A flour like fine ’00’ Italian bread flour needs less than high protein bread flour, which needs less water than a wholemeal 
+                    flour. My advice is to find a brand of flour which works well and stick to it for consistent results.
+                p.post.
+                    If you feel your dough is too dry when you’ve mixed the ingredients in your bowl, then you can add a small amount of 
+                    water before you move to the worktop. A tablespoon at a time is a good amount – you can easily go too far and make your dough 
+                    too wet very quickly. If you find it hard to incorporate water without a sticky mess, then you can use a spray bottle and go slowly.
+                h2(style="margin-top:25px;") <strong>Pizza Dough Too Soft</strong>
+                p(style="padding-left:20px;"). 
+                    This is likely down to the <strong>flour that you used</strong> in your recipe or if referring to the cooked crust – 
+                    <strong>the temperature you cooked it.</strong>
+                p.post.
+                    The protein content in flour dictates how much gluten will be present in the dough. A lower protein flour means less gluten, 
+                    and less stretch. That is why bread flour is often labelled ‘strong bread flour’ – that extra gluten gives strength to work with. 
+                    If you use ’00’ grade flour then this is very soft, as its ground fine and uses the softest wheat. It is harder to work with, 
+                    so perhaps go for a stronger bread flour or make a blend if you find it too soft.
+                p.post.
+                    If the pizza crust is too soft then it could be down to how you cooked it. You need to have a pizza stone or steel preheated in 
+                    the oven, with the oven on the highest setting.
+                img.image-center(src="dough-balls-large.jpg")
+                h2(style="margin-top:25px;") <strong>Pizza Dough Too Bready</strong>
+                p(style="padding-left:20px;").
+                    If you are going for a fairly thin crust pizza, you don’t want a thick, heavy and indigestible crust. You want to aim for 
+                    a base that is thin, crisp and holds its shape as a slice. And a crust that is light, with open holes like a good ciabatta.
+                p.post.
+                    The first thing would be to use a good recipe. <strong>Lower the yeast content to around 1% of the flour, and proof the dough overnight</strong>
+                    at least. This makes the dough more digestible as the starches are being broken down and consumed by the yeast.
+                p.post.
+                    <strong>If you knead the dough for longer like bread, it will produce an internal crumb structure that is similar to bread</strong>. 
+                    Instead of kneading until passing the ‘window pane’ test (see pizza dough looks lumpy), you should knead until the dough is just 
+                    smooth, and this should make the crumb less bread like.
+                p.post.
+                    Finally, <strong>ensure you stretch out the dough thinly enough</strong>. This takes practice, but you should aim to stretch it 
+                    pretty much as thin as you can go without tearing it. The thicker it is, the more bready it will be when it rises up. Stretch 
+                    right out to the crust, and leave a 3/4 inch of thicker area which is enough to get a nice rise around the edge.
+                p.post.
+                    The the pizza tastes too much like bread or yeast – see my paragraph for ‘pizza dough tastes like yeast’
+                h2(style="margin-top:25px;") <strong>Pizza Dough Looks Lumpy</strong>
+                p(style="padding-left:20px;").
+                    A lumpy pizza dough probably hasn’t had enough time to knead. When you knead, you turn this shaggy ball of flour and water 
+                    into a nice smooth dough ball, and it takes a few minutes.
+                p.post.
+                    <strong>Incorporate all your ingredients and give your dough a firm knead for 3-5 minutes until smooth</strong>. You will feel 
+                    the dough’s state change as the gluten is developed from the movement of kneading. It will firm up slight, become more elastic, 
+                    and the surface will visibly become more smooth.
+                p.post.
+                    You can test that it is done by poking a finger into the ball – it should spring back slightly when finished. Another test is 
+                    the <strong>windowpane test</strong>. Tear off a golf ball sizes piece and try to stretch it thinly – if you can stretch and 
+                    see some light through it then you know you are done. If it tears then give it a few more minutes. You don’t have to knead pizza 
+                    dough to the extent of bread dough, as we don’t need such a strong crumb structure.
+                p.post.
+                    If you used a stand mixer then it might be that your dough hook isn’t doing its job very well. Finish it off by hand for the 
+                    last few minutes, and always make sure to scrape down the dough hook periodically.
+                img.image-center(src="dough-bowl-large.jpg")
+                h2(style="margin-top:25px;") <strong>Final Key Tips</strong>
+                p(style="padding-left:20px;").
+                    As you can see from most of these tips, there are some common themes running through. Following a good recipe is a good start,
+                    then these pizza tips should ensure you make the best pizzas every time:
+                ul 
+                    li.list-disc Use a flour with at least 12% protein content for better gluten strength and texture.
+                    li.list-disc Avoid dry dough – the stickier and wetter the dough you can handle, the better the pizza.
+                    li.list-disc Use a weighing scales to accurately measure ingredients.
+                    li.list-disc Add the correct amount of yeast, salt and sugar. Around 1%, 2% and 2% if being technical.
+                    li.list-disc Knead your dough for just long enough to develop gluten (around 3-5 minutes).
+                    li.list-disc Cold, slow ferment your dough for at least 24 hours to develop flavor and texture.
+                    li.list-disc Make sure your dough, toppings and sauce are not cold when assembling.
+                    li.list-disc Do not use too many toppings – it will overload the cooking process.
+                    li.list-disc Cook with the highest temperature your oven can go.
+                    li.list-disc Cook on a pre-heated pizza stone or steel.
+                    li.list-disc Finish the pizza with a sprinkling of sea salt and extra virgin olive oil.
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>

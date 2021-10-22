@@ -1,0 +1,271 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="aboutUsStyle.css")
+        link(rel="stylesheet" href="sky-forms.css")
+        link(rel="stylesheet" href="contactStyle.css")
+        
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        
+        //script(src='https://polyfill.io/v3/polyfill.min.js?features=default')
+        //script(src='https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js')
+
+        script. 
+            function myFunction() {
+                var x = document.getElementById("search-bar");
+                var y = document.getElementById("nav-list");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                        y.style.display = "none";
+                    } else {
+                        x.style.display = "none";
+                        y.style.display = "flex";
+                    }
+            }
+            
+            //- // Initialize and add the map
+            //- function initMap() {
+            //-     // The location of Uluru
+            //-     const uluru = { lat: -25.344, lng: 131.036 };
+            //-     // The map, centered at Uluru
+            //-     const map = new google.maps.Map(document.getElementById("map"), {
+            //-         zoom: 4,
+            //-         center: uluru,
+            //-     });
+            //-     // The marker, positioned at Uluru
+            //-     const marker = new google.maps.Marker({
+            //-         position: uluru,
+            //-         map: map,
+            //-     });
+            //- }
+            
+
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="/")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item
+                        a(class="Shop" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                        else
+                            span(class="fa-stack fa-2x has-badge" data-count=0)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP     
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !", )
+        //Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3 Contact
+                    h4 Get in touch with Us
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/") Home 
+                        i /       
+                        a(href="/contact") Contact
+        
+        // Section 1
+        .section-lg
+            .container 
+                .row 
+                    .col-md-8 
+                        form.sky-form(id='sky-form' novalidate='novalidate')
+                            fieldset 
+                                .row 
+                                    .col.col-6.m-bottom2
+                                        label.label Name 
+                                        label.input
+                                            i.icon-append.fa.fa-user 
+                                            input(type='text' name='name' id='name')
+                                    .col.col-6.m-bottom2
+                                        label.label E-mail 
+                                        label.input
+                                            i.icon-append.fa.fa-envelope
+                                            input(type='email' name='email' id='email')
+                                .m-bottom2
+                                    label.label Subject
+                                        label.input
+                                            i.icon-append.fa.fa-tag 
+                                            input(type='text' name='subject' id='subject')
+                                .m-bottom2
+                                    label.label Message
+                                        label.textarea
+                                            i.icon-append.fa.fa-comment
+                                            textarea(rows='4' name='message' id='message')
+                                .m-bottom2
+                                    label.label Enter characters below:
+                                        label.input.input-captcha
+                                            img(src='thumb1.jpg' width='100' height='35' alt='Captcha image')
+                                            input(type='text' maxlength='6' name='captcha' id='captcha')
+                                .m-bottom2
+                                    label.checkbox
+                                        input(type='checkbox' name='copy')
+                                        i 
+                                        span Send a copy to my e-mail address
+                            footer 
+                                button.button(type= 'submit') Send message
+                            .message
+                                i.fa.fa-check 
+                                p Your message was successfully sent!
+                    .col-md-4
+                        .address-info 
+                            h2.m-bottom2 Address Info
+                            p.font-777575 Feel free to talk to our online representative at any time you please using our Live Chat system on our website or one of the below instant messaging programs.
+                            br
+                            p.font-777575 Please be patient while waiting for response.
+                                br
+                                strong Phone General Inquiries: +1 (012) 345 6789
+                        .address-info
+                            h2.m-bottom2 Address Info Two 
+                            ul.address-info.map 
+                                li 
+                                    i.fa.fa-map-marker
+                                    span 15 Barnes Wallis Way, 358744, USA
+                                li 
+                                    i.fa.fa-phone
+                                    span +1 (012) 345 6789
+                                li
+                                    i.fa.fa-envelope
+                                    span info@yourdomain.com
+
+        // Google Maps
+        .mapouter.m-top8
+            .gmap_canvas
+                iframe.gmap_iframe(width='100%' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?width=600&height=500&hl=en&q=SaiGon Center&t=&z=10&ie=UTF8&iwloc=B&output=embed')
+                a(href='https://www.fridaynightfunkin.net/') FNF PC
+            style.
+                .mapouter{position:relative;text-align:right;width:100%;height:500px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:500px;}.gmap_iframe {height:500px!important;}
+        
+
+        // Slider
+        .section-lg.bg-parallax.m-top6
+            .container 
+                    h3.text-center.font-bold.font-white.font15.uppercase Testimonials
+                    h2.text-center.font-bold.font-white.font30.uppercase What People Say
+                    .title-line-shape.m-bottom2 
+                    div.carousel.slide(data-ride='carousel' id='carousel-example-generic1')
+                        ol.carousel-indicators
+                            li(class="" data-slide-to="0" data-target="#carousel-example-generic1")
+                            li(data-slide-to="1" data-target="#carousel-example-generic1" class="")
+                            li(data-slide-to="2" data-target="#carousel-example-generic1" class="active")
+                        .carousel-inner(role='listbox')
+                            div(class='carousel-item carousel-item-service')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575 / from examedia
+                            div(class='carousel-item carousel-item-service')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575 / from examedia
+                            div(class='carousel-item carousel-item-service active')
+                                .col-md-10.sec-auto-margin.text-center 
+                                    p.font-white.line-height30.font20.font-thin.line-height Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                    p.m-top2
+                                        span.font-color.font18 John Deo
+                                        span.italic.font-777575  / from examedia
+
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>
+
+        // Script to get API
+        //script(async='' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCgAoa6MJeAybaDdsNndWtPy33SELXojfo&callback=initMap')
+        // script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCgAoa6MJeAybaDdsNndWtPy33SELXojfo&callback=initMap&libraries=&v=weekly' async='')

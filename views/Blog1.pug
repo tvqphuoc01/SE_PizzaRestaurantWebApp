@@ -1,0 +1,205 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="Blog1Style.css" )
+        link(rel="stylesheet" href="indexStyle.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Parisienne&display=swap")
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="#")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item
+                        a(class="Shop" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP  
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text", placeholder="Search Here ..... !")
+        //  - Page Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3.left-section1 BLOG 
+                    h4.left-section2 Different Pizza Types For Different Palates
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/" style="color:white; text-decoration: none") Home 
+                        i(style="color: white") /       
+                        a(href="/Blog" style="color: white; text-decoration: none") Blog
+                        i(style="color: white") / 
+                        a(href="#" style="color: white; text-decoration: none") Blog 1
+        //Section 1
+        .section-lg
+            .container 
+                .Quotes
+                    p.quotes "There’s no better feeling in the world than a warm Pizza box in your lap"
+                    p.author - Kevin James -
+        //Section 2
+        .section-lg1 
+            .container 
+                .row 
+                    .col-5 
+                        img(src="pizza9.png" alt="Picture Pizza" style="float: right; width: 80%; height: 350px")
+                    .col-7
+                        p.header(style="color: forestgreen") VEGETARIAN PIZZA
+                        p.p1(style="font-size: 19px;font-family: 'Raleway', san-serif; text-align:justify; padding-right: 70px") The vegetarian pizzas are made mainly for consumers who prefer vegetables and generally ingredients such as peppers, mushrooms, tomatoes, cheddar, Mozzarella, olives, onions and corn are used. In case there are any ingredients in the pizza which you do not like you can have it removed or have the ones you like added on more. Vegetarian pizza, often preferred by people who do not eat meat, contains less calories in comparison with other selections.
+        //Section 3
+        .section-lg2 
+            .container
+                .row 
+                    .col-md-12 
+                        img(src="pizza10.jpg" alt="Picture Pizza" style="width: 100%; height: 350px; margin-bottom: 20px; object-fit: cover")
+                        p(style="font-size: 20px; text-align: center; font-family: 'Raleway', san-serif") If you like vegetable pizza, you have to try this one, it’s the BEST! The flavors are SO good and because there are so many veggies involved you can eat as many pieces as you want.
+        //Section 4
+        .section-lg3 
+            .container 
+                .row 
+                    .col-7
+                        p.header(style="color:rgb(209, 59, 14);text-align: right") NEW YORK PIZZA
+                        p.p1(style="font-size: 19px; font-family: 'Raleway', san-serif; text-align:right;") The New York pizza type, which is popular with children, is more appealing to people who enjoy simple delicacies. This, light and easy to digest pizza is made of tomatoes, cheddar and onion on a thin crust. There is also a variant of this pizza made with ground mutton. You can make a choice based on your palate.
+                    .col-5
+                        img(src="pizza11.png" alt="Picture Pizza" style="float: left; width: 80%; height: 350px")
+        //Section 5
+        .section-lg4 
+            .container
+                .row 
+                    .col-md-12 
+                        img(src="pizza12.jpg" alt="Picture Pizza" style="width: 100%; height: 450px; margin-bottom: 20px; object-fit: cover")
+                        p(style="font-size: 20px; text-align: center; font-family: 'Raleway', san-serif") New York–style pizza is traditionally hand-tossed, consisting in its basic form of a light layer of tomato sauce sprinkled with dry, grated, full-fat mozzarella cheese; additional toppings are placed over the cheese. Pies are typically around 18 to 24 inches (45 to 60 cm) in diameter, and commonly cut into eight slices.
+        //Section 6
+        .section-lg5 
+            .container 
+                .row 
+                    .col-5 
+                        img(src="pizza13.png" alt="Picture Pizza" style="float: right; width: 80%; height: 350px")
+                    .col-7
+                        p.header(style="color:rgb(224, 136, 21);") NEAPOLITAN PIZZA
+                        p.p1(style="font-size: 19px;font-family: 'Raleway', san-serif; text-align:justify; padding-right: 70px") Neapolitan pizza, which is one of the most popular among pizza varieties, appeals to all tastes due to its abundant of ingredients. This type of pizza meets expectations of consumers who enjoy intense flavors, which ingredients such as sausage, salami, tomatoes, onions, mushrooms, olives, corn, cheese and eggs are used.     
+        //Section 7
+        .section-lg6 
+            .container
+                .row 
+                    .col-md-12 
+                        img(src="pizza14.jpeg" alt="Picture Pizza" style="width: 100%; height: 450px; margin-bottom: 20px; object-fit: cover")
+                        p(style="font-size: 20px; text-align: center; font-family: 'Raleway', san-serif") Neapolitan pizza is a Traditional Speciality Guaranteed (TSG) product in Europe, and the art of its making is included on UNESCO's list of intangible cultural heritage. This style of pizza gave rise to the New York-style pizza that was first made by Italian immigrants to the United States in the early 20th century.
+        //Section 8
+        .section-lg7 
+            .container 
+                .row 
+                    .col-5 
+                        img(src="pizza15.png" alt="Picture Pizza" style="float: right; width: 80%; height: 350px")
+                    .col-7
+                        p.header(style="color:rgb(156, 48, 48);") SICILIAN PIZZA
+                        p.p1(style="font-size: 19px;font-family: 'Raleway', san-serif; text-align:justify; padding-right: 70px") The Sicilian pizza, which appeals cheese lovers, contains Mozzarella cheese, Cheddar cheese, Parmesan cheese, Gorgonzola cheese, dried tomatoes and various spices. You can be sure that you will be delighted by the delicate taste created by the mixed melted cheese topped with dried tomatoes. The secret to Sicilian pizza is, its thin crust. You will be able to taste the cheese better due to the thin crust. 
+        .section-lg8 
+            .container 
+                .row 
+                    .col-5 
+                        img(src="pizza16.png" alt="Picture Pizza" style="float: right; width: 80%; height: 350px")
+                    .col-7
+                        p.header(style="color:rgb(163, 109, 27);") MARGHERITA PIZZA
+                        p.p1(style="font-size: 19px;font-family: 'Raleway', san-serif; text-align:justify; padding-right: 70px") This pizza variant named after Queen Margherita is while also the first pizza made, it contains tomatoes, Mozzarella and basil. This variant loved by the Italian people emerged during the poverty and wartime period, in which Italian women would add ingredients that were available on the dough.               
+        .section-lg9 
+            .container 
+                .row 
+                    .col-5 
+                        img(src="pizza17.png" alt="Picture Pizza" style="float: right; width: 80%; height: 350px")
+                    .col-7
+                        p.header(style="color:rgb(133, 80, 20);") CHICAGO PIZZA
+                        p.p1(style="font-size: 19px;font-family: 'Raleway', san-serif; text-align:justify; padding-right: 70px") The Chicago pizza type, which has a different structure than the other pizzas, is known as deep-dish pizza with high edges and thick layer of toppings. The pizza which usually contains tomatoes and cheese gives it a layered appearance. The Chicago pizza, which you can add different ingredients depending on your wishes, is also a thick crust pizza.
+        //Footer
+        .footer
+            .container-fluid.row(style="background-color: black")
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>

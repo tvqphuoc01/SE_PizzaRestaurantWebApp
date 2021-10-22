@@ -1,0 +1,278 @@
+doctype html
+html(lang="en") 
+    head
+        title Butter
+
+        // Required meta tags
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        // Boostrap & CSS
+        link(rel="stylesheet" href="indexStyle.css" )
+        link(rel="stylesheet" href="serviceStyle.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.2/css/all.css', integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay', crossorigin='anonymous')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet")
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+        <script src="app.js"></script>
+    body
+        .container-fluid.row.mainNavBar.fixed-top.w-100.navbar-expand-lg
+            //Navbar
+            .col-2.d-flex.justify-content-center
+                a(href="/")
+                    img(src="logo.png" alt="Butter logo")
+            .col-10.d-flex.justify-content-center
+                ul(id="nav-list").nav.align-items-center
+                    li.nav-item.dropdown <a class="home" href="/"> HOME </a>
+                    li.nav-item
+                        a(class="Shop" href="/Shop") SHOP
+                    li.nav-item.dropdown PAGES 
+                        i(class="fa fa-angle-down")
+                        div(class="dropdown-content")
+                            a(class="dropdown-item" href="/aboutUs") About Us
+                            a(class="dropdown-item" href="/service") Service
+                    li.nav-item.dropdown <a class="menu" href="/menu"> MENU </a>
+                    li.nav-item 
+                        a(class="reservation" href="/reservation") RESERVATION
+                    li.nav-item 
+                        a(class="Blog" href="/Blog") BLOG
+                    li.nav-item
+                        a(class="contact" href="/contact") CONTACT
+                    li.nav-item
+                        if cartLength
+                            span(class="fa-stack fa-2x has-badge" data-count=cartLength)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                        else
+                            span(class="fa-stack fa-2x has-badge" data-count=0)
+                                a(href="/ShoppingCart")
+                                    i(class="fa fa-shopping-cart fa-stack-1x fa-inverse")
+                    li.nav-item
+                        i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    if user
+                        li.nav-item
+                            a(href="/profilePage")
+                                img(src=user.avatar alt="Avatar" class="avatar-nav")
+                        li.nav-item.dropdown
+                            a(class="contact" href="/profilePage")= user.userName
+                            div(class="dropdown-content")
+                                a(class="dropdown-item" href="/profilePage") Profile
+                                a(class="dropdown-item" href="/logOut") Log Out
+                    else
+                        li.nav-item
+                            a(class="contact" href="/logIn") LOGIN
+                        li.nav-item
+                            a(class="contact" href="/signUp") SIGN UP  
+                div.col-12(id="search-bar")
+                    i(class="fas fa-search fa-lg" onclick="myFunction()")
+                    input(type="text" id="searchBar" placeholder="Search Here ..... !")
+                    div(id="search_List")
+                        ul(id="dishesList")
+        //Header
+        .page-header
+            .container
+                .col-md-6.left-padd0
+                    h3.left-section1 Services 
+                    h4.left-section2 Know About Our Amazing Services 
+                .col-md-6
+                    .breadcrumbs
+                        a(href="/" style="color:white") Home 
+                        i /       
+                        a(href="#" style="color:white") Page
+                        i / 
+                        a Service
+        //Section1
+        .service-section1 
+            .container 
+                h2 Restaurant, Bakery, Coffee, Winery & Pizza
+                p Consequuntur magni dolores eos ratione voluptatem nesciunt natus error voluptatem accusantium tempo doloremque.
+        //Section2
+        .service-section2
+            .container 
+                .row
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img18.jpg" alt="breakfast")
+                            span.dine-time BREAKFAST 
+                            p(style="padding:30px").
+                                A great British breakfast makes the perfect start to any day, and nobody does breakfast quite like the great British hotelier.<br><br>
+                                We are helping you to make breakfast even better with our fantastic Breakfast Service collection, carefully 
+                                selected from the best suppliers to offer a wide range of items.
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img19.jpg" alt="lunch")
+                            span.dine-time LUNCH 
+                            p(style="padding:30px"). 
+                                You work hard and your time is valuable. Why waste a lunch break running around to find food? Good food should be easy to find.<br><br>
+                                Quality food comes from awesome ingredients and care in preparation. It delights taste buds and makes us feel good. 
+                                Your individual lifestyle and diet deserve fresh, delicious food.
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img20.jpg" alt="dinner")
+                            span.dine-time DINNER 
+                            p(style="padding:30px"). 
+                                For Friday night dinner with friends to Sunday meals with family, browse our range to leave an impression.<br><br>
+                                Our ideal sized bowls for soups or pasta to plates and serveware in plain and floral can be coordinated. These are our 
+                                picks for easy, fast, and delicious meals — including nutritious dinners, family-style favorites, and seasonal sides.
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img21.jpg" alt="dinner")
+                            span.dine-time TABLE ORDERING
+                            p(style="padding:30px"). 
+                                The app is perfect if you are on your own and don’t want to lose your table, or you don’t want to carry a large round 
+                                of worries back through a busy restaurant on a tray.
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img22.jpg" alt="dinner")
+                            span.dine-time OFFER FREE WI-FI
+                            p(style="padding:30px"). 
+                                Along with creating a positive experience the first time people engage with your brand, free customer WiFi can increase 
+                                the odds that your new buyers become loyal fans.
+                    .col-md-4.col-sm-6.m-bottom
+                        .cell-service
+                            img.img-responsive(src="site-img23.jpg" alt="dinner")
+                            span.dine-time HOME DELIVERY 
+                            p(style="padding:30px"). 
+                                We have one of fastest Food Delivery service in Vietnam. We have curated all your favorite dishes and cuisines to 
+                                help you grab your food in the easiest & quickest way possible.
+        //Section3
+        .service-section3
+            .container
+                h3.text-center(style="color:white;text-transform: uppercase;font-size: 20px !important;font-weight: 700 !important;") Testimonials
+                h4.text-center(style="color:white;text-transform: uppercase;font-size: px !important;font-weight: 700 !important;") What people say
+                div(id = "carousel-example-generic1" class="carousel slide" data-ride="carousel")
+                    ol.carousel-indicators 
+                        li(data-target="#carousel-example-generic1" data-slide-to="0" class="active")
+                        li(data-target="#carousel-example-generic1" data-slide-to="1")
+                        li(data-target="#carousel-example-generic1" data-slide-to="2") 
+                    .carousel-inner(role = "listbox")
+                        //Slide 1
+                        div(class="carousel-item carousel-item-service active")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+                        //Slide 2
+                        div(class="carousel-item carousel-item-service")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+                        //Slide 3
+                        div(class="carousel-item carousel-item-service")
+                            div(class="col-md-10 sec-auto-margin text-center")
+                                p(style="color:white").
+                                    Nulla imperdiet sit amet magna. Vesti bulum elt dapibus, mauris nec malesuada fames ac turpis velit, nhoncus eu, luctus et interdum adipiscing wisi bulum elt dapibus, mauris malesuada fames Aliquam erat ac ipsum dipiscing Nulla amet elt wisi bulum Integer luctus et.
+                                p(style="margin-top:30px")
+                                    span(style="color:red;font-size:18px") John Deo 
+                                    span(style="font-style:italic;color:#777575") / from exmedia
+        //Section4
+        .service-section4
+            .container 
+                .row 
+                    .col-md-6 
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-utensils" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Online Ordering 
+                                    p Simple and fast
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-wifi" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Offer Free Wi-Fi
+                                    p Convenient
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-vihara" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Conference Halls
+                                    p Simple and fast
+                    .col-md-6 
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="far fa-calendar-check" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Table Ordering
+                                    p Convenient
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-puzzle-piece" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Games at The Table
+                                    p Simple and fast
+                        div(class="col-md-12" style="text-algin:left;margin-bottom: 60px")
+                            div(class="fea-sce-col")
+                                div.icon-boxed
+                                    span(class="fas fa-door-open" style="font-size:30px")
+                                div(style="padding-left: 120px")
+                                    h2(style="margin-bottom:10px;font-thin:300 !important") Home Delivery 
+                                    p Convenient
+                                    
+        //Footer
+        .footer
+            .container-fluid.row 
+                .col-6
+                    h4 About Company
+                    .title-line 
+                    p Pellentesque mi purus, eleifend sedt commodo vel, sagittis elts vestibulum dui sagittis mlste sagittis elts.
+                    ul.address-info 
+                        li
+                            <i class="fas fa-map-marker-alt"></i>   15 Barnes Wallis Way, 358744, USA
+                        li 
+                            <i class="fas fa-phone"></i>    +1 (012) 345 6789 
+                        li
+                            <i class="fas fa-envelope"></i>   info@yourdomain.com
+                .col-6 
+                    h4 Twitter Feed!
+                    .title-line 
+                    ul.customer-sp
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Customer Support
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Documentation
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="#") Developer Center
+                        li 
+                            <i class="fas fa-angle-right"></i> 
+                                a(href="/FAQs") General FAQs
+        .container-fluid.Copyright.row
+            .col-6.copyRight-title
+                h5 Copyright © 2016 yourdomian. All rights reserved.
+            .col-6
+                ul.social-list 
+                    li.social-app
+                        <i class="fab fa-facebook-square fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-instagram fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-youtube fa-3x"></i>
+                    li.social-app
+                        <i class="fab fa-twitter-square fa-3x"></i>
+
+
+
+
+                        
+                           
+
+                
