@@ -145,6 +145,4 @@ app.use('/ShoppingCart', authMiddleware.authMiddleware, cartRoutes);
 
 app.use('/StaffReservation', authMiddleware.authMiddleware, staffReservationRoutes)
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.listen(process.env.PORT || 5000);
