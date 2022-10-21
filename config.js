@@ -16,12 +16,12 @@ const {
 
 module.exports = {
     firebaseConfig: {
-        apiKey: API_KEY,
-        authDomain: AUTH_DOMAIN,
-        projectId: PROJECT_ID,
-        storageBucket: STORAGE_BUCKET,
-        messagingSenderId: MESSAGING_SENDER_ID,
-        appId: APP_ID,
-        measurementId: MEASUREMENT_ID
+        apiKey: "AIzaSyDlR5DYVBszVW2fU5NwzvvqPTOmDwALBpw",
+        authDomain: "pizza-project-8878d.firebaseapp.com",
+        projectId: "pizza-project-8878d",
+        storageBucket: "pizza-project-8878d.appspot.com",
+        messagingSenderId: "131525536349",
+        appId: "1:131525536349:web:d9e1d04ca0e65bec553bb4",
+        measurementId: "G-508F52KKH0"
       }
 }
