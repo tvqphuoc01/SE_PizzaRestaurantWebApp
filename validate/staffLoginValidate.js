@@ -1,7 +1,7 @@
 'use strict';
 
 const firebase = require('../db');
-const Staff = require('../models/staff');
+const Staff = require('../models/Staff');
 const firestore = firebase.firestore();
 
 module.exports.validateLoginStaff = async function(req, res, next) {
