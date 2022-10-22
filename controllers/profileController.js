@@ -97,6 +97,8 @@ const profileGet = async function(req, res) {
     // res.locals.user = client;
     if (check === 0) {
       const ref = await firestore.collection('client').where('email', '==', userEmail).get();
+      let temp = await firestore.collection('client').where('email', '==', userEmail).onSnapshot();
+      console.log(temp.docs[0].data());
       const refOrder = await firestore.collection('order').where('userId', '==', req.cookies.userId).get();
       const refReservation = await firestore.collection('reservation').where('userId', '==', req.cookies.userId).get();
       const user = ref.docs[0].data();
