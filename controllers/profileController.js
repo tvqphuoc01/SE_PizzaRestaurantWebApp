@@ -100,7 +100,9 @@ const profileGet = async function(req, res) {
       let temp = firestore.collection('client').where('email', '==', userEmail);
       const observer = temp.onSnapshot(querySnapshot => {
         console.log(`Received query snapshot of size ${querySnapshot.size}`);
-        console.log(querySnapshot);
+        querySnapshot.docChanges().forEach(change => {
+          console.log(change.doc.data());
+        }
         // ...
       }, err => {
         console.log(`Encountered error: ${err}`);
